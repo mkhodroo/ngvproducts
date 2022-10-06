@@ -14,17 +14,10 @@
     <!-- Custom CSS -->
     <link href="{{ url('public/dashboard/dist/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/dashboard/assets/node_modules/toast-master/css/jquery.toast.css') }}" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: Samim;
-            src: url('{{ public_path('dashboard/dist/css/fonts/Samim.ttf') }}');
-            font-weight: normal;
-            font-style: normal;
-        }
+    <link href="{{ url('public/dashboard/assets/node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
 
-        body {
-            font-family: Samim;
-        }
+    <style>
+        
     </style>
 
     <![endif]-->
@@ -422,6 +415,8 @@
     <!--Custom JavaScript -->
     <script src="{{ url('public/dashboard/dist/js/custom.min.js') }}"></script>
     <script src="{{ url('public/dashboard/assets/node_modules/toast-master/js/jquery.toast.js') }}"></script>
+    <script src="{{ url('public/dashboard/assets/node_modules/select2/dist/js/select2.full.min.js') }}" type="text/javascript"></script>
+    
     <!-- This is data table -->
     <script src="{{ url('public/dashboard/assets/node_modules/datatables/jquery.dataTables.min.js') }}"></script>
     <!-- start - This is for export functionality only -->
@@ -434,6 +429,7 @@
     <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
 
     <script>
+        $(".select2").select2();
         function alert_notification(msg='انجام شد'){
             $('#alert-success').html(msg);
             $('#alert-success').show();

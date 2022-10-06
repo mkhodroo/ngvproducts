@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ProductsInventory extends Model
 {
     use HasFactory;
+    public $table = 'product_inventories';
+    protected $fillable = [
+        'store_id', 'product_id', 'number'
+    ];
+
+    public function store()
+    {
+        return Store::find($this->store_id);
+    }
 }

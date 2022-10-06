@@ -21,6 +21,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/products.php';
+Route::prefix('/admin')->middleware(['auth'])->group(function(){
+    require __DIR__.'/products.php';
+    require __DIR__.'/inventory.php';
+    require __DIR__.'/store.php';
+    require __DIR__.'/methods.php';
+});
+
+
 
 require __DIR__.'/auth.php';

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Method extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name', 'fa_name'
+    ];
 }

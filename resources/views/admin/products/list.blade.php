@@ -12,12 +12,10 @@
             width="100%">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Updated At</th>
+                    <th>Created At</th>
                 </tr>
             </thead>
         </table>
@@ -30,6 +28,16 @@
     <script>
         $('#example23').DataTable({
             dom: 'Bfrtip',
+            ajax: {
+                url: '{{ route("admin-products-get-list") }}',
+                dataSrc: 'data',
+            },
+            columns: [
+                { data: 'id' },
+                { data: 'name' },
+                { data: 'updated_at' },
+                { data: 'created_at' }
+            ],
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
