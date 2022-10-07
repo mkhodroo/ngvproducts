@@ -11408,23 +11408,27 @@ icons path
 *******************/
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.ttf?-rdmvgc") format("truetype"); }
+  src: url("fonts/Samim.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'simple-line-icons';
-  src: url("fonts/Simple-Line-Icons.ttf?-i3a2kk") format("truetype"); }
+  src: url("fonts/Samim.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'themify';
-  src: url("fonts/themify.ttf") format("truetype"); }
+  src: url("fonts/Samim.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url("fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"); }
+  src: url("fonts/Samim.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'Material Design Icons';
-  src: url("fonts/materialdesignicons-webfont.ttf") format("truetype"); }
+  src: url("fonts/Samim.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Samim';
+  src: url("fonts/Samim.ttf") format("truetype"); }
 
 /*============================================================== 
  For all pages 
