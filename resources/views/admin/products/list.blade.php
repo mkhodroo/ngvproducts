@@ -30,6 +30,7 @@
     <script>
         var table = $('#example23').DataTable({
             dom: 'Bfrtip',
+            order: [[0, 'desc']],
             ajax: {
                 url: '{{ route("admin-products-get-list") }}',
                 dataSrc: '',

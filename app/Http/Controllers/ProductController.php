@@ -25,9 +25,10 @@ class ProductController extends Controller
 
     public function add(Request $r)
     {
-        AccessController::check('add_product');
+        // AccessController::check('add_product');
         Product::create([
-            'name' => $r->name
+            'name' => $r->name,
+            'user_id' => Auth::id()
         ]);
         return response('اضافه شد');
     }
