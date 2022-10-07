@@ -29,7 +29,12 @@ class ProductInventoryController extends Controller
     public function get_user_inventories()
     {
         $user_store_ids = $this->storeCont->get_user_stores_ids();
-        return ProductsInventory::whereIn('store_id', $user_store_ids)->get();
+        return ProductsInventory::whereIn('store_id', $user_store_ids)
+                ->get()
+                ->each(function($c){
+                    $c->product_name = $c->product()->name;
+                    $c->store_name = $c->store()->name;
+                });
     }
 
     public function add(Request $r)
@@ -40,6 +45,18 @@ class ProductInventoryController extends Controller
             'number' => $r->number
         ]);
         return response('اضافه شد');
+    }
+
+    public function get_product_inventory($product_id)
+    {
+        return ProductsInventory::where('product_id', $product_id)->sum('number');
+    }
+
+    public function cal_product_inventory($product_id)
+    {
+        $inventory = $this->get_product_inventory($product_id);
+        $product_orders_number = OrderController::get_product_orders_number($product_id);
+        return $inventory - $product_orders_number;
     }
 
     

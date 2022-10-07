@@ -14,6 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Inventory</th>
                     <th>Updated At</th>
                     <th>Created At</th>
                 </tr>
@@ -22,19 +23,21 @@
     </div>
 
     @include('admin.products.add')
+    @include('admin.products.edit')
 @endsection
 
 @section('script')
     <script>
-        $('#example23').DataTable({
+        var table = $('#example23').DataTable({
             dom: 'Bfrtip',
             ajax: {
                 url: '{{ route("admin-products-get-list") }}',
-                dataSrc: 'data',
+                dataSrc: '',
             },
             columns: [
                 { data: 'id' },
                 { data: 'name' },
+                { data: 'inventory' },
                 { data: 'updated_at' },
                 { data: 'created_at' }
             ],
@@ -44,12 +47,18 @@
             "displayLength": 25,
         });
 
+        $('#example23 tbody').on('dblclick', 'tr', function () {
+            var data = table.row(this).data();
+            get_info(data['id']);
+        });
+
+        $.get('{{ route("admin-products-get-list") }}', function (d) { console.log(d); });
+
         function open_add_modal() {
             $('#add-product-modal').modal('show');
         }
 
         function add_product() {
-            
             $.ajax({
                 url: `{{ route('add-product') }}`,
                 data: $('#add-product-form').serialize(),

@@ -14,6 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Product Name</th>
+                    <th>Store</th>
                     <th>Inventory</th>
                     <th>Updated at</th>
                     <th>Created at</th>
@@ -38,7 +39,9 @@
             },
             columns: [
                 { data: 'id' },
-                { data: 'name' },
+                { data: 'product_name' },
+                { data: 'store_name' },
+                { data: 'number' },
                 { data: 'updated_at' },
                 { data: 'created_at' }
             ],

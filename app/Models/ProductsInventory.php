@@ -17,4 +17,9 @@ class ProductsInventory extends Model
     {
         return Store::find($this->store_id);
     }
+
+    public function product()
+    {
+        return Product::find($this->product_id);
+    }
 }
