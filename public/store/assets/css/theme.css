@@ -143,8 +143,11 @@
 /* 1.2 */
 /* Global properties (body, common classes, structure etc)
 /* ========================================================================== */
+@font-face {
+  font-family: Samim;
+  src: url("fonts/Samim.ttf") format("truetype"); }
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: Samim, 'Lato', sans-serif;
   font-size: 14px;
   line-height: 1.72;
   background: #ffffff;
@@ -1017,6 +1020,7 @@ input[type=checkbox] {
 .top-bar .top-bar-left {
   float: left;
 }
+
 .top-bar .top-bar-right {
   float: right;
 }
@@ -1029,16 +1033,7 @@ input[type=checkbox] {
   padding: 0 0 0 10px;
   margin: 0 0 0 9px;
 }
-.top-bar .top-bar-right > ul > li + li:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 8px;
-  left: 0;
-  width: 1px;
-  height: 8px;
-  background-color: #ffffff;
-}
+
 .top-bar .icon-user img {
   margin-top: -3px;
   margin-right: 5px;
@@ -1114,7 +1109,7 @@ input[type=checkbox] {
 }
 .header .header-search button {
   position: absolute;
-  right: 3px;
+  left: 3px;
   top: 3px;
   background-color: #ffffff;
   border: none;
@@ -1127,7 +1122,7 @@ input[type=checkbox] {
   content: '';
   position: absolute;
   top: 0;
-  left: -34px;
+  right: -34px;
   width: 34px;
   height: 34px;
   background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
@@ -1294,7 +1289,7 @@ input[type=checkbox] {
 }
 .navigation .nav.sf-menu {
   line-height: 1.72;
-  text-align: left;
+  text-align: right;
   display: inline-block;
   margin: 0 auto !important;
 }
@@ -1313,11 +1308,11 @@ input[type=checkbox] {
   position: absolute;
   display: none;
   top: 100%;
-  left: 0;
+  right: 0;
   z-index: 99;
 }
 .sf-menu > li {
-  float: left;
+  float: right;
 }
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
@@ -1381,11 +1376,11 @@ input[type=checkbox] {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .sf-menu ul {
-  margin-left: 0;
-  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
 }
 .sf-menu ul ul {
-  margin-left: 0;
+  margin-right: 0;
 }
 .sf-menu ul li {
   background: #ffffff;
@@ -1403,13 +1398,13 @@ input[type=checkbox] {
 /* ARROW DOWN */
 .sf-menu.nav > li > a.sf-with-ul,
 .sf-arrows .sf-with-ul {
-  padding-right: 1.8em;
+  padding-left: 1.8em;
 }
 .sf-arrows .sf-with-ul:after {
   content: '';
   position: absolute;
   top: 50%;
-  right: 1em;
+  left: 1em;
   margin-top: -1px;
   height: 0;
   width: 0;
@@ -1467,17 +1462,17 @@ input[type=checkbox] {
 .sf-menu li.megamenu > ul li ul {
   display: block;
   position: relative;
-  left: 0;
+  right: 0;
   margin-left: 0;
 }
 .sf-menu li.megamenu > ul li a {
   background-color: transparent;
 }
 .sf-menu li.megamenu ul {
-  margin-left: 0;
+  margin-right: 0;
 }
 .sf-menu li.megamenu ul a {
-  padding-left: 0;
+  padding-right: 0;
 }
 .sf-menu li.megamenu ul a:hover {
   color: #00b16a;

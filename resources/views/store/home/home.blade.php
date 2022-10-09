@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><!-- sherad by mellatweb.com -->
+<html lang="en" dir="rtl"><!-- sherad by mellatweb.com -->
 <head>
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bella Shop by www.mellatweb.com</title>
+    <title>ngvproducts</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url('public/store/assets/ico/apple-touch-icon-144-precomposed.png') }}">
@@ -89,36 +89,19 @@
     <!-- Header top bar -->
     <div class="top-bar">
         <div class="container">
-            <div class="top-bar-left">
-                <ul class="list-inline">
-                    <li class="icon-user"><a href="login.html"><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/> <span>Login</span></a></li>
-                    <li class="icon-form"><a href="login.html"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span>Not a Member? <span class="colored">Sign Up</span></span></a></li>
-                    <li><a href="https://www.mellatweb.com/"><i class="fa fa-envelope"></i> <span>Mellatweb.com</span></a></li>
-                </ul>
-            </div>
             <div class="top-bar-right">
                 <ul class="list-inline">
-                    <li class="hidden-xs"><a href="about.html">About</a></li>
-                    <li class="hidden-xs"><a href="blog.html">Blog</a></li>
-                    <li class="hidden-xs"><a href="contact.html">Contact</a></li>
-                    <li class="hidden-xs"><a href="faq.html">FAQ</a></li>
-                    <li class="hidden-xs"><a href="wishlist.html">My Wishlist</a></li>
-                    <li class="dropdown currency">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">€ EURO<i class="fa fa-angle-down"></i></a>
-                        <ul role="menu" class="dropdown-menu">
-                            <li><a href="#">€ EURO</a></li>
-                            <li><a href="#">€ EURO</a></li>
-                            <li><a href="#">€ EURO</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown flags">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ url('public/store/assets/img/flag.gif') }}" alt=""/> Eng<i class="fa fa-angle-down"></i></a>
-                        <ul role="menu" class="dropdown-menu">
-                            <li><a href="#"><img src="assets/img/flag.gif" alt=""/> Eng</a></li>
-                            <li><a href="#"><img src="assets/img/flag.gif" alt=""/> Eng</a></li>
-                            <li><a href="#"><img src="assets/img/flag.gif" alt=""/> Eng</a></li>
-                        </ul>
-                    </li>
+                    <li class="icon-user"><a href="login.html"><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/> <span>ورود</span></a></li>
+                    <li class="icon-form"><a href="login.html"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span class="colored">ثبت نام</span></span></a></li>
+                </ul>
+            </div>
+            <div class="top-bar-left">
+                <ul class="list-inline">
+                    <li class="hidden-xs"><a href="about.html">درباره ما</a></li>
+                    <li class="hidden-xs"><a href="blog.html">بلاگ</a></li>
+                    <li class="hidden-xs"><a href="contact.html">تماس با ما</a></li>
+                    <li class="hidden-xs"><a href="faq.html">سوالات پر تکرار</a></li>
+                    <li class="hidden-xs"><a href="wishlist.html">علاقه مندی ها</a></li>
                 </ul>
             </div>
         </div>
@@ -132,13 +115,15 @@
 
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html"><img src="{{ url('public/store/assets/img/logo-bella-shop.png') }}" alt="Bella Shop"/></a>
+                    <h3 style="font-weight: bold">
+                        NGV<span style="color: black">Products</span>
+                    </h3>
                 </div>
                 <!-- /Logo -->
 
                 <!-- Header search -->
                 <div class="header-search">
-                    <input class="form-control" type="text" placeholder="What are you looking?"/>
+                    <input class="form-control" type="text" placeholder="جستجو ..."/>
                     <button><i class="fa fa-search"></i></button>
                 </div>
                 <!-- /Header search -->
@@ -146,9 +131,7 @@
                 <!-- Header shopping cart -->
                 <div class="header-cart">
                     <div class="cart-wrapper">
-                        <a href="wishlist.html" class="btn btn-theme-transparent hidden-xs hidden-sm"><i class="fa fa-heart"></i></a>
-                        <a href="compare-products.html" class="btn btn-theme-transparent hidden-xs hidden-sm"><i class="fa fa-exchange"></i></a>
-                        <a href="#" class="btn btn-theme-transparent" data-toggle="modal" data-target="#popup-cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs"> 0 item(s) - $0.00 </span> <i class="fa fa-angle-down"></i></a>
+                        <a href="#" class="btn btn-theme-transparent" data-toggle="modal" data-target="#popup-cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">  </span> <i class="fa fa-angle-down"></i></a>
                         <!-- Mobile menu toggle button -->
                         <a href="#" class="menu-toggle btn btn-theme-transparent"><i class="fa fa-bars"></i></a>
                         <!-- /Mobile menu toggle button -->
@@ -161,79 +144,35 @@
         <div class="navigation-wrapper">
             <div class="container">
                 <!-- Navigation -->
-                <nav class="navigation closed clearfix">
+                <nav class="navigation closed clearfix" >
                     <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
-                    <ul class="nav sf-menu">
-                        <li class="active"><a href="index.html">Homepage</a>
-                            <ul>
-                                <li><a href="index.html">Homepage 1</a></li>
-                                <li><a href="index-2.html">Homepage 2</a></li>
-                                <li><a href="index-3.html">Homepage 3</a></li>
-                                <li><a href="index-4.html">Homepage 4</a></li>
-                                <li><a href="index-5.html">Homepage 5</a></li>
-                                <li><a href="index-6.html">Homepage 6</a></li>
-                                <li><a href="index-7.html">Homepage 7</a></li>
-                                <li><a href="index-8.html">Homepage 8</a></li>
-                                <li><a href="index-9.html">Homepage 9</a></li>
-                            </ul>
+                    <ul class="nav sf-menu" >
+                        <li class="active"><a href="{{ route('home') }}">NGVProducts</a>
                         </li>
-                        <li><a href="category.html">Shop</a>
+                        <li class="megamenu"><a href="#">محصولات</a>
                             <ul>
-                                <li><a href="category.html">Shop Sidebar Left</a></li>
-                                <li><a href="category-right.html">Shop Sidebar Right</a></li>
-                                <li><a href="category-list.html">Shop List View</a></li>
-                                <li><a href="product-details.html">Product Page</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Blog</a>
-                            <ul>
-                                <li><a href="blog.html">Blog Sidebar Left </a></li>
-                                <li><a href="blog-right.html">Blog Sidebar Right</a></li>
-                                <li><a href="blog-post.html">Blog Single Post</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="portfolio.html">Portfolio</a>
-                            <ul>
-                                <li><a href="portfolio.html">Portfolio 3 columns</a></li>
-                                <li><a href="portfolio-4col.html">Portfolio 4 columns</a></li>
-                                <li><a href="portfolio-alt.html">Portfolio Alternate</a></li>
-                                <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                            </ul>
-                        </li>
-                        <li class="megamenu"><a href="#">Features</a>
-                            <ul>
-                                <li class="row">
+                                <li class="row" >
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>Womens</span></h4>
+                                        <h4 class="block-title"><span>مخازن</span></h4>
                                         <ul>
-                                            <li><a href="#">Dresses</a></li>
-                                            <li><a href="#">Rompers & Jumpsuits</a></li>
-                                            <li><a href="#">Bodysuits</a></li>
-                                            <li><a href="#">Shirts & Blouses</a></li>
-                                            <li><a href="#">Coats & Jackets</a></li>
-                                            <li><a href="#">Blazers</a></li>
+                                            <li><a href="#">نوع اول</a></li>
+                                            <li><a href="#">نوع دوم</a></li>
+                                            <li><a href="#">نوع سوم</a></li>
+                                            <li><a href="#">نوع چهارم</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>Mens</span></h4>
+                                        <h4 class="block-title"><span>رگلاتور</span></h4>
                                         <ul>
-                                            <li><a href="#">T-Shirts & Vests</a></li>
-                                            <li><a href="#">Sweaters & Cardigans</a></li>
-                                            <li><a href="#">Hoodies & Sweats</a></li>
-                                            <li><a href="#">Coats & Jackets</a></li>
-                                            <li><a href="#">Shirts</a></li>
-                                            <li><a href="#">Shorts</a></li>
+                                            <li><a href="#">نسل یک</a></li>
+                                            <li><a href="#">نسل دو</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>Pages</span></h4>
+                                        <h4 class="block-title"><span>شیرمخزن</span></h4>
                                         <ul>
-                                            <li><a href="shortcodes.html"><strong>Shortcodes</strong></a></li>
-                                            <li><a href="typography.html"><strong>Typography</strong></a></li>
-                                            <li><a href="coming-soon.html"><strong>Coming soon</strong></a></li>
-                                            <li><a href="error-page.html"><strong>404 Page</strong></a></li>
-                                            <li><a href="about.html"><strong>About</strong></a></li>
-                                            <li><a href="login.html"><strong>Login</strong></a></li>
+                                            <li><a href="shortcodes.html">مخروطی</a></li>
+                                            <li><a href="typography.html">استوانه</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-3">
