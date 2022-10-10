@@ -1,3 +1,5 @@
+
+
 <div class="modal fade bs-example-modal-lg" id="edit-product-modal" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
@@ -7,16 +9,36 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <form action="javascript:void(0)" class="" id="edit-product-form">
-                    @csrf
-                    @include('inputs.hidden',[
-                        'name' => 'id'
-                    ])
-                    @include('inputs.text', [
-                        'name' => 'name',
-                        'label' => 'نام محصول',
-                    ])
-                </form>
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="active" ><a href="#product" data-toggle="tab">محصول</a></li>
+                        <li><a href="#images" data-toggle="tab">تصاویر</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="product" class="tab-pane fade in active">
+                            
+                            <form action="javascript:void(0)" class="" id="edit-product-form">
+                                @csrf
+                                <div id="info">
+                                </div>
+                            </form>
+                        </div>
+                        <div id="images" class="tab-pane fade">
+                            <form action="javascript:void(0)" id="product-image-form">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            @include('inputs.file',[
+                                                'name' => 'image[]',
+                                            ])
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="btn btn-success" onclick="edit_product()">ویرایش</button>
             </div>
             <div class="modal-footer">
@@ -30,8 +52,10 @@
     function get_info(id) {
         $.get(`{{ url("admin/products/get") }}/${id}`, function (data) {
             console.log(data);
-            $("input[name='id']").val(data.id);
-            $("input[name='name']").val(data.name);
+            $('#info').html('')
+            $('#info').append(`@include('inputs.hidden', ['name' => 'id', 'value' => '${data.id}' ])`)
+            $('#info').append(`@include('inputs.text', ['name' => 'name', 'value' => '${data.name}' ,'label' => 'نام محصول',])`)
+            $('#info').append(`@include('inputs.text', ['name' => 'price', 'value' => '${data.price}' ,'label' => 'قیمت',])`)
             $('#edit-product-modal').modal('show');
         })
     }

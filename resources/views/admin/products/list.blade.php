@@ -14,6 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Price</th>
                     <th>Inventory</th>
                     <th>Updated At</th>
                     <th>Created At</th>
@@ -38,6 +39,7 @@
             columns: [
                 { data: 'id' },
                 { data: 'name' },
+                { data: 'price' },
                 { data: 'inventory' },
                 { data: 'updated_at' },
                 { data: 'created_at' }

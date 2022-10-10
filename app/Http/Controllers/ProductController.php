@@ -38,16 +38,21 @@ class ProductController extends Controller
         $pInventoryCont = new ProductInventoryController();
         return Product::where('user_id', Auth::id())->get()->each(function($c)use($pInventoryCont){
             $c->inventory = $pInventoryCont->cal_product_inventory($c->id);
+            $c->price = $c->price()->price;
         });
     }
 
     public function get(Request $r=null, $id=null)
     {
         if($id){
-            return Product::find($id);
+            $p = Product::find($id);
+            $p->price = $p->price()->price;
+            return $p;
         }
         if($r->id){
-            return Product::find($r->id);
+            $p = Product::find($r->id);
+            $p->price = $p->price()->price;
+            return $p;
         }
     }
 
@@ -59,8 +64,15 @@ class ProductController extends Controller
     public function edit(Request $r)
     {
         $this->get_user_product($r->id, Auth::id())->update([
-            'name' => $r->name
+            'name' => $r->name,
         ]);
+        $product_price = new ProductPriceController();
+        $product_price->add($r->id, $r->price);
         return response('محصول ویرایش شد.');
+    }
+
+    public function newest_products()
+    {
+        return Product::orderBy('id', 'desc')->take(4)->get();
     }
 }

@@ -11,4 +11,9 @@ class Product extends Model
     protected $fillable =[
         'name'
     ];
+
+    public function price()
+    {
+        return ProductPrice::latest()->first();
+    }
 }
