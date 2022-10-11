@@ -72,7 +72,7 @@
                 method: 'post',
                 success: function(data) {
                     console.log(data);
-                    alert_notification('محصول اضافه شد');
+                    alert_notification(data);
                     $('#add-product-modal').modal('hide');
                 }
             })

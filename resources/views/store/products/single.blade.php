@@ -1,8 +1,9 @@
+@if (isset($product->name))
 <div class="col-md-3 col-sm-6">
     <div class="thumbnail no-border no-padding">
         <div class="media">
             <a class="media-link" data-gal="prettyPhoto" href="{{ url('public/store/assets/img/preview/shop/product-1-big.jpg') }}">
-                <img src="{{ url("$product->image") ?? '' }}" alt=""/>
+                <img src="{{ url("$product?->image") ?? '' }}" alt=""/>
                 <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
             </a>
         </div>
@@ -15,7 +16,7 @@
                 --><span class="star active"></span><!--
                 --><span class="star active"></span>
             </div>
-            <div class="price"><ins>{{ $product->price()->price ?? '' }} <span style="color: black">تومان</span></ins> <del>{{ $product->old_price ?? '' }}</del></div>
+            <div class="price"><ins>{{ $product?->price()->price ?? '' }} <span style="color: black">تومان</span></ins> <del>{{ $product->old_price ?? '' }}</del></div>
             <div class="buttons">
                 <a class="btn btn-theme btn-theme-transparent btn-wish-list" href="#"><i class="fa fa-heart"></i></a><!--
                 --><a class="btn btn-theme btn-theme-transparent btn-icon-left" href="#"><i class="fa fa-shopping-cart"></i>افزودن به سبد</a><!--
@@ -24,3 +25,4 @@
         </div>
     </div>
 </div>
+@endif

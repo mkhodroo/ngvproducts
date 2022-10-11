@@ -9,11 +9,11 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'name'
+        'name', 'user_id'
     ];
 
     public function price()
     {
-        return ProductPrice::latest()->first();
+        return ProductPrice::where('product_id', $this->id)->latest()->first();
     }
 }

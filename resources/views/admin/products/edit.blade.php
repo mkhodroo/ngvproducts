@@ -16,15 +16,14 @@
                     </ul>
                     <div class="tab-content">
                         <div id="product" class="tab-pane fade in active">
-                            
-                            <form action="javascript:void(0)" class="" id="edit-product-form">
+                            <form action="javascript:void(0)" class="" id="edit-product-form" >
                                 @csrf
                                 <div id="info">
                                 </div>
                             </form>
                         </div>
                         <div id="images" class="tab-pane fade">
-                            <form action="javascript:void(0)" id="product-image-form">
+                            <form action="javascript:void(0)" id="product-image-form" class="dropzone" enctype="multipart/form-data">
                                 <table>
                                     <tr>
                                         <td>
@@ -76,4 +75,25 @@
             }
         })
     }
+
+    Dropzone.options.dropzone =
+         {
+            maxFilesize: 12,
+            renameFile: function(file) {
+                var dt = new Date();
+                var time = dt.getTime();
+               return time+file.name;
+            },
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            addRemoveLinks: true,
+            timeout: 5000,
+            success: function(file, response) 
+            {
+                console.log(response);
+            },
+            error: function(file, response)
+            {
+               return false;
+            }
+        };
 </script>

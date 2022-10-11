@@ -26,11 +26,13 @@ class ProductController extends Controller
     public function add(Request $r)
     {
         // AccessController::check('add_product');
-        Product::create([
+        $p = Product::create([
             'name' => $r->name,
             'user_id' => Auth::id()
         ]);
-        return response('اضافه شد');
+        $product_price = new ProductPriceController();
+        $product_price->add($p->id, $r->price);
+        return response('محصول اضافه شد');
     }
 
     public function get_user_products()
@@ -73,6 +75,8 @@ class ProductController extends Controller
 
     public function newest_products()
     {
-        return Product::orderBy('id', 'desc')->take(4)->get();
+        return Product::orderBy('id', 'desc')->take(4)->get()->each(function($c){
+            $c->price = $c->price()->price;
+        });
     }
 }

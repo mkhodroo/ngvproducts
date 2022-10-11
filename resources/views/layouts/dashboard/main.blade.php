@@ -15,12 +15,11 @@
     <link href="{{ url('public/dashboard/dist/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/dashboard/assets/node_modules/toast-master/css/jquery.toast.css') }}" rel="stylesheet">
     <link href="{{ url('public/dashboard/assets/node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+    
 
-    <style>
-        
-    </style>
-
-    <![endif]-->
+    <script src="{{ url('public/dashboard/assets/node_modules/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
 </head>
 
 <body class="skin-blue fixed-layout">
@@ -399,7 +398,6 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ url('public/dashboard/assets/node_modules/jquery/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ url('public/dashboard/assets/node_modules/popper/popper.min.js') }}"></script>
     <script src="{{ url('public/dashboard/assets/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>

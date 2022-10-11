@@ -13,6 +13,10 @@
                         'name' => 'name',
                         'label' => 'نام محصول',
                     ])
+                    @include('inputs.text', [
+                        'name' => 'price',
+                        'label' => 'قیمت محصول',
+                    ])
                 </form>
                 <button class="btn btn-success" onclick="add_product()">افزودن</button>
             </div>

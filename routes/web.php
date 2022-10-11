@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,9 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::any('/get-newest-products', [ProductController::class, 'newest_products'])->name('get-newest_products');
+
 
 Route::prefix('/admin')->middleware(['auth'])->group(function(){
     require __DIR__.'/products.php';

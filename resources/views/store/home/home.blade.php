@@ -25,12 +25,13 @@
     <link href="{{ url('public/store/assets/css/theme-green-1.css') }}" rel="stylesheet" id="theme-config-link">
 
     <!-- Head Libs -->
-    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="{{ url('public/store/assets/plugins/modernizr.custom.js') }}"></script>
 
-    <!--[if lt IE 9]>
-    <script src="assets/plugins/iesupport/html5shiv.js"></script>
-    <script src="assets/plugins/iesupport/respond.min.js"></script>
-    <![endif]-->
+    <script src="{{ url('public/store/assets/plugins/jquery/jquery-1.11.1.min.js') }}"></script>
+
+
+    
+
 </head>
 <body id="home" class="wide">
 <!-- PRELOADER -->
@@ -259,7 +260,13 @@
 
                     <!-- tab 1 -->
                     <div class="tab-pane active" id="tab-1">
-                        <div class="row">
+                        <div class="row" id="newest-products">
+                            <script>
+                                $(document).ready(function(){
+                                    get_newest_products();
+                                })
+                                
+                            </script>
                             @foreach ($newest_products as $item)
                                 @include('store.products.single',[
                                     'product' => $item
@@ -374,7 +381,6 @@
 <!-- /WRAPPER -->
 
 <!-- JS Global -->
-<script src="{{ url('public/store/assets/plugins/jquery/jquery-1.11.1.min.js') }}"></script>
 <script src="{{ url('public/store/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ url('public/store/assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ url('public/store/assets/plugins/superfish/js/superfish.min.js') }}"></script>
@@ -392,6 +398,19 @@
 <script src="{{ url('public/store/assets/plugins/jquery.cookie.js') }}"></script>
 <script src="{{ url('public/store/assets/js/theme-config.js') }}"></script>
 <!--<![endif]-->
+
+<!-- Custome JS -->
+<script>
+    function get_newest_products(div_id = "newest-products"){
+        $.get(`{{ route('get-newest_products') }}`, function(data){
+            data.forEach(function(item){
+                $('#'+div_id).append(`@include('store.products.single', ['product' => '${JSON.stringify(item)}' ])`)
+            })
+        })
+    }
+</script>
+
+
 
 </body>
 </html>
