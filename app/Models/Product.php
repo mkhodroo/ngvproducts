@@ -16,4 +16,14 @@ class Product extends Model
     {
         return ProductPrice::where('product_id', $this->id)->latest()->first();
     }
+
+    public function images()
+    {
+        return ProductImage::where('product_id', $this->id)->get();
+    }
+
+    public function main_image()
+    {
+        return ProductImage::where('product_id', $this->id)->first();
+    }
 }

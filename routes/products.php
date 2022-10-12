@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImageController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/products')->group(function(){
@@ -9,4 +10,6 @@ Route::prefix('/products')->group(function(){
     Route::any('/get/{id}', [ProductController::class, 'get'])->name('admin-get-product');
     Route::any('/get-list', [ProductController::class, 'get_user_products'])->name('admin-products-get-list');
     Route::any('/add', [ProductController::class, 'add'])->name('add-product');
+    Route::any('/add-image', [ProductImageController::class, 'add'])->name('add-product-image');
+    Route::any('/remove-image', [ProductImageController::class, 'remove'])->name('remove-product-image');
 });

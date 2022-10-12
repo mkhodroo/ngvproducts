@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -49,11 +50,13 @@ class ProductController extends Controller
         if($id){
             $p = Product::find($id);
             $p->price = $p->price()->price;
+            $p->images = $p->images();
             return $p;
         }
         if($r->id){
             $p = Product::find($r->id);
             $p->price = $p->price()->price;
+            $p->images = $p->images();
             return $p;
         }
     }

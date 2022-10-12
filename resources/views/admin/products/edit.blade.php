@@ -23,16 +23,12 @@
                             </form>
                         </div>
                         <div id="images" class="tab-pane fade">
-                            <form action="javascript:void(0)" id="product-image-form" class="dropzone" enctype="multipart/form-data">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            @include('inputs.file',[
-                                                'name' => 'image[]',
-                                            ])
-                                        </td>
-                                    </tr>
-                                </table>
+                            <form action="{{ route('add-product-image') }}" id="product-image-form" class="dropzone" enctype="multipart/form-data">
+                                @csrf
+                                @include('inputs.hidden',[
+                                    'name' => 'id',
+                                    'id' => 'product_id'
+                                ])
                             </form>
                         </div>
                     </div>
@@ -55,7 +51,56 @@
             $('#info').append(`@include('inputs.hidden', ['name' => 'id', 'value' => '${data.id}' ])`)
             $('#info').append(`@include('inputs.text', ['name' => 'name', 'value' => '${data.name}' ,'label' => 'نام محصول',])`)
             $('#info').append(`@include('inputs.text', ['name' => 'price', 'value' => '${data.price}' ,'label' => 'قیمت',])`)
+            $('#product_id').val(data.id);
             $('#edit-product-modal').modal('show');
+
+            Dropzone.options.dropzone =
+            {
+                init: function(){
+                    thisDropzone = this;
+                    var mockFile = { name: 'asd', size: 5 };
+                    thisDropzone.options.addedfile.call(thisDropzone, mockFile);
+                    thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "/public/products/images/bB7XTvLnSO.png");
+                },
+                maxFilesize: 12,
+                renameFile: function(file) {
+                    var dt = new Date();
+                    var time = dt.getTime();
+                return time+file.name;
+                },
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                addRemoveLinks: true,
+                timeout: 5000,
+                removedfile: function(file) 
+                {
+                    var name = file.upload.filename;
+                    $.ajax({
+                        headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                                },
+                        type: 'POST',
+                        url: '{{ route('remove-product-image') }}',
+                        data: {filename: name},
+                        success: function (data){
+                            console.log("File has been successfully removed!!");
+                        },
+                        error: function(e) {
+                            console.log(e);
+                        }});
+                        var fileRef;
+                        return (fileRef = file.previewElement) != null ? 
+                        fileRef.parentNode.removeChild(file.previewElement) : void 0;
+                },
+                success: function(file, response) 
+                {
+                    console.log(response);
+                },
+                error: function(file, response)
+                {
+                    console.log(response);
+                return false;
+                }
+            };
         })
     }
 
@@ -76,24 +121,5 @@
         })
     }
 
-    Dropzone.options.dropzone =
-         {
-            maxFilesize: 12,
-            renameFile: function(file) {
-                var dt = new Date();
-                var time = dt.getTime();
-               return time+file.name;
-            },
-            acceptedFiles: ".jpeg,.jpg,.png,.gif",
-            addRemoveLinks: true,
-            timeout: 5000,
-            success: function(file, response) 
-            {
-                console.log(response);
-            },
-            error: function(file, response)
-            {
-               return false;
-            }
-        };
+    
 </script>
