@@ -1,9 +1,10 @@
-@if (isset($product->name))
+
 <div class="col-md-3 col-sm-6">
     <div class="thumbnail no-border no-padding">
         <div class="media">
             <a class="media-link" data-gal="prettyPhoto" href="{{ url('public/store/assets/img/preview/shop/product-1-big.jpg') }}">
-                <img src="{{ url("$product?->image") ?? '' }}" alt=""/>
+                <?php $image_url = env('PRODUCTS_IMAGE_URL') . $item->main_image()?->image_url ?>
+                <img src='{{ $image_url ?? '' }}' alt=""/>
                 <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
             </a>
         </div>
@@ -25,4 +26,3 @@
         </div>
     </div>
 </div>
-@endif

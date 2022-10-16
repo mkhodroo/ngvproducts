@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductProducer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -73,6 +74,10 @@ class ProductController extends Controller
         ]);
         $product_price = new ProductPriceController();
         $product_price->add($r->id, $r->price);
+
+        //ADD PRODUCT PRODUCER
+        $product_producer = new ProductProducerController();
+        $product_producer->add($r->id, $r->producer_name);
         return response('محصول ویرایش شد.');
     }
 

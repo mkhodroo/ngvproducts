@@ -12,6 +12,7 @@
                 <div class="container">
                     <ul class="nav nav-tabs">
                         <li class="active" ><a href="#product" data-toggle="tab">محصول</a></li>
+                        <li class="" ><a href="#producer" data-toggle="tab">تولیدکنندگان</a></li>
                         <li><a href="#images" data-toggle="tab">تصاویر</a></li>
                     </ul>
                     <div class="tab-content">
@@ -19,6 +20,26 @@
                             <form action="javascript:void(0)" class="" id="edit-product-form" >
                                 @csrf
                                 <div id="info">
+                                </div>
+                            </form>
+                        </div>
+                        <div id="producer" class="tab-pane fade in active">
+                            <form action="javascript:void(0)" class="" id="" >
+                                @csrf
+                                <div id="">
+                                    <table id="list" class="table">
+                                        <thead>
+                                          <tr><th>تولید کننده</th><th>قیمت محصول</th><th></th></tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr class="list_var">
+                                            <td><input type="text" name="list-name_0"></td>
+                                            <td><input type="text" name="list-price_0"></td>
+                                            <td class="del-area"><button class="list_del">Delete</button></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <input type="button" value="Add" class="list_add">
                                 </div>
                             </form>
                         </div>
@@ -51,6 +72,7 @@
             $('#info').append(`@include('inputs.hidden', ['name' => 'id', 'value' => '${data.id}' ])`)
             $('#info').append(`@include('inputs.text', ['name' => 'name', 'value' => '${data.name}' ,'label' => 'نام محصول',])`)
             $('#info').append(`@include('inputs.text', ['name' => 'price', 'value' => '${data.price}' ,'label' => 'قیمت',])`)
+            $('#info').append(`@include('inputs.text', ['name' => 'producer_name', 'value' => '${data.price}' ,'label' => 'تولید کننده',])`)
             $('#product_id').val(data.id);
             $('#edit-product-modal').modal('show');
 
@@ -120,6 +142,10 @@
             }
         })
     }
+
+    $('#list').addInputArea({
+        area_del: '.del-area'
+    });
 
     
 </script>

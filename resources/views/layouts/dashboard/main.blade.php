@@ -18,6 +18,7 @@
     
 
     <script src="{{ url('public/dashboard/assets/node_modules/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url('public/dashboard/dist/js/jquery.add-input-area.min.js') }}"></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>

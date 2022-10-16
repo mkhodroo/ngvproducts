@@ -261,12 +261,6 @@
                     <!-- tab 1 -->
                     <div class="tab-pane active" id="tab-1">
                         <div class="row" id="newest-products">
-                            <script>
-                                $(document).ready(function(){
-                                    get_newest_products();
-                                })
-                                
-                            </script>
                             @foreach ($newest_products as $item)
                                 @include('store.products.single',[
                                     'product' => $item
@@ -400,15 +394,7 @@
 <!--<![endif]-->
 
 <!-- Custome JS -->
-<script>
-    function get_newest_products(div_id = "newest-products"){
-        $.get(`{{ route('get-newest_products') }}`, function(data){
-            data.forEach(function(item){
-                $('#'+div_id).append(`@include('store.products.single', ['product' => '${JSON.stringify(item)}' ])`)
-            })
-        })
-    }
-</script>
+
 
 
 

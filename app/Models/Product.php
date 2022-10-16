@@ -26,4 +26,9 @@ class Product extends Model
     {
         return ProductImage::where('product_id', $this->id)->first();
     }
+
+    public function producers()
+    {
+        return ProductProducer::where('product_id', $this->id)->get();
+    }
 }
