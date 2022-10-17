@@ -26,15 +26,15 @@
                         <div id="producer" class="tab-pane fade in active">
                             <form action="javascript:void(0)" class="" id="" >
                                 @csrf
-                                <div id="">
+                                <div id="producer-info">
                                     <table id="list" class="table">
                                         <thead>
                                           <tr><th>تولید کننده</th><th>قیمت محصول</th><th></th></tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="producer-info-tbody">
                                           <tr class="list_var">
-                                            <td><input type="text" name="list-name_0"></td>
-                                            <td><input type="text" name="list-price_0"></td>
+                                            <td><input type="text" name="list-name_0" id="list-name_0"></td>
+                                            <td><input type="text" name="list-price_0" id="list-price_0"></td>
                                             <td class="del-area"><button class="list_del">Delete</button></td>
                                           </tr>
                                         </tbody>
@@ -75,7 +75,13 @@
             $('#info').append(`@include('inputs.text', ['name' => 'producer_name', 'value' => '${data.price}' ,'label' => 'تولید کننده',])`)
             $('#product_id').val(data.id);
             $('#edit-product-modal').modal('show');
-
+            var i = 0;
+            data.producers.forEach(function(item){
+                $('#list-name_' + i).val(item.name);
+                $('#list-price_' + i).val(item.price);
+                $('.list_add').click();
+                i++;
+           })
             Dropzone.options.dropzone =
             {
                 init: function(){

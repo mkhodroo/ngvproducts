@@ -52,12 +52,18 @@ class ProductController extends Controller
             $p = Product::find($id);
             $p->price = $p->price()->price;
             $p->images = $p->images();
+            $p->producers = $p->producers()->each(function($c){
+                $c->price = $c->price();
+            });
             return $p;
         }
         if($r->id){
             $p = Product::find($r->id);
             $p->price = $p->price()->price;
             $p->images = $p->images();
+            $p->producers = $p->producers()->each(function($c){
+                $c->price = $c->price();
+            });
             return $p;
         }
     }
