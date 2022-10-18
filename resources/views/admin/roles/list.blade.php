@@ -14,7 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Inventory</th>
+                    <th>Fa Name</th>
                     <th>Updated At</th>
                     <th>Created At</th>
                 </tr>
@@ -22,8 +22,8 @@
         </table>
     </div>
 
-    @include('admin.products.add')
-    @include('admin.products.edit')
+    @include('admin.roles.add')
+    @include('admin.roles.edit')
 @endsection
 
 @section('script')
@@ -32,13 +32,13 @@
             dom: 'Bfrtip',
             order: [[0, 'desc']],
             ajax: {
-                url: '{{ route("admin-products-get-list") }}',
+                url: '{{ route("admin-roles-get-list") }}',
                 dataSrc: '',
             },
             columns: [
                 { data: 'id' },
                 { data: 'name' },
-                { data: 'inventory' },
+                { data: 'fa_name' },
                 { data: 'updated_at' },
                 { data: 'created_at' }
             ],
@@ -55,10 +55,17 @@
 
 
         function open_add_modal() {
-            $('#add-product-modal').modal('show');
+            $('#add-modal').modal('show');
         }
         function close_add_modal() {
-            $('#add-product-modal').modal('hide');
+            $('#add-modal').modal('hide');
+        }
+
+        function open_edit_modal() {
+            $('#edit-modal').modal('show');
+        }
+        function close_edit_modal() {
+            $('#edit-modal').modal('hide');
         }
         function refresh_table(){
             table.ajax.reload();

@@ -17,6 +17,11 @@ class Product extends Model
         return ProductPrice::where('product_id', $this->id)->latest()->first();
     }
 
+    public function min_price()
+    {
+        return ProductPrice::where('product_id', $this->id)->orderBy('price', 'asc')->first();
+    }
+
     public function images()
     {
         return ProductImage::where('product_id', $this->id)->get();

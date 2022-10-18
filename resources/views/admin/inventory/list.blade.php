@@ -31,7 +31,7 @@
 
 @section('script')
     <script>
-        $('#stores').DataTable({
+        var table = $('#stores').DataTable({
             dom: 'Bfrtip',
             ajax: {
                 url: '{{ route("admin-inventory-get-list") }}',
@@ -72,9 +72,14 @@
                 success: function(data) {
                     console.log(data);
                     alert_notification('موجودی اضافه شد');
+                    refresh_table();
                     $('#add-store-modal').modal('hide');
                 }
             })
+        }
+
+        function refresh_table(){
+            table.ajax.reload();
         }
     </script>
 @endsection

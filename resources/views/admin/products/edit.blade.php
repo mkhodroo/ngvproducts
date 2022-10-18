@@ -11,20 +11,25 @@
             <div class="modal-body">
                 <div class="container">
                     <ul class="nav nav-tabs">
-                        <li class="active" ><a href="#product" data-toggle="tab">محصول</a></li>
-                        <li class="" ><a href="#producer" data-toggle="tab">تولیدکنندگان</a></li>
-                        <li><a href="#images" data-toggle="tab">تصاویر</a></li>
+                        <li class="active" ><a href="#product" data-toggle="tab">محصول</a></li> |
+                        <li class="" ><a href="#producer" data-toggle="tab">تولیدکنندگان</a></li> |
+                        <li><a href="#images" data-toggle="tab">تصاویر</a></li> |
                     </ul>
                     <div class="tab-content">
                         <div id="product" class="tab-pane fade in active">
-                            <form action="javascript:void(0)" class="" id="edit-product-form" >
-                                @csrf
-                                <div id="info">
-                                </div>
-                            </form>
+                            <div class="col-sm-12">
+                                <form action="javascript:void(0)" class="" id="edit-product-form" >
+                                    @csrf
+                                    <div id="info">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-12">
+                                <button class="btn btn-success" onclick="edit_product()">ثبت تغییرات</button>
+                            </div>
                         </div>
                         <div id="producer" class="tab-pane fade in active">
-                            <form action="javascript:void(0)" class="" id="" >
+                            <form action="javascript:void(0)" class="" id="producer-info-form" >
                                 @csrf
                                 <div id="producer-info">
                                     <table id="list" class="table">
@@ -33,13 +38,27 @@
                                         </thead>
                                         <tbody id="producer-info-tbody">
                                           <tr class="list_var">
-                                            <td><input type="text" name="list-name_0" id="list-name_0"></td>
+                                            <td>
+                                                <input type="hidden" name="list-id_0" id="list-id_0">
+                                                <input type="text" name="list-name_0" id="list-name_0">
+                                            </td>
                                             <td><input type="text" name="list-price_0" id="list-price_0"></td>
                                             <td class="del-area"><button class="list_del">Delete</button></td>
                                           </tr>
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>
+                                                    <input type="button" value="Add" class="list_add btn btn-warning">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="btn btn-success" onclick="edit_product_producer_info()">ثبت تغییرات</button>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
                                       </table>
-                                      <input type="button" value="Add" class="list_add">
                                 </div>
                             </form>
                         </div>
@@ -55,7 +74,7 @@
                     </div>
                 </div>
                 
-                <button class="btn btn-success" onclick="edit_product()">ویرایش</button>
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
@@ -68,18 +87,21 @@
     function get_info(id) {
         $.get(`{{ url("admin/products/get") }}/${id}`, function (data) {
             console.log(data);
-            $('#info').html('')
+            $('#info').html('');
+            $('#producer-info-tbody').html('');
+
             $('#info').append(`@include('inputs.hidden', ['name' => 'id', 'value' => '${data.id}' ])`)
             $('#info').append(`@include('inputs.text', ['name' => 'name', 'value' => '${data.name}' ,'label' => 'نام محصول',])`)
-            $('#info').append(`@include('inputs.text', ['name' => 'price', 'value' => '${data.price}' ,'label' => 'قیمت',])`)
-            $('#info').append(`@include('inputs.text', ['name' => 'producer_name', 'value' => '${data.price}' ,'label' => 'تولید کننده',])`)
             $('#product_id').val(data.id);
             $('#edit-product-modal').modal('show');
+            
+            $('#producer-info-tbody').append(`@include('inputs.hidden', ['name' => 'product_id', 'value' => '${data.id}' ])`);
             var i = 0;
             data.producers.forEach(function(item){
-                $('#list-name_' + i).val(item.name);
-                $('#list-price_' + i).val(item.price);
                 $('.list_add').click();
+                $('#list-id_' + i).val(item.id);
+                $('#list-name_' + i).val(item.name);
+                $('#list-price_' + i).val(item.price.price);
                 i++;
            })
             Dropzone.options.dropzone =
@@ -144,7 +166,25 @@
             success: function(data) {
                 console.log(data);
                 alert_notification(data);
-                $('#edit-product-modal').modal('hide');
+                refresh_table();
+            }
+        })
+    }
+
+    function edit_product_producer_info() {
+        $.ajax({
+            url: `{{ route('admin-edit-product-producer') }}`,
+            data: $('#producer-info-form').serialize(),
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'post',
+            success: function(data) {
+                console.log(data);
+                alert_notification(data);
+                var product_id = $('input[name="product_id"]').val();
+                get_info(product_id);
             }
         })
     }

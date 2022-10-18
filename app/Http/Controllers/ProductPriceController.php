@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class ProductPriceController extends Controller
 {
-    public function add($product_id, $price)
+    public function add($product_id, $price, $producer_id=null)
     {
         $pp =ProductPrice::create([
             'product_id' => $product_id,
-            'price' => $price
+            'price' => $price,
+            'product_producer_id' => $producer_id
         ]);
         return $pp->id;
     }

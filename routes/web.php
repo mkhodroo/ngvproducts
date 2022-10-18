@@ -29,6 +29,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
     require __DIR__.'/inventory.php';
     require __DIR__.'/store.php';
     require __DIR__.'/methods.php';
+    require __DIR__.'/roles.php';
 });
 
 

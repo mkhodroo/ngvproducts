@@ -31,6 +31,11 @@
                     <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">!methods</span>
                 </a>
             </li>
+            <li>
+                <a class="waves-effect waves-dark" href="{{ route('admin-roles') }}" aria-expanded="false">
+                    <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">!نقش ها</span>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- End Sidebar navigation -->

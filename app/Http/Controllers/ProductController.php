@@ -32,9 +32,7 @@ class ProductController extends Controller
             'name' => $r->name,
             'user_id' => Auth::id()
         ]);
-        $product_price = new ProductPriceController();
-        $product_price->add($p->id, $r->price);
-        return response('محصول اضافه شد');
+        return response($p);
     }
 
     public function get_user_products()
@@ -42,7 +40,6 @@ class ProductController extends Controller
         $pInventoryCont = new ProductInventoryController();
         return Product::where('user_id', Auth::id())->get()->each(function($c)use($pInventoryCont){
             $c->inventory = $pInventoryCont->cal_product_inventory($c->id);
-            $c->price = $c->price()->price;
         });
     }
 
@@ -50,7 +47,6 @@ class ProductController extends Controller
     {
         if($id){
             $p = Product::find($id);
-            $p->price = $p->price()->price;
             $p->images = $p->images();
             $p->producers = $p->producers()->each(function($c){
                 $c->price = $c->price();
@@ -59,7 +55,6 @@ class ProductController extends Controller
         }
         if($r->id){
             $p = Product::find($r->id);
-            $p->price = $p->price()->price;
             $p->images = $p->images();
             $p->producers = $p->producers()->each(function($c){
                 $c->price = $c->price();
@@ -81,16 +76,13 @@ class ProductController extends Controller
         $product_price = new ProductPriceController();
         $product_price->add($r->id, $r->price);
 
-        //ADD PRODUCT PRODUCER
-        $product_producer = new ProductProducerController();
-        $product_producer->add($r->id, $r->producer_name);
         return response('محصول ویرایش شد.');
     }
 
     public function newest_products()
     {
         return Product::orderBy('id', 'desc')->take(4)->get()->each(function($c){
-            $c->price = $c->price()->price;
+            $c->price = $c->min_price()?->price;
         });
     }
 }
