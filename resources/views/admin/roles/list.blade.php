@@ -1,6 +1,6 @@
 @extends('layouts.dashboard.main')
 @section('title')
-    محصولات
+    نقش ها
 @endsection
 
 @section('content')

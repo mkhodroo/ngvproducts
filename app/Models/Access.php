@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Access extends Model
 {
     use HasFactory;
+    public $table = "access";
+    protected $fillable = [
+        'method_id', 'role_id', 'access'
+    ];
 }

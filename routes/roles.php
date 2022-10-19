@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccessController;
 use App\Http\Controllers\MethodController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
@@ -11,4 +12,5 @@ Route::prefix('/roles')->group(function(){
     Route::any('/get/{id}', [RoleController::class, 'get'])->name('admin-get-role');
     Route::any('/add', [RoleController::class, 'add'])->name('add-role');
     Route::any('/edit', [RoleController::class, 'edit'])->name('admin-edit-role');
+    Route::any('/edit-role-access', [AccessController::class, 'edit_role_access'])->name('admin-edit-role-access');
 });

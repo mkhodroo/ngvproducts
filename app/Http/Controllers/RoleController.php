@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Method;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ class RoleController extends Controller
     {
         return view('admin.roles.list')->with([
             'objects' => Role::get(),
+            'methods' => Method::get(),
         ]);
     }
 
@@ -30,7 +32,10 @@ class RoleController extends Controller
 
     public function get($id)
     {
-        return Role::find($id);
+        $r = Role::find($id);
+        $a = new AccessController();
+        $r->access = $a->get_by_role_id($r->id);
+        return $r;
     }
 
     public function edit(Request $r)
@@ -39,5 +44,10 @@ class RoleController extends Controller
             'name' => $r->name,
             'fa_name' => $r->fa_name
         ]);
+    }
+
+    public function edit_role_access(Request $r)
+    {
+        
     }
 }

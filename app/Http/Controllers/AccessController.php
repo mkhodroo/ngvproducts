@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Access as AccessModel;
 use App\Models\Method as MethodsModel;
 use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AccessController
@@ -93,6 +94,39 @@ class AccessController
         $method->fa_name = $method_faname;
         $method->save();
         return true;
+    }
+
+    public function add($role_id, $method_id)
+    {
+        return AccessModel::create([
+            'method_id' => $method_id,
+            'role_id' => $role_id
+        ]);
+    }
+
+    public function delete_all_role_access($role_id)
+    {
+        return AccessModel::where('role_id', $role_id)->delete();
+    }
+
+    public function get_by_role_id($role_id)
+    {
+        return AccessModel::where('role_id', $role_id)->get();
+    }
+
+    public function edit_role_access(Request $r)
+    {
+        $this->delete_all_role_access($r->role_id);
+        $a = new AccessModel();
+        for($i=0; true; $i++){
+            $method_id = $r->get("list-method_$i");
+            if($method_id !== null){
+                $this->add($r->role_id, $method_id);
+            }else{
+                break;
+            }
+        }
+        return response('دسترسی ها ویرایش شد.');
     }
 
     public function CheckClientIP()

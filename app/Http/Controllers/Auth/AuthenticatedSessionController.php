@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,5 +51,21 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function customer_login(Request $r)
+    {
+        $credentials = $r->only('cellphone', 'password');
+        if(Auth::attempt($credentials)){
+            return response(Auth::user());
+        }
+        return response("نام کاربری را رمز عبور اشتباه است.");
+        $user = User::where('cellphone', $r->username)->first();
+
+    }
+
+    public function get_user_info()
+    {
+        return Auth::user();
     }
 }

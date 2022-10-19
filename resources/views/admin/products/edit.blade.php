@@ -28,7 +28,7 @@
                                 <button class="btn btn-success" onclick="edit_product()">ثبت تغییرات</button>
                             </div>
                         </div>
-                        <div id="producer" class="tab-pane fade in active">
+                        <div id="producer" class="tab-pane fade">
                             <form action="javascript:void(0)" class="" id="producer-info-form" >
                                 @csrf
                                 <div id="producer-info">
