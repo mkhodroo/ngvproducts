@@ -10,7 +10,7 @@ class ProductsInventory extends Model
     use HasFactory;
     public $table = 'product_inventories';
     protected $fillable = [
-        'store_id', 'product_id', 'number'
+        'store_id', 'product_producer_id', 'number'
     ];
 
     public function store()
@@ -18,8 +18,8 @@ class ProductsInventory extends Model
         return Store::find($this->store_id);
     }
 
-    public function product()
+    public function producer()
     {
-        return Product::find($this->product_id);
+        return ProductProducer::find($this->product_producer_id);
     }
 }

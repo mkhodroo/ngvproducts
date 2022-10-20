@@ -9,11 +9,16 @@
             <div class="modal-body">
                 <form action="javascript:void(0)" class="" id="add-inventory-form">
                     @csrf
-                    @include('inputs.select2', [
-                        'name' => 'product_id', 
-                        'label' => 'محصول',
-                        'objects' => $products
-                    ])
+                    محصول - تولید کننده
+                    <select name="pp_id" id="" class="select2 form-control col-sm-12" style="width: 100%">
+                        @foreach ($products as $p)
+                            @foreach ($p->producers() as $pp)
+                                <option value="{{ $pp->id }}">{{ $pp->product()->name }} - تولیدکننده: {{ $pp->name }}</option>
+                            @endforeach
+                        @endforeach
+                    </select>
+                    
+                    
                     @include('inputs.select2', [
                         'name' => 'store_id', 
                         'label' => 'انبار',

@@ -14,6 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Product Name</th>
+                    <th>Producer Name</th>
                     <th>Store</th>
                     <th>Inventory</th>
                     <th>Updated at</th>
@@ -40,6 +41,7 @@
             columns: [
                 { data: 'id' },
                 { data: 'product_name' },
+                { data: 'producer_name' },
                 { data: 'store_name' },
                 { data: 'number' },
                 { data: 'updated_at' },

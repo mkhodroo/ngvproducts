@@ -20,7 +20,7 @@
             <div class="price"><ins>{{ $product?->min_price()->price ?? '' }} <span style="color: black">تومان</span></ins> <del>{{ $product->old_price ?? '' }}</del></div>
             <div class="buttons">
                 <a class="btn btn-theme btn-theme-transparent btn-wish-list" href="#"><i class="fa fa-heart"></i></a><!--
-                --><a class="btn btn-theme btn-theme-transparent btn-icon-left" href="#"><i class="fa fa-shopping-cart"></i>افزودن به سبد</a><!--
+                --><a class="btn btn-theme btn-theme-transparent btn-icon-left" onclick="add_to_cart({{$product->min_price()?->product_producer_id}})"><i class="fa fa-shopping-cart"></i>افزودن به سبد</a><!--
                 --><a class="btn btn-theme btn-theme-transparent btn-compare" href="#"><i class="fa fa-exchange"></i></a>
             </div>
         </div>

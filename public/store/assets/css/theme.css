@@ -429,21 +429,25 @@ ol.list-check li + li {
   display: inline-block;
   position: relative;
 }
-.block-title span:after {
+/* .block-title span:after {
   content: "";
   position: absolute;
   height: 1px;
   width: 2000px;
   background-color: #a5abb7;
   top: 10px;
-}
-.block-title span:after {
-  left: 100%;
-  margin-left: 15px;
+} */
+/* .block-title span:after {
+  right: 100%;
+  margin-right: 30px;
+} */
+.block-title span{
+  position: relative;
+  margin-right: 50px;
 }
 .block-title .thin {
   font-weight: 300;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 .block-title.alt {
   font-size: 18px;
@@ -458,7 +462,7 @@ ol.list-check li + li {
 .block-title.alt .fa {
   position: absolute;
   top: -3px;
-  left: -3px;
+  right: -3px;
   height: 50px;
   width: 50px;
   line-height: 47px;
@@ -5752,6 +5756,8 @@ input[type=checkbox] {
 .orders .table > tfoot > tr > td {
   border-top: none;
   border-bottom: solid 1px #e9e9e9;
+  text-align: center !important;
+  direction: rtl !important;
 }
 .orders td.image {
   padding-left: 0;

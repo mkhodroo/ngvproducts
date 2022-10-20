@@ -17,4 +17,9 @@ class ProductProducer extends Model
         return ProductPrice::where('product_id', $this->product_id)
             ->where('product_producer_id', $this->id)->latest()->first();
     }
+
+    public function product()
+    {
+        return Product::find($this->product_id);
+    }
 }

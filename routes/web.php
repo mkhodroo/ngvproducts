@@ -32,6 +32,9 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
     require __DIR__.'/roles.php';
 });
 
+require __DIR__.'/carts.php';
+require __DIR__.'/checkout.php';
+
 
 
 require __DIR__.'/auth.php';

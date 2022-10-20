@@ -32,7 +32,8 @@ class ProductInventoryController extends Controller
         return ProductsInventory::whereIn('store_id', $user_store_ids)
                 ->get()
                 ->each(function($c){
-                    $c->product_name = $c->product()->name;
+                    $c->product_name = $c->producer()->product()->name;
+                    $c->producer_name = $c->producer()->name;
                     $c->store_name = $c->store()->name;
                 });
     }
@@ -40,16 +41,16 @@ class ProductInventoryController extends Controller
     public function add(Request $r)
     {
         ProductsInventory::create([
-            'product_id' => $r->product_id,
+            'product_producer_id' => $r->pp_id,
             'store_id' => $r->store_id,
             'number' => $r->number
         ]);
         return response('اضافه شد');
     }
 
-    public function get_product_inventory($product_id)
+    public function get_product_inventory($pp_id)
     {
-        return ProductsInventory::where('product_id', $product_id)->sum('number');
+        return ProductsInventory::where('product_producer_id', $pp_id)->sum('number');
     }
 
     public function cal_product_inventory($product_id)

@@ -53,42 +53,12 @@
 <div class="wrapper">
 
     <!-- Popup: Shopping cart items -->
-    <div class="modal fade popup-cart" id="popup-cart" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="container">
-                <div class="cart-items">
-                    <div class="cart-items-inner">
-                        <div class="media">
-                            <a class="pull-left" href="#"><img class="media-object item-image" src="{{ url('public/store/assets/img/preview/shop/order-1s.jpg') }}" alt=""></a>
-                            <p class="pull-right item-price">$450.00</p>
-                            <div class="media-body">
-                                <h4 class="media-heading item-title"><a href="#">1x Standard Product</a></h4>
-                                <p class="item-desc">Lorem ipsum dolor</p>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <p class="pull-right item-price">$450.00</p>
-                            <div class="media-body">
-                                <h4 class="media-heading item-title summary">Subtotal</h4>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-body">
-                                <div>
-                                    <a href="#" class="btn btn-theme btn-theme-dark" data-dismiss="modal">Close</a><!--
-                                    --><a href="shopping-cart.html" class="btn btn-theme btn-theme-transparent btn-call-checkout">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('layouts.cart-item')
     <!-- /Popup: Shopping cart items -->
 
     <!-- Header top bar -->
     @include('store.auth.login')
+    @include('store.auth.register')
     @include('layouts.alert')
     <div class="top-bar">
         <div class="container">
@@ -101,7 +71,7 @@
                                 $('#login-info').append(`<li class="icon-form" onclick="logout()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span class="colored">خروج</span></span></li>`);
                             }else{
                                 $('#login-info').append(`<li class="icon-user" onclick="open_login_modal()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/> <span>ورود</span></li>`);
-                                $('#login-info').append(`<li class="icon-form"><a href="login.html"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span class="colored">ثبت نام</span></span></a></li>`);
+                                $('#login-info').append(`<li class="icon-form" onclick="open_register_modal()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span class="colored">ثبت نام</span></span></li>`);
                             }
                         })
                     </script>
@@ -379,6 +349,24 @@
         $('#alert-success').html(msg);
         $('#alert-success').show();
         $('#alert-success').delay(2000).fadeOut('slow');;
+    }
+
+    function add_to_cart(product_producer_id){
+        fd = { 'pp_id': product_producer_id };
+        $.ajax({
+            url: `{{ route('add-to-cart') }}`,
+            data: fd,
+            proccessData : false,
+            headers: {
+                'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'get',
+            success: function(data){
+                console.log(data);
+                alert_notification("محصول به سبد خرید اضافه شد");
+                update_user_cart_item();
+            }
+        })
     }
 </script>
 
