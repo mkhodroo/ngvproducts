@@ -50,6 +50,10 @@
                 close_login_modal();
                 alert_notification('با موفقیت وارد شدید');
                 location.reload();
+            },
+            error: function(data){
+                console.log(data);
+                error_notification(data.responseText);
             }
         })
     }

@@ -19,6 +19,8 @@
     <link href="{{ url('public/store/assets/plugins/owl-carousel2/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/store/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/store/assets/plugins/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url('public/dashboard/assets/node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+
 
     <!-- Theme CSS -->
     <link href="{{ url('public/store/assets/css/theme.css') }}" rel="stylesheet">
@@ -98,7 +100,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <h3 style="font-weight: bold">
-                        NGV<span style="color: black">Products</span>
+                        <a href="{{ route('home') }}">NGV<span style="color: black">Products</span></a>
                     </h3>
                 </div>
                 <!-- /Logo -->
@@ -332,6 +334,7 @@
 <script src="{{ url('public/store/assets/plugins/jquery.easing.min.js') }}"></script>
 <script src="{{ url('public/store/assets/plugins/jquery.smoothscroll.min.js') }}"></script>
 <script src="{{ url('public/store/assets/plugins/smooth-scrollbar.min.js') }}"></script>
+<script src="{{ url('public/dashboard/assets/node_modules/select2/dist/js/select2.full.min.js') }}" type="text/javascript"></script>
 
 <!-- JS Page Level -->
 <script src="{{ url('public/store/assets/js/theme.js') }}"></script>
@@ -344,11 +347,18 @@
 <!-- Custome JS -->
 
 <script>
+    $(".select2").select2();
     
     function alert_notification(msg='انجام شد'){
         $('#alert-success').html(msg);
         $('#alert-success').show();
         $('#alert-success').delay(2000).fadeOut('slow');;
+    }
+
+    function error_notification(msg='خطا دریافت شد'){
+        $('#alert-error').html(msg);
+        $('#alert-error').show();
+        $('#alert-error').delay(3000).fadeOut('slow');;
     }
 
     function add_to_cart(product_producer_id){
@@ -365,6 +375,7 @@
                 console.log(data);
                 alert_notification("محصول به سبد خرید اضافه شد");
                 update_user_cart_item();
+                update_total_cart_price();
             }
         })
     }
