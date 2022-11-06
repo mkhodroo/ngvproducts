@@ -92,6 +92,7 @@
                 contentType: false,
                 success: function (data) {
                     console.log(data);
+                    alert_notification(data);
                 }
             })
         }

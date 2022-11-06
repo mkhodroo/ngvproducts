@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,10 +24,11 @@ class CheckoutController extends Controller
 
     public function pay(Request $r )
     {
-        $carts = (new CartController())->get_user_cart_items();
-        foreach($carts as $item){
+        $carts = new CartController();
+        $order_code = $this->create_new_order_code();
+        foreach($carts->get_user_cart_items() as $item){
             $order = Order::create([
-                'order_code' => '100001',
+                'order_code' => $order_code,
                 'product_producer_id' => $item->producer()->id,
                 'price' => $item->price()->price,
                 'number' => $item->number,
@@ -36,6 +38,27 @@ class CheckoutController extends Controller
                 'payment_status' => $r->payment_status,
             ]);
         }
-        return response('ثبت شد');
+        $this->increase_last_order_number();
+        $carts->delete_user_cart_items();
+        return response("سفارش شما با کد پیگیری $order_code ثبت شد. و در حال پردازش می باشد");
+    }
+
+    public function create_new_order_code()
+    {
+        $o = new OptionController();
+        $last_order_code = $o->get_by_key('last_order_number');
+        if(!$last_order_code){
+            $last_order_code = $o->add('last_order_number', 0);
+        }
+        $d = Carbon::now();
+        return $d->format('Y'). $d->format('m') . $d->format('d') . $last_order_code->value + 1;
+
+    }
+
+    public function increase_last_order_number()
+    {
+        $o = new OptionController();
+        $loc = $o->get_by_key('last_order_number');
+        $o->edit($loc->key, $loc->value+1);
     }
 }
