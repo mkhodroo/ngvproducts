@@ -376,6 +376,10 @@
                 alert_notification("محصول به سبد خرید اضافه شد");
                 update_user_cart_item();
                 update_total_cart_price();
+            },
+            error: function (data) {
+                console.log(data);
+                error_notification(data.responseText);
             }
         })
     }

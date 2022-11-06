@@ -10,6 +10,9 @@ class CartController extends Controller
 {
     public function add(Request $r)
     {
+        if(!Auth::id()){
+            return response('ابتدا وارد شوید', 403);
+        }
         $user_cart = $this->product_is_in_user_cart($r->pp_id);
         if( $user_cart ){
             $user_cart->number = $user_cart->number +1;

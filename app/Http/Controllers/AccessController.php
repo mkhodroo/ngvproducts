@@ -68,8 +68,12 @@ class AccessController
     {
         try{
             $method = MethodsModel::where('name', $method_name)->first();
+            if(!$method){
+                $m = new MethodController();
+                $method = $m->add_with_name($method_name);
+            }
             $user = Auth::user();
-            $access = AccessModel::where('method_id', $method->id)->where('user_id', $user->id)->first();
+            $access = AccessModel::where('method_id', $method->id)->where('role_id', $user->role_id)->first();
 
             if(!empty($access)):
                 if($access->access == 1):
@@ -100,7 +104,8 @@ class AccessController
     {
         return AccessModel::create([
             'method_id' => $method_id,
-            'role_id' => $role_id
+            'role_id' => $role_id,
+            'access' => 1
         ]);
     }
 
@@ -111,7 +116,7 @@ class AccessController
 
     public function get_by_role_id($role_id)
     {
-        return AccessModel::where('role_id', $role_id)->get();
+        return AccessModel::where('role_id', $role_id)->where('access', 1)->get();
     }
 
     public function edit_role_access(Request $r)

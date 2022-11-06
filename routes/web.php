@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 Route::any('/get-newest-products', [ProductController::class, 'newest_products'])->name('get-newest_products');
 
 
-Route::prefix('/admin')->middleware(['auth'])->group(function(){
+Route::prefix('/admin')->middleware(['access'])->group(function(){
     require __DIR__.'/products.php';
     require __DIR__.'/inventory.php';
     require __DIR__.'/store.php';

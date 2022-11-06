@@ -22,6 +22,14 @@ class MethodController extends Controller
         return true;
     }
 
+    public function add_with_name($name, $fa_name = null)
+    {
+        return Method::create([
+            'name' => $name,
+            'fa_name' => ($fa_name) ? $fa_name : $name,
+        ]);
+    }
+
     public function list()
     {
         return view('admin.methods.list')->with([
