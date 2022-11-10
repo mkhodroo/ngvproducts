@@ -28,12 +28,15 @@ Route::prefix('/admin')->middleware(['access'])->group(function(){
     require __DIR__.'/products.php';
     require __DIR__.'/inventory.php';
     require __DIR__.'/store.php';
+    require __DIR__.'/orders.php';
     require __DIR__.'/methods.php';
+    require __DIR__.'/product-catagories.php';
     require __DIR__.'/roles.php';
 });
 
 require __DIR__.'/carts.php';
 require __DIR__.'/checkout.php';
+require __DIR__.'/myorders.php';
 
 
 

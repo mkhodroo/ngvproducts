@@ -46,4 +46,10 @@ class ProductProducerController extends Controller
     {
         return ProductProducer::find($id);
     }
+
+    public function get_user_product_producers_id()
+    {
+        $products_id = (new ProductController())->get_user_products_id();
+        return ProductProducer::where('product_id', 1)->get()->pluck('id')->values();
+    }
 }

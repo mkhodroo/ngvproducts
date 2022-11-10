@@ -24,7 +24,6 @@
 
     <!-- Theme CSS -->
     <link href="{{ url('public/store/assets/css/theme.css') }}" rel="stylesheet">
-    <link href="{{ url('public/store/assets/css/theme-green-1.css') }}" rel="stylesheet" id="theme-config-link">
 
     <!-- Head Libs -->
     <script src="{{ url('public/store/assets/plugins/modernizr.custom.js') }}"></script>
@@ -69,7 +68,7 @@
                     <script>
                         $.get(`{{ route('get-user-info') }}`, function(data){
                             if(data){
-                                $('#login-info').append(`<li class="icon-user" ><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/> <span>${data.name}</span></li>`)
+                                $('#login-info').append(`<li class="icon-user" ><a href="{{ route('my-orders') }}"> <img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/><span>${data.name}</span></a></li>`)
                                 $('#login-info').append(`<li class="icon-form" onclick="logout()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span class="colored">خروج</span></span></li>`);
                             }else{
                                 $('#login-info').append(`<li class="icon-user" onclick="open_login_modal()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/> <span>ورود</span></li>`);
@@ -235,8 +234,8 @@
 
                     <div class="col-md-3">
                         <div class="widget">
-                            <h4 class="widget-title">About Us</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin ultrices suscipit. Sed commodo vel mauris vel dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h4 class="widget-title">درباره ما</h4>
+                            <p></p>
                             <ul class="social-icons">
                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
@@ -247,8 +246,8 @@
                     </div>
                     <div class="col-md-3">
                         <div class="widget">
-                            <h4 class="widget-title">News Letter</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h4 class="widget-title">وبلاگ</h4>
+                            <p>در وبلاگ ما میتوانید از آخرین خبرهای حوزه سوخت های جایگزین با خبر شوید.</p>
                             <form action="#">
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Enter Your Mail and Get $10 Cash"/>
@@ -261,31 +260,26 @@
                     </div>
                     <div class="col-md-3">
                         <div class="widget widget-categories">
-                            <h4 class="widget-title">Information</h4>
+                            <h4 class="widget-title">اطلاعات</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Delivery Information</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Terms and Conditions</a></li>
-                                <li><a href="#">Private Policy</a></li>
+                                <li><a href="#">درباره ما</a></li>
+                                <li><a href="#">اطلاعات ارسال کالاها</a></li>
+                                <li><a href="#">تماس با ما</a></li>
+                                <li><a href="#">قوانین و شرایط</a></li>
+                                <li><a href="#">خط مشی</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="widget widget-tag-cloud">
-                            <h4 class="widget-title">Item Tags</h4>
+                            <h4 class="widget-title">دسته بندی ها</h4>
                             <ul>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Jeans</a></li>
-                                <li><a href="#">Top Sellers</a></li>
-                                <li><a href="#">E commerce</a></li>
-                                <li><a href="#">Hot Deals</a></li>
-                                <li><a href="#">Supplier</a></li>
-                                <li><a href="#">Shop</a></li>
-                                <li><a href="#">Theme</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Isamercan</a></li>
-                                <li><a href="#">Themeforest</a></li>
+                                <li><a href="#">مخازن</a></li>
+                                <li><a href="#">رگلاتور</a></li>
+                                <li><a href="#">شیر مخزن ها</a></li>
+                                <li><a href="#">شیر قطع کن ها</a></li>
+                                <li><a href="#">جدیدترین ها</a></li>
+                                <li><a href="#">پرفروش ترین ها</a></li>
                             </ul>
                         </div>
                     </div>
@@ -297,20 +291,8 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-sm-6">
-                        <div class="copyright">Copyright <a href="https://www.mellatweb.com/"> mellatweb.com<a/></div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="payments">
-                            <ul>
-                                <li><img src="{{ url('public/store/assets/img/preview/payments/visa.jpg') }}" alt=""/></li>
-                                <li><img src="{{ url('public/store/assets/img/preview/payments/mastercard.jpg') }}" alt=""/></li>
-                                <li><img src="{{ url('public/store/assets/img/preview/payments/paypal.jpg') }}" alt=""/></li>
-                                <li><img src="{{ url('public/store/assets/img/preview/payments/american-express.jpg') }}" alt=""/></li>
-                                <li><img src="{{ url('public/store/assets/img/preview/payments/visa-electron.jpg') }}" alt=""/></li>
-                                <li><img src="{{ url('public/store/assets/img/preview/payments/maestro.jpg') }}" alt=""/></li>
-                            </ul>
-                        </div>
+                    <div class="col-sm-12">
+                        <div class="copyright">تمامی حقوق این سایت متعلق به <a href="https://www.ngvkala.ir/"> ngvkala.ir<a/> می باشد</div>
                     </div>
 
                 </div>
@@ -341,7 +323,6 @@
 
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="{{ url('public/store/assets/plugins/jquery.cookie.js') }}"></script>
-<script src="{{ url('public/store/assets/js/theme-config.js') }}"></script>
 <!--<![endif]-->
 
 <!-- Custome JS -->

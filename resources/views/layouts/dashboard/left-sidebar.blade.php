@@ -17,13 +17,23 @@
                         class="fa fa-circle-o text-danger"></i><span class="hide-menu">محصولات</span></a>
             </li>
             <li>
+                <a class="waves-effect waves-dark" href="{{ route('admin-inventory-for-each-store') }}" aria-expanded="false">
+                    <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">موجودی محصولات در هر انبار</span>
+                </a>
+            </li>
+            <li>
                 <a class="waves-effect waves-dark" href="{{ route('admin-inventory') }}" aria-expanded="false">
-                    <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">موجودی محصولات</span>
+                    <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">گزارش کلی انبار </span>
                 </a>
             </li>
             <li>
                 <a class="waves-effect waves-dark" href="{{ route('admin-store') }}" aria-expanded="false">
                     <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">انبار</span>
+                </a>
+            </li>
+            <li>
+                <a class="waves-effect waves-dark" href="{{ route('admin-orders') }}" aria-expanded="false">
+                    <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">سفارشات</span>
                 </a>
             </li>
             <li>

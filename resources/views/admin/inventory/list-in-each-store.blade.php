@@ -36,7 +36,7 @@
         var table = $('#stores').DataTable({
             dom: 'Bfrtip',
             ajax: {
-                url: '{{ route("admin-inventory-get-list") }}',
+                url: '{{ route("admin-inventory-get-list-for-each-store") }}',
                 dataSrc: '',
             },
             columns: [
@@ -44,7 +44,7 @@
                 { data: 'product_name' },
                 { data: 'producer_name' },
                 { data: 'store_name' },
-                { data: 'number' },
+                { data: 'inventory' },
                 { data: 'description' },
                 { data: 'updated_at' },
                 { data: 'created_at' }

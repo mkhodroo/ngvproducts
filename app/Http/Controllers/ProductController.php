@@ -39,8 +39,13 @@ class ProductController extends Controller
     {
         $pInventoryCont = new ProductInventoryController();
         return Product::where('user_id', Auth::id())->get()->each(function($c)use($pInventoryCont){
-            $c->inventory = $pInventoryCont->cal_product_inventory($c->id);
+            $c->inventory = $pInventoryCont->get_product_inventory($c->id);
         });
+    }
+
+    public function get_user_products_id()
+    {
+        return Product::where('user_id', Auth::id())->get()->pluck('id')->values();
     }
 
     public function get(Request $r=null, $id=null)
