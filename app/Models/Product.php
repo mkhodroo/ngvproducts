@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'name', 'user_id'
+        'name', 'user_id', 'product_catagory_id'
     ];
 
     public function price()
@@ -35,5 +35,10 @@ class Product extends Model
     public function producers()
     {
         return ProductProducer::where('product_id', $this->id)->get();
+    }
+
+    public function catagory()
+    {
+        return ProductCatagory::find($this->product_catagory_id);
     }
 }

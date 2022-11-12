@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCatagory;
 use App\Models\ProductProducer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,9 @@ class ProductController extends Controller
 
     public function list()
     {
-        return view('admin.products.list');
+        return view('admin.products.list')->with([
+            'catagories' => ProductCatagory::get(),
+        ]);
     }
 
     public function get_list()
@@ -53,6 +56,7 @@ class ProductController extends Controller
         if($id){
             $p = Product::find($id);
             $p->images = $p->images();
+            $p->catagory = $p->catagory();
             $p->producers = $p->producers()->each(function($c){
                 $c->price = $c->price();
             });
@@ -61,6 +65,7 @@ class ProductController extends Controller
         if($r->id){
             $p = Product::find($r->id);
             $p->images = $p->images();
+            $p->catagory = $p->catagory();
             $p->producers = $p->producers()->each(function($c){
                 $c->price = $c->price();
             });
@@ -77,9 +82,10 @@ class ProductController extends Controller
     {
         $this->get_user_product($r->id, Auth::id())->update([
             'name' => $r->name,
+            'product_catagory_id' => $r->product_catagory_id,
         ]);
-        $product_price = new ProductPriceController();
-        $product_price->add($r->id, $r->price);
+        // $product_price = new ProductPriceController();
+        // $product_price->add($r->id, $r->price);
 
         return response('محصول ویرایش شد.');
     }
@@ -89,5 +95,12 @@ class ProductController extends Controller
         return Product::orderBy('id', 'desc')->take(4)->get()->each(function($c){
             $c->price = $c->min_price()?->price;
         });
+    }
+
+    public function show($id)
+    {
+        return view('store.products.detail')->with([
+            'product' => $this->get(null,$id),
+        ]);
     }
 }

@@ -44,7 +44,9 @@ class ProductProducerController extends Controller
 
     public function get($id)
     {
-        return ProductProducer::find($id);
+        $pp = ProductProducer::find($id);
+        $pp->price = $pp->price();
+        return $pp;
     }
 
     public function get_user_product_producers_id()

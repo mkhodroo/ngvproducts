@@ -13,6 +13,17 @@
                         'name' => 'name',
                         'label' => 'نام انبار'
                     ])
+                    <hr>
+                    استان و شهر
+                    <select name="city_id" id="" class="col-sm-6 form-control select2">
+                        @foreach ($cities as $item)
+                            <option value="{{ $item->id }}">{{ $item->province }} - {{ $item->province }}</option>
+                        @endforeach
+                    </select>
+
+                    <hr>
+                    آدرس: 
+                    <input type="text" name="address" id="" class="form-control">
                 </form>
                 <button class="btn btn-success" onclick="add_store()">افزودن</button>
             </div>

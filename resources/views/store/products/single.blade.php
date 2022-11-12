@@ -9,7 +9,7 @@
             </a>
         </div>
         <div class="caption text-center">
-            <h4 class="caption-title"><a href="product-details.html">{{ $product->name ?? '' }}</a></h4>
+            <h4 class="caption-title"><a href="{{ route('product-show', [ 'id' => $product->id ]) }}">{{ $product->name ?? '' }}</a></h4>
             <div class="rating">
                 <span class="star"></span><!--
                 --><span class="star active"></span><!--

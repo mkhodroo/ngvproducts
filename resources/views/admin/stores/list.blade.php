@@ -14,6 +14,9 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Province</th>
+                    <th>City</th>
+                    <th>Address</th>
                     <th>Updated at</th>
                     <th>Created at</th>
                 </tr>
@@ -26,7 +29,7 @@
 
 @section('script')
     <script>
-        $('#stores').DataTable({
+        var table = $('#stores').DataTable({
             dom: 'Bfrtip',
             ajax: {
                 url: '{{ route("admin-store-get-list") }}',
@@ -35,6 +38,9 @@
             columns: [
                 { data: 'id' },
                 { data: 'name' },
+                { data: 'city.province' },
+                { data: 'city.city' },
+                { data: 'address' },
                 { data: 'updated_at' },
                 { data: 'created_at' }
             ],
@@ -64,6 +70,7 @@
                 method: 'post',
                 success: function(data) {
                     console.log(data);
+                    table.ajax.reload();
                     alert_notification('انبار اضافه شد');
                     $('#add-store-modal').modal('hide');
                 }

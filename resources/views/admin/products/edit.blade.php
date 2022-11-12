@@ -16,7 +16,7 @@
                         <li><a href="#images" data-toggle="tab">تصاویر</a></li> |
                     </ul>
                     <div class="tab-content">
-                        <div id="product" class="tab-pane fade in active">
+                        <div id="product" class="tab-pane active">
                             <div class="col-sm-12">
                                 <form action="javascript:void(0)" class="" id="edit-product-form" >
                                     @csrf
@@ -91,7 +91,20 @@
             $('#producer-info-tbody').html('');
 
             $('#info').append(`@include('inputs.hidden', ['name' => 'id', 'value' => '${data.id}' ])`)
-            $('#info').append(`@include('inputs.text', ['name' => 'name', 'value' => '${data.name}' ,'label' => 'نام محصول',])`)
+            $('#info').append(`@include('inputs.text', ['name' => 'name', 'value' => '${data.name}' ,'label' => 'نام محصول',])<hr>`)
+            $('#info').append(`
+                دسته بندی محصول: 
+                <select name="product_catagory_id" class="select2 form-control">
+                    <option value="">انتخاب کنید</option>
+                    @foreach($catagories as $c)
+                        <option value="{{ $c->id }}" >{{ $c->name }}</option>
+                    @endforeach
+                </select>
+                <hr>
+            `);
+            if(data.catagory){
+                $(`select[name="product_catagory_id"]`).val(data.catagory.id);
+            }    
             $('#product_id').val(data.id);
             $('#edit-product-modal').modal('show');
             

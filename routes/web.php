@@ -25,7 +25,7 @@ Route::any('/get-newest-products', [ProductController::class, 'newest_products']
 
 
 Route::prefix('/admin')->middleware(['access'])->group(function(){
-    require __DIR__.'/products.php';
+    require __DIR__.'/admin-products.php';
     require __DIR__.'/inventory.php';
     require __DIR__.'/store.php';
     require __DIR__.'/orders.php';
@@ -37,6 +37,7 @@ Route::prefix('/admin')->middleware(['access'])->group(function(){
 require __DIR__.'/carts.php';
 require __DIR__.'/checkout.php';
 require __DIR__.'/myorders.php';
+require __DIR__.'/products.php';
 
 
 

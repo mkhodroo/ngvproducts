@@ -16,6 +16,9 @@
             <li> <a class="waves-effect waves-dark" href="{{ route('admin-products') }}" aria-expanded="false"><i
                         class="fa fa-circle-o text-danger"></i><span class="hide-menu">محصولات</span></a>
             </li>
+            <li> <a class="waves-effect waves-dark" href="{{ route('admin-catagories') }}" aria-expanded="false"><i
+                class="fa fa-circle-o text-danger"></i><span class="hide-menu">دسته بندی محصولات</span></a>
+            </li>
             <li>
                 <a class="waves-effect waves-dark" href="{{ route('admin-inventory-for-each-store') }}" aria-expanded="false">
                     <i class="fa fa-circle-o text-danger"></i><span class="hide-menu">موجودی محصولات در هر انبار</span>
