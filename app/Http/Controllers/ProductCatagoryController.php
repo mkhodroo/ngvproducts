@@ -36,4 +36,9 @@ class ProductCatagoryController extends Controller
         $c->save();
         return $c;
     }
+
+    public function show_by_name($name)
+    {
+        
+    }
 }

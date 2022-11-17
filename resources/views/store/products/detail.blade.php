@@ -7,6 +7,7 @@
         </div>
         <div class="col-sm-4">
             <h3>{{ $product->name }}</h3>
+            <h5>{{ $product->catagory()?->name }}</h5>
             سازنده: 
             <select name="producer" id="producer" class="col-sm-6 select2">
                 @foreach ($product->producers() as $item)

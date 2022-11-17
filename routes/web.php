@@ -38,6 +38,7 @@ require __DIR__.'/carts.php';
 require __DIR__.'/checkout.php';
 require __DIR__.'/myorders.php';
 require __DIR__.'/products.php';
+require __DIR__.'/catagories.php';
 
 
 

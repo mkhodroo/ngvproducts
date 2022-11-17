@@ -1,5 +1,5 @@
 
-<div class="col-md-3 col-sm-6">
+<div class="col-md-3 col-sm-6" style="background: #f2fcfc; margin: 10px 3px 5px 3px; padding: 10px; border-radius: 8px">
     <div class="thumbnail no-border no-padding">
         <div class="media">
             <a class="media-link" data-gal="prettyPhoto" href="{{ url('public/store/assets/img/preview/shop/product-1-big.jpg') }}">

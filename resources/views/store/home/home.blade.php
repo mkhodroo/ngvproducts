@@ -9,6 +9,20 @@
     <!-- /PAGE -->
 
     <!-- PAGE -->
+    <style>
+        .thumbnail div.media{
+            height: 200px;
+        }
+        @media only screen and (max-width: 600px) {
+            .thumbnail div.media{
+                height: 100px;
+            }
+            .thumbnail div div.buttons{
+                width: 100%
+            }
+        }
+    </style>
+
     <section class="page-section">
         <div class="container">
 
@@ -21,14 +35,15 @@
             <div class="tab-content">
 
                 <!-- tab 1 -->
-                <div class="tab-pane active" id="tab-1">
-                    <div class="row" id="newest-products">
-                        @foreach ($newest_products as $item)
-                            @include('store.products.single',[
-                                'product' => $item
-                            ])
-                        @endforeach
-                    </div>
+                
+            </div>
+            <div class="container-fluid h-scroll" id="tab-1">
+                <div class="row h-scroll" id="newest-products">
+                    @foreach ($newest_products as $item)
+                        @include('store.products.single',[
+                            'product' => $item
+                        ])
+                    @endforeach
                 </div>
             </div>
 
