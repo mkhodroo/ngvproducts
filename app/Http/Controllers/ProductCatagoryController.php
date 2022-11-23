@@ -29,6 +29,11 @@ class ProductCatagoryController extends Controller
         return ProductCatagory::find($id);
     }
 
+    public function get_by_name($name)
+    {
+        return ProductCatagory::where('name', $name)->first();
+    }
+
     public function edit(Request $r)
     {
         $c = $this->get($r->id);

@@ -20,6 +20,8 @@
     <link href="{{ url('public/store/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/store/assets/plugins/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/dashboard/assets/node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/dashboard/assets/css/bootstrap-theme.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/store/assets/css/rtl.css') }}" rel="stylesheet" type="text/css" />
 
 
     <!-- Theme CSS -->
@@ -138,9 +140,9 @@
                                     <div class="col-md-2">
                                         <h4 class="block-title"><span>مخازن</span></h4>
                                         <ul>
-                                            <li><a href="#">نوع اول</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن نوع اول']) }}">نوع اول</a></li>
                                             <li><a href="#">نوع دوم</a></li>
-                                            <li><a href="#">نوع سوم</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن-نوع-سوم']) }}">نوع سوم</a></li>
                                             <li><a href="#">نوع چهارم</a></li>
                                         </ul>
                                     </div>
@@ -204,12 +206,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="category.html">Men</a></li>
-                        <li><a href="category.html">Women</a></li>
-                        <li><a href="category.html">Kids</a></li>
-                        <li><a href="category.html">New</a></li>
                         <li class="sale"><a href="category.html">Sale</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- /Navigation -->

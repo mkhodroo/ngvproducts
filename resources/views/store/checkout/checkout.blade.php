@@ -2,74 +2,91 @@
 
 @section('content')
 <section class="page-section">
-    <div class="">
-        <div class="col-sm-6 box">
-        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><span> سفارشات</span></h3>
-            <div class="col-sm-12">
-                <table class="table" style="text-align: center">
-                    <thead>
-                        <tr>
-                            <th style="text-align: center">محصول</th>
-                            <th style="text-align: center">تولیدکننده</th>
-                            <th style="text-align: center">تعداد</th>
-                            <th style="text-align: center">مبلغ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($items as $item)
-                            <tr>
-                                <td>{{$item->product->name}}</td>
-                                <td>{{$item->producer->name}}</td>
-                                <td>{{$item->number}}</td>
-                                <td>{{$item->price->price* $item->number}}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            
+    @if (count($items) === 0)
+        <div class="col-sm-12" style="text-align: center; color: red">
+            سبد خرید شما خالی است
         </div>
-    </div>
+    @else
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+                <fieldset style="background: lightblue; margin: 10px; padding: 5px">
+                    <legend style="background: rgb(0, 177, 106)">سفارشات</legend>
+                    <div class="col-sm-12">
+                        <table class="table" style="text-align: center">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">محصول</th>
+                                    <th style="text-align: center">تولیدکننده</th>
+                                    <th style="text-align: center">تعداد</th>
+                                    <th style="text-align: center">مبلغ</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($items as $item)
+                                    <tr>
+                                        <td>{{$item->product->name}}</td>
+                                        <td>{{$item->producer->name}}</td>
+                                        <td>{{$item->number}}</td>
+                                        <td>{{$item->price->price* $item->number}}</td>
+                                        <td><i class="fa fa-trash" style="color: red; cursor: pointer" onclick="delete_item_from_cart({{$item->id}})"></i></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            <tbody>
+                                <tr style="background: lightgray; color: black">
+                                    <td>مجموع</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ $total_price }}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>                
+        </div>
 
-    <div class="col-sm-3">
-        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><span> آدرس ارسال</span></h3>
-        @csrf
-        <div class="col-sm-12">
-            <div class="col-md-6">
+        <div class="col-sm-3">
+            <fieldset style="background: lightblue; margin: 10px; padding: 5px">
+                <legend style="background: rgb(0, 177, 106)"> آدرس ارسال</legend>
+                @csrf
                 @foreach ($customer_addresses as $item)
-                    <input type="radio" name="address" value="{{ $item->id }}">
-                    {{$item->city()->province}} -
-                    {{$item->city()->city}} - 
-                    {{ $item->address }}
+                    <div class="col-sm-12">
+                        <input type="radio" name="address" value="{{ $item->id }}">
+                        {{$item->city()->province}} -
+                        {{$item->city()->city}} - 
+                        {{ $item->address }}
+                    </div>
                 @endforeach
-            </div>
-            <div class="col-md-6">
                 <button class="btn btn-info" onclick="open_add_address_modal()">افزودن آدرس</button>
-            </div>
+                @include('store.addresses.add-address-modal', [ 'cities' => $cities ])
+            </fieldset>       
+            <fieldset style="background: lightblue; margin: 10px; padding: 5px">
+                <legend style="background: rgb(0, 177, 106)">نحوه ارسال</legend>
+                <div class="col-sm-12">
+                    <input type="radio" name="how_to_send" id="" value="send"> ارسال توسط ما
+                </div>
+                <div class="col-sm-12">
+                    <input type="radio" name="how_to_send" id="" value="delivery_by_customer"> تحویل حضوری توسط شما
+                </div>
+            </fieldset>
+            
+            <fieldset style="background: lightblue; margin: 10px; padding: 5px">
+                <legend style="background: rgb(0, 177, 106)">نحوه پرداخت</legend>
+                <div class="col-sm-12">
+                    <input type="radio" name="payment_status" id="online" value="online">پرداخت آنلاین
+                </div>
+                <div class="col-sm-12">
+                    <input type="radio" name="payment_status" id="offline" value="offline">پرداخت حضوری
+                </div>
+                <div class="col-sm-12">
+                    <button class="btn btn-danger" onclick="pay()">تایید سفارش</button>
+                </div>
+            </fieldset>     
         </div>
-    </div>
-    <div class="col-sm-3">
-        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><span>نحوه ارسال</span></h3>
-        <div class="col-sm-12">
-            <input type="radio" name="how_to_send" id="" value="send"> ارسال توسط ما
-        </div>
-        <div class="col-sm-12">
-            <input type="radio" name="how_to_send" id="" value="delivery_by_customer"> تحویل حضوری توسط شما
-        </div>
-    </div>
-    
-    <div class="col-sm-12">
-        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><span>نحوه پرداخت</span></h3>
-        <div class="col-sm-12">
-            <input type="radio" name="payment_status" id="online" value="online">پرداخت آنلاین
-        </div>
-        <div class="col-sm-12">
-            <input type="radio" name="payment_status" id="offline" value="offline">پرداخت حضوری
-        </div>
-        <div class="col-sm-12">
-            <button class="btn btn-success" onclick="pay()">پرداخت</button>
-        </div>
-    </div>
+        
+        @endif
 </section>
     
         
@@ -93,6 +110,26 @@
                 success: function (data) {
                     console.log(data);
                     alert_notification(data);
+                }
+            })
+        }
+
+        function delete_item_from_cart(cart_id){
+            var fd = new FormData();
+            fd.append('id', cart_id);
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                },
+                method: 'post',
+                url: `{{ route('delete-cart-item')}}`,
+                data: fd,
+                processData: false,
+                contentType: false,
+                success: function(data){
+                    console.log(data);
+                    alert_notification('کالای موردنظر از سبد خرید حذف شد.')
+                    location.reload()
                 }
             })
         }

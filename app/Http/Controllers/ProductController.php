@@ -103,4 +103,13 @@ class ProductController extends Controller
             'product' => $this->get(null,$id),
         ]);
     }
+
+    public function get_by_catagory_name($name)
+    {
+        $c = (new ProductCatagoryController())->get_by_name($name);
+        return view('store.catagories.list')->with([
+            'catagory' => $name,
+            'products' => Product::where('product_catagory_id', $c?->id)->get(),
+        ]);
+    }
 }

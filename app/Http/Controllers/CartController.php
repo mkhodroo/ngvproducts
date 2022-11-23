@@ -57,4 +57,10 @@ class CartController extends Controller
     {
         Cart::where('user_id', Auth::id())->delete();
     }
+
+    public function delete(Request $r)
+    {
+        Cart::find($r->id)->delete();
+        return true;
+    }
 }

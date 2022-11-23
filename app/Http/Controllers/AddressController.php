@@ -12,4 +12,13 @@ class AddressController extends Controller
     {
         return CustomerAddress::where('user_id', Auth::id())->get();
     }
+
+    public function add(Request $r)
+    {
+        return CustomerAddress::create([
+            'user_id' => Auth::id(),
+            'city_id' => $r->city,
+            'address' => $r->address
+        ]);
+    }
 }

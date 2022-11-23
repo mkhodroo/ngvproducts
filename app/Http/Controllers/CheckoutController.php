@@ -17,6 +17,7 @@ class CheckoutController extends Controller
         $c_address = new AddressController();
         return view('store.checkout.checkout')->with([
             'items' => $cart->get_user_cart_items(),
+            'total_price' => $cart->get_total_price(),
             'cities' => $city->cities(),
             'customer_addresses' => $c_address->customer_addresses(),
         ]);
