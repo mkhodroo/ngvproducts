@@ -108,9 +108,40 @@
 
                 <!-- Header search -->
                 <div class="header-search">
-                    <input class="form-control" type="text" placeholder="جستجو ..."/>
+                    <input class="form-control" type="text" name="search" id="search-field" list="search" autocomplete="off" placeholder="جستجو ..."/>
+                    @csrf
                     <button><i class="fa fa-search"></i></button>
+                    <datalist id="search">
+                        <option value="asd">asd</option>
+                        <option value="asd">asd</option>
+                        <option value="asd">asd</option>
+                    </datalist>
                 </div>
+                <script>
+                    $('#search-field').on('keyup', function(){
+                        var fd = new FormData();
+                        fd.append('q', $('#search-field').val());
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                            },
+                            method: 'post',
+                            url: `{{ route('search')}}`,
+                            data: fd,
+                            processData: false,
+                            contentType: false,
+                            success: function(data){
+                                console.log(data);
+                                var datalist = $('#search');
+                                datalist.html('');
+                                data.forEach(function (item) { 
+                                    console.log(item);
+                                    datalist.append(`<option value="${item.name}"></option>`)
+                                })
+                            }
+                        })
+                    })
+                </script>
                 <!-- /Header search -->
 
                 <!-- Header shopping cart -->
@@ -206,7 +237,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="sale"><a href="category.html">Sale</a></li>
+                        <li class="sale"><a href="{{ route('home') }}">فروشگاه</a></li>
                     </ul>
                 </nav>
                 <!-- /Navigation -->

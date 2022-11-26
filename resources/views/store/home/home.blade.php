@@ -48,6 +48,60 @@
             </div>
 
         </div>
+        <div class="container">
+            <div class="tabs">
+                <ul id="tabs" class="nav nav-justified-off"><!--
+                    --><li class=""><a href="#tab-1" data-toggle="tab" style="font-weight: bold"> دسته بندی ها</a></li>
+                </ul>
+            </div>
+            <div class="container-fluid h-scroll" id="tab-1">
+                <div class="row" id="">
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">مخازن CNG</h4>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">رگولاتورهای CNG</h4>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">شیرمخزن CNG</h4>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">شیرقطع کن های CNG</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tabs">
+                <ul id="tabs" class="nav nav-justified-off"><!--
+                    --><li class=""><a href="#tab-1" data-toggle="tab" style="font-weight: bold">برندهای فعال </a></li>
+                </ul>
+            </div>
+            <div class="container-fluid h-scroll" id="tab-1">
+                <div class="row" id="" >
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/bsi.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">بهینه صنعت اصفهان</h4>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/asianama.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">آسیاناما</h4>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/shahab.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">شهاب گازسوز</h4>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                        <img class="" src="{{ url('public/store/assets/img/electrofan.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold">الکتروفن</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- /PAGE -->
 @endsection

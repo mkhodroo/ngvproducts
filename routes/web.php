@@ -40,6 +40,7 @@ require __DIR__.'/myorders.php';
 require __DIR__.'/products.php';
 require __DIR__.'/catagories.php';
 require __DIR__.'/address.php';
+require __DIR__.'/search.php';
 
 
 
