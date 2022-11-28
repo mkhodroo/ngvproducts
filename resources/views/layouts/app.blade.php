@@ -99,9 +99,12 @@
             <div class="container">
 
                 <!-- Logo -->
-                <div class="logo">
+                <div class="logo" style="text-align: center">
                     <h3 style="font-weight: bold">
-                        <a href="{{ route('home') }}">NGV<span style="color: black">Products</span></a>
+                        <a href="{{ route('home') }}">
+                            <img src="{{ url('public/store/assets/img/logo.png') }}" alt="">
+                            NGV<span style="color: black">Products</span>
+                        </a>
                     </h3>
                 </div>
                 <!-- /Logo -->
@@ -163,7 +166,8 @@
                 <nav class="navigation closed clearfix" >
                     <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
                     <ul class="nav sf-menu" >
-                        <li class="active"><a href="{{ route('home') }}">NGVProducts</a>
+                        <li class="active">
+                            <a href="{{ route('home') }}">NGVProducts</a>
                         </li>
                         <li class="megamenu"><a href="#">محصولات</a>
                             <ul>
@@ -172,27 +176,28 @@
                                         <h4 class="block-title"><span>مخازن</span></h4>
                                         <ul>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن نوع اول']) }}">نوع اول</a></li>
-                                            <li><a href="#">نوع دوم</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن نوع دوم']) }}">نوع دوم</a></li>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن-نوع-سوم']) }}">نوع سوم</a></li>
-                                            <li><a href="#">نوع چهارم</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن نوع سوم']) }}">نوع چهارم</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
                                         <h4 class="block-title"><span>رگلاتور</span></h4>
                                         <ul>
-                                            <li><a href="#">نسل یک</a></li>
-                                            <li><a href="#">نسل دو</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'رگلاتور نسل یک']) }}">نسل یک</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'رگلاتور نسل دو']) }}">نسل دو</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
                                         <h4 class="block-title"><span>شیرمخزن</span></h4>
                                         <ul>
-                                            <li><a href="shortcodes.html">مخروطی</a></li>
-                                            <li><a href="typography.html">استوانه</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرمخزن مخروطی']) }}">مخروطی</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرمخزن استوانه']) }}">استوانه</a></li>
                                         </ul>
                                     </div>
+                                    
                                     <div class="col-md-3">
-                                        <h4 class="block-title"><span>Paragraph</span></h4>
+                                        <h4 class="block-title"><span>شیرقطع کن</span></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                                         <p>Suspendisse molestie est nec tortor placerat, vel pellentesque metus sollicitudin. Suspendisse congue sem mauris, at ultrices felis blandit non.</p>
                                     </div>

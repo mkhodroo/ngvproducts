@@ -34,6 +34,11 @@ class ProductCatagoryController extends Controller
         return ProductCatagory::where('name', $name)->first();
     }
 
+    public function get_by_part_of_name($name)
+    {
+        return ProductCatagory::where('name', 'like', "%$name%")->get()->pluck('id')->values();
+    }
+
     public function edit(Request $r)
     {
         $c = $this->get($r->id);

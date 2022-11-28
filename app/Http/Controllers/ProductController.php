@@ -112,4 +112,18 @@ class ProductController extends Controller
             'products' => Product::where('product_catagory_id', $c?->id)->get(),
         ]);
     }
+
+    public function get_by_part_of_catagory_name($name)
+    {
+        $c = (new ProductCatagoryController())->get_by_part_of_name($name);
+        return view('store.catagories.list')->with([
+            'catagory' => $name,
+            'products' => Product::whereIn('product_catagory_id', $c)->get(),
+        ]);
+    }
+
+    public function get_producer_products($name)
+    {
+        
+    }
 }

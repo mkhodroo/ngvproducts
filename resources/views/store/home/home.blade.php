@@ -56,22 +56,30 @@
             </div>
             <div class="container-fluid h-scroll" id="tab-1">
                 <div class="row" id="">
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">مخازن CNG</h4>
-                    </div>
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">رگولاتورهای CNG</h4>
-                    </div>
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">شیرمخزن CNG</h4>
-                    </div>
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">شیرقطع کن های CNG</h4>
-                    </div>
+                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'مخزن']) }}">
+                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                            <img class="" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold">مخازن CNG</h4>
+                        </div>
+                    </a>
+                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'رگلاتور']) }}">
+                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                            <img class="" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold">رگولاتورهای CNG</h4>
+                        </div>
+                    </a>
+                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'شیرمخزن']) }}">
+                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                            <img class="" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold">شیرمخزن CNG</h4>
+                        </div>
+                    </a>
+                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'شیرقطع کن']) }}">
+                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
+                            <img class="" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold">شیرقطع کن های CNG</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
