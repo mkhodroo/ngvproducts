@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>ngvproducts</title>
+    <meta name="keywords" content="@yield('keywords')" / >
+    <meta name="description" content="@yield('description')" / >
 
     <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url('public/store/assets/ico/apple-touch-icon-144-precomposed.png') }}">

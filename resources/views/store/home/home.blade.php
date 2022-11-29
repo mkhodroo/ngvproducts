@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('keywords')
+    فروشگاه قطعات گازسوز, قطعات گازسوز, فروشگاه cng, قطعات cng,
+@endsection
+
+@section('description')
+    فروشگاه ngvkala، اولین و تنها فروشگاه قطعات گازسوز ایران در جهت ارائه محصولات استاندارد و تضمین پایین ترین قیمت به مشتریان خودروهای دوگانه سوز است.
+@endsection
+
 @section('content')
     <!-- PAGE -->
     <section class="page-section no-padding slider">
