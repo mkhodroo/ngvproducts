@@ -5,7 +5,7 @@
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ngvproducts</title>
+    <title>NGVKALA</title>
     <meta name="keywords" content="@yield('keywords')" / >
     <meta name="description" content="@yield('description')" / >
 
@@ -104,7 +104,7 @@
                 <div class="logo" style="text-align: center">
                     <h3 style="font-weight: bold">
                         <a href="{{ route('home') }}">
-                            <img src="{{ url('public/store/assets/img/logo.png') }}" alt="">
+                            <img src="{{ url('public/store/assets/img/logo.png') }}" alt="logo">
                             NGV<span style="color: black">Products</span>
                         </a>
                     </h3>
@@ -208,7 +208,7 @@
                                         <div class="product-list">
                                             <div class="media">
                                                 <a class="pull-left media-link" href="#">
-                                                    <img class="media-object" src="{{ url('public/store/assets/img/preview/shop/top-sellers-2.jpg') }}" alt="">
+                                                    <img class="media-object" src="{{ url('public/store/assets/img/preview/shop/top-sellers-2.jpg') }}" alt="top-sellers">
                                                     <i class="fa fa-plus"></i>
                                                 </a>
                                                 <div class="media-body">
@@ -225,7 +225,7 @@
                                             </div>
                                             <div class="media">
                                                 <a class="pull-left media-link" href="#">
-                                                    <img class="media-object" src="{{ url('public/store/assets/img/preview/shop/top-sellers-3.jpg') }}" alt="">
+                                                    <img class="media-object" src="{{ url('public/store/assets/img/preview/shop/top-sellers-3.jpg') }}" alt="top-sellers">
                                                     <i class="fa fa-plus"></i>
                                                 </a>
                                                 <div class="media-body">
