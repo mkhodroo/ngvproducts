@@ -3,7 +3,7 @@
     <nav class="sidebar-nav">
         <ul id="sidebarnav">
             <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                    aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"><span
+                    aria-expanded="false"><img src="{{ url('public/dashboard/assets/images/users/Sample_User_Icon.png') }}" alt="user-img" class="img-circle"><span
                         class="hide-menu">Mark Jeckson</span></a>
                 <ul aria-expanded="false" class="collapse">
                     <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
