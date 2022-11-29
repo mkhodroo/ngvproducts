@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+Route::get('build-app', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('migrate');
+    return 'done';
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
