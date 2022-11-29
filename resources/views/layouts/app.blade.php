@@ -195,11 +195,12 @@
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرمخزن استوانه']) }}">استوانه</a></li>
                                         </ul>
                                     </div>
-                                    
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h4 class="block-title"><span>شیرقطع کن</span></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                        <p>Suspendisse molestie est nec tortor placerat, vel pellentesque metus sollicitudin. Suspendisse congue sem mauris, at ultrices felis blandit non.</p>
+                                        <ul>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرقطع کن دستی']) }}">دستی</a></li>
+                                            <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرقظع کن برقی']) }}">برقی</a></li>
+                                        </ul>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="product-list">
