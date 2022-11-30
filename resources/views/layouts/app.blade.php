@@ -113,38 +113,43 @@
 
                 <!-- Header search -->
                 <div class="header-search">
-                    <input class="form-control" type="text" name="search" id="search-field" list="search" autocomplete="off" placeholder="جستجو ..."/>
+                    <input class="form-control" type="text"  name="search" id="search-field" list="search" autocomplete="off" placeholder="جستجو ..."/>
+                    <div class="" id="search" style="background: white"></div>
                     @csrf
                     <button><i class="fa fa-search"></i></button>
-                    <datalist id="search">
-                        <option value="asd">asd</option>
-                        <option value="asd">asd</option>
-                        <option value="asd">asd</option>
-                    </datalist>
                 </div>
                 <script>
+                    $('#search-field').focusout(function() {
+                        $('#search').delay('fast').fadeOut()
+                    })
                     $('#search-field').on('keyup', function(){
-                        var fd = new FormData();
-                        fd.append('q', $('#search-field').val());
-                        $.ajax({
-                            headers: {
-                                'X-CSRF-TOKEN': $('input[name="_token"]').val()
-                            },
-                            method: 'post',
-                            url: `{{ route('search')}}`,
-                            data: fd,
-                            processData: false,
-                            contentType: false,
-                            success: function(data){
-                                console.log(data);
-                                var datalist = $('#search');
-                                datalist.html('');
-                                data.forEach(function (item) { 
-                                    console.log(item);
-                                    datalist.append(`<option value="${item.name}"></option>`)
-                                })
-                            }
-                        })
+                        if( $(this).val().length >= 3){
+                            var fd = new FormData();
+                            fd.append('q', $('#search-field').val());
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                                },
+                                method: 'post',
+                                url: `{{ route('search')}}`,
+                                data: fd,
+                                processData: false,
+                                contentType: false,
+                                success: function(data){
+                                    console.log(data);
+                                    var datalist = $('#search');
+                                    datalist.fadeIn();
+                                    datalist.html('');
+                                    data.forEach(function (item) { 
+                                        console.log(item);
+                                        datalist.append(`<a href="${item.link}"><ol>${item.name}</ol></a>`)
+                                    })
+                                }
+                            })
+                        }else{
+                            $('#search').fadeOut();
+                        }
+                        
                     })
                 </script>
                 <!-- /Header search -->
