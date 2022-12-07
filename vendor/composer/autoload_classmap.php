@@ -44,6 +44,7 @@ return array(
     'App\\Http\\Controllers\\ProductProducerController' => $baseDir . '/app/Http/Controllers/ProductProducerController.php',
     'App\\Http\\Controllers\\RandomStringController' => $baseDir . '/app/Http/Controllers/RandomStringController.php',
     'App\\Http\\Controllers\\RoleController' => $baseDir . '/app/Http/Controllers/RoleController.php',
+    'App\\Http\\Controllers\\SearchController' => $baseDir . '/app/Http/Controllers/SearchController.php',
     'App\\Http\\Controllers\\StoreController' => $baseDir . '/app/Http/Controllers/StoreController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Access' => $baseDir . '/app/Http/Middleware/Access.php',

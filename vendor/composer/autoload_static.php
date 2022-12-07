@@ -573,6 +573,7 @@ class ComposerStaticInit104c302ce3651fce3c1dd47e01f438ea
         'App\\Http\\Controllers\\ProductProducerController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductProducerController.php',
         'App\\Http\\Controllers\\RandomStringController' => __DIR__ . '/../..' . '/app/Http/Controllers/RandomStringController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
+        'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
         'App\\Http\\Controllers\\StoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Access' => __DIR__ . '/../..' . '/app/Http/Middleware/Access.php',

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Jobs\CreatePDFJob;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,10 @@ Route::get('/dashboard', function () {
 
 Route::any('/get-newest-products', [ProductController::class, 'newest_products'])->name('get-newest_products');
 
+Route::get('create-pdf', function(){
+    CreatePDFJob::dispatch();
+    return "asd";
+});
 
 Route::prefix('/admin')->middleware(['access'])->group(function(){
     require __DIR__.'/admin-products.php';

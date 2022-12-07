@@ -1,0 +1,724 @@
+# <!=Copyright (C) 2019 Rara Theme
+# This file is distributed under the GNU General Public License v2 or later.=!>
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Travel Diaries 1.1.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/travel-diaries\n"
+"POT-Creation-Date: 2019-04-28 07:19+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: archive.php:38 index.php:44
+msgid "Previous"
+msgstr ""
+
+#: archive.php:39 index.php:45
+msgid "Next"
+msgstr ""
+
+#: archive.php:40 index.php:46
+msgid "Page"
+msgstr ""
+
+#: comments.php:29
+msgid "Comments"
+msgstr ""
+
+#: comments.php:45
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:48
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:49
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:47
+msgid "Primary"
+msgstr ""
+
+#: functions.php:48
+msgid "Secondary"
+msgstr ""
+
+#: functions.php:142
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:152
+msgid "Footer One"
+msgstr ""
+
+#: functions.php:162
+msgid "Footer Two"
+msgstr ""
+
+#: functions.php:172
+msgid "Footer Three"
+msgstr ""
+
+#: functions.php:182
+msgid "Footer Four"
+msgstr ""
+
+#: functions.php:192
+msgid "Banner Widget"
+msgstr ""
+
+#: functions.php:194
+msgid "Custom Use for Newsletter Plugin"
+msgstr ""
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page"
+msgstr ""
+
+#: inc/customizer.php:16
+msgid "Static Front Page"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "Choose Post"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "Default Settings"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "Default section provided by WordPress customizer."
+msgstr ""
+
+#: inc/customizer.php:53
+msgid "Header Info Settings"
+msgstr ""
+
+#: inc/customizer.php:71
+msgid "Enable Header Info"
+msgstr ""
+
+#: inc/customizer.php:89
+msgid "First Label"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "First Content"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "Second Label"
+msgstr ""
+
+#: inc/customizer.php:143
+msgid "Second Content"
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "Third Label"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Third Content"
+msgstr ""
+
+#: inc/customizer.php:192
+msgid "Home Page Settings"
+msgstr ""
+
+#: inc/customizer.php:193
+msgid "Customize Home Page Settings"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid "Banner Settings"
+msgstr ""
+
+#: inc/customizer.php:219
+msgid "Enable featured image as Banner"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "(The featured image of the page with homepage template will be shown.)"
+msgstr ""
+
+#: inc/customizer.php:238
+msgid "Enable Banner Form"
+msgstr ""
+
+#: inc/customizer.php:257
+msgid "Enable Featured On Section"
+msgstr ""
+
+#: inc/customizer.php:277 inc/customizer.php:817
+msgid "Upload a logo (One)"
+msgstr ""
+
+#: inc/customizer.php:296 inc/customizer.php:836
+msgid "Logo Url (One)"
+msgstr ""
+
+#: inc/customizer.php:316 inc/customizer.php:856
+msgid "Upload a logo (Two)"
+msgstr ""
+
+#: inc/customizer.php:335 inc/customizer.php:875
+msgid "Logo Url (Two)"
+msgstr ""
+
+#: inc/customizer.php:355 inc/customizer.php:895
+msgid "Upload a logo (Three)"
+msgstr ""
+
+#: inc/customizer.php:374 inc/customizer.php:914
+msgid "Logo Url (Three)"
+msgstr ""
+
+#: inc/customizer.php:394 inc/customizer.php:934
+msgid "Upload a logo (Four)"
+msgstr ""
+
+#: inc/customizer.php:413 inc/customizer.php:953
+msgid "Logo Url (Four)"
+msgstr ""
+
+#: inc/customizer.php:433 inc/customizer.php:973
+msgid "Upload a logo (Five)"
+msgstr ""
+
+#: inc/customizer.php:452 inc/customizer.php:992
+msgid "Logo Url (Five)"
+msgstr ""
+
+#: inc/customizer.php:470
+msgid "Featured On Link Text"
+msgstr ""
+
+#: inc/customizer.php:488
+msgid "Featured On Link Url"
+msgstr ""
+
+#: inc/customizer.php:499
+msgid "Recent Post Settings"
+msgstr ""
+
+#: inc/customizer.php:517
+msgid "Enable Recent Post Section"
+msgstr ""
+
+#: inc/customizer.php:535
+msgid "Recent Post Title"
+msgstr ""
+
+#: inc/customizer.php:553
+msgid "Recent Post Content"
+msgstr ""
+
+#: inc/customizer.php:571
+msgid "Recent Post View All Text"
+msgstr ""
+
+#: inc/customizer.php:582
+msgid "Popular Article Settings"
+msgstr ""
+
+#: inc/customizer.php:600
+msgid "Enable Popular Article Section"
+msgstr ""
+
+#: inc/customizer.php:618
+msgid "Popular Article Title"
+msgstr ""
+
+#: inc/customizer.php:636
+msgid "Popular Article Content"
+msgstr ""
+
+#: inc/customizer.php:654 inc/customizer.php:1150
+msgid "Select Post One"
+msgstr ""
+
+#: inc/customizer.php:673 inc/customizer.php:1169
+msgid "Select Post Two"
+msgstr ""
+
+#: inc/customizer.php:692 inc/customizer.php:1188
+msgid "Select Post Three"
+msgstr ""
+
+#: inc/customizer.php:711 inc/customizer.php:1207
+msgid "Select Post Four"
+msgstr ""
+
+#: inc/customizer.php:730 inc/customizer.php:1226
+msgid "Select Post Five"
+msgstr ""
+
+#: inc/customizer.php:749 inc/customizer.php:1245
+msgid "Select Post Six"
+msgstr ""
+
+#: inc/customizer.php:761
+msgid "Clients Settings"
+msgstr ""
+
+#: inc/customizer.php:779
+msgid "Enable Clients Section"
+msgstr ""
+
+#: inc/customizer.php:797
+msgid "Clients Section Title"
+msgstr ""
+
+#: inc/customizer.php:1012
+msgid "Upload a logo (Six)"
+msgstr ""
+
+#: inc/customizer.php:1031
+msgid "Logo Url (Six)"
+msgstr ""
+
+#: inc/customizer.php:1049
+msgid "Link Text"
+msgstr ""
+
+#: inc/customizer.php:1067
+msgid "Link Url"
+msgstr ""
+
+#: inc/customizer.php:1078
+msgid "My Guide Settings"
+msgstr ""
+
+#: inc/customizer.php:1096
+msgid "Enable My Guide Section"
+msgstr ""
+
+#: inc/customizer.php:1114
+msgid "My Guide Title"
+msgstr ""
+
+#: inc/customizer.php:1132
+msgid "My Guide Content"
+msgstr ""
+
+#: inc/customizer.php:1258
+msgid "Social Settings"
+msgstr ""
+
+#: inc/customizer.php:1259
+msgid "Leave blank if you do not want to show the social link."
+msgstr ""
+
+#: inc/customizer.php:1277
+msgid "Enable Social Links"
+msgstr ""
+
+#: inc/customizer.php:1295 inc/extras.php:191 inc/widget-social-links.php:57
+#: inc/widget-social-links.php:109
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer.php:1313 inc/extras.php:193 inc/widget-social-links.php:59
+#: inc/widget-social-links.php:115
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer.php:1331 inc/extras.php:195 inc/widget-social-links.php:61
+#: inc/widget-social-links.php:121
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer.php:1349 inc/extras.php:197 inc/widget-social-links.php:127
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/customizer.php:1367 inc/extras.php:199 inc/widget-social-links.php:65
+#: inc/widget-social-links.php:133
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:1385 inc/extras.php:201 inc/widget-social-links.php:67
+#: inc/widget-social-links.php:139
+msgid "YouTube"
+msgstr ""
+
+#: inc/customizer.php:1403 inc/extras.php:203 inc/widget-social-links.php:69
+#: inc/widget-social-links.php:145
+msgid "OK"
+msgstr ""
+
+#: inc/customizer.php:1421 inc/extras.php:205 inc/widget-social-links.php:71
+#: inc/widget-social-links.php:151
+msgid "VK"
+msgstr ""
+
+#: inc/customizer.php:1439 inc/extras.php:207 inc/widget-social-links.php:73
+#: inc/widget-social-links.php:157
+msgid "Xing"
+msgstr ""
+
+#: inc/customizer.php:1451
+msgid "Custom CSS Settings"
+msgstr ""
+
+#: inc/customizer.php:1469
+msgid "Custom Css"
+msgstr ""
+
+#: inc/customizer.php:1471
+msgid "Put your custom CSS"
+msgstr ""
+
+#: inc/customizer.php:1482
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer.php:1499
+msgid "Copyright Info"
+msgstr ""
+
+#: inc/extras.php:269
+#, php-format
+msgid ""
+"<b class=\"fn\" itemprop=\"creator\" itemscope itemtype=\"http://schema."
+"org/Person\">%s</b>"
+msgstr ""
+
+#: inc/extras.php:272
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/extras.php:277
+msgid "Posted on"
+msgstr ""
+
+#: inc/extras.php:395
+msgid "Copyright &copy; "
+msgstr ""
+
+#: inc/extras.php:395
+msgid "Y"
+msgstr ""
+
+#: inc/extras.php:399
+msgid "Travel Diaries | Developed By "
+msgstr ""
+
+#. Author of the plugin/theme
+#: inc/extras.php:400
+msgid "Rara Theme"
+msgstr ""
+
+#: inc/extras.php:401
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: inc/extras.php:401
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: inc/extras.php:554
+msgid "Name*"
+msgstr ""
+
+#: inc/extras.php:556
+msgid "Email*"
+msgstr ""
+
+#: inc/extras.php:558
+msgid "Website"
+msgstr ""
+
+#: inc/extras.php:571
+msgid "Comment"
+msgstr ""
+
+#: inc/info.php:11
+msgid "Information Links"
+msgstr ""
+
+#: inc/info.php:21
+msgid "Need help?"
+msgstr ""
+
+#: inc/info.php:22
+msgid "View demo"
+msgstr ""
+
+#: inc/info.php:22 inc/info.php:23 inc/info.php:24 inc/info.php:25
+#: inc/info.php:26
+msgid "here"
+msgstr ""
+
+#: inc/info.php:23
+msgid "View documentation"
+msgstr ""
+
+#: inc/info.php:24
+msgid "Download Zip"
+msgstr ""
+
+#: inc/info.php:25
+msgid "Support ticket"
+msgstr ""
+
+#: inc/info.php:26
+msgid "More Details"
+msgstr ""
+
+#: inc/info.php:30
+msgid "About Travel Diaries"
+msgstr ""
+
+#: inc/info.php:151
+msgid "Pro Available"
+msgstr ""
+
+#: inc/info.php:153
+msgid "VIEW PRO THEME"
+msgstr ""
+
+#: inc/metabox.php:13
+msgid "Sidebar Layout"
+msgstr ""
+
+#: inc/metabox.php:23
+msgid "Right sidebar (default)"
+msgstr ""
+
+#: inc/metabox.php:28
+msgid "No sidebar"
+msgstr ""
+
+#: inc/metabox.php:40
+msgid "Choose Sidebar Template"
+msgstr ""
+
+#: inc/template-tags.php:23
+#, php-format
+msgctxt "post date"
+msgid " On %s"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post author"
+msgid "By %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:46 inc/template-tags.php:52
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:48 inc/template-tags.php:54
+#: inc/widget-popular-post.php:73 inc/widget-popular-post.php:75
+#: inc/widget-recent-post.php:72 inc/widget-recent-post.php:74
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:62 template-parts/content-page.php:42
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: inc/widget-featured-post.php:25
+msgid "RARA: Featured Post"
+msgstr ""
+
+#: inc/widget-featured-post.php:26
+msgid "A Featured Post Widget"
+msgstr ""
+
+#: inc/widget-featured-post.php:40 inc/widget-featured-post.php:96
+#: inc/widget-featured-post.php:144
+msgid "Read More"
+msgstr ""
+
+#: inc/widget-featured-post.php:84
+msgid "--choose--"
+msgstr ""
+
+#: inc/widget-featured-post.php:103
+msgid "Posts"
+msgstr ""
+
+#: inc/widget-featured-post.php:113
+msgid "Read More Text"
+msgstr ""
+
+#: inc/widget-featured-post.php:118
+msgid "Excerpt Character"
+msgstr ""
+
+#: inc/widget-featured-post.php:124 inc/widget-popular-post.php:121
+#: inc/widget-recent-post.php:120
+msgid "Show Post Thumbnail"
+msgstr ""
+
+#: inc/widget-popular-post.php:25
+msgid "RARA: Popular Post"
+msgstr ""
+
+#: inc/widget-popular-post.php:26
+msgid "A Popular Post Widget"
+msgstr ""
+
+#: inc/widget-popular-post.php:40 inc/widget-popular-post.php:102
+#: inc/widget-popular-post.php:145
+msgid "Popular Posts"
+msgstr ""
+
+#: inc/widget-popular-post.php:72 inc/widget-recent-post.php:71
+msgid "on"
+msgstr ""
+
+#: inc/widget-popular-post.php:110 inc/widget-recent-post.php:109
+#: inc/widget-social-links.php:104
+msgid "Title"
+msgstr ""
+
+#: inc/widget-popular-post.php:115 inc/widget-recent-post.php:114
+msgid "Number of Posts"
+msgstr ""
+
+#: inc/widget-popular-post.php:126 inc/widget-recent-post.php:125
+msgid "Show Post Date"
+msgstr ""
+
+#: inc/widget-recent-post.php:25
+msgid "RARA: Recent Post"
+msgstr ""
+
+#: inc/widget-recent-post.php:26
+msgid "A Recent Post Widget"
+msgstr ""
+
+#: inc/widget-recent-post.php:40 inc/widget-recent-post.php:101
+#: inc/widget-recent-post.php:144
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widget-social-links.php:25
+msgid "RARA: Social Links"
+msgstr ""
+
+#: inc/widget-social-links.php:26
+msgid "A Social Links Widget"
+msgstr ""
+
+#: inc/widget-social-links.php:40 inc/widget-social-links.php:90
+#: inc/widget-social-links.php:177
+msgid "Social"
+msgstr ""
+
+#: inc/widget-social-links.php:63
+msgid "Linkedin"
+msgstr ""
+
+#: inc/widget-social-links.php:111 inc/widget-social-links.php:117
+#: inc/widget-social-links.php:123 inc/widget-social-links.php:129
+#: inc/widget-social-links.php:135 inc/widget-social-links.php:141
+#: inc/widget-social-links.php:147 inc/widget-social-links.php:153
+#: inc/widget-social-links.php:159
+msgid "Leave blank if you do not want to show."
+msgstr ""
+
+#: sections/section-featuredon.php:35
+msgid "Featured on"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:31 template-parts/content-single.php:39
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: template-parts/content-single.php:34
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content.php:37
+msgid "Continue reading "
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Travel Diaries"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Travel Diaries is a modern, clean and easy to use WordPress theme suitable "
+"for traveller bloggers and all kind of bloggers. The design is responsive "
+"and therefore, each elements are displayed nicely in all kind of devices of "
+"various screen sizes. Theme theme has a custom home page with several "
+"features such as subscription form, recent posts, most popular articles, "
+"travel guide, featured on section with Call to Action (CTA) button for "
+"advertisement, and featured on section with Call to Action button for "
+"advertisement. It also has 4 custom widgets. The theme provides feature to "
+"write number of countries visited, last trip and next trip. The theme is "
+"translation ready."
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://raratheme.com/wordpress-themes/travel-diaries/"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://raratheme.com/"
+msgstr ""
