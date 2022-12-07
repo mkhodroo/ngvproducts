@@ -85,7 +85,7 @@
             <div class="top-bar-left">
                 <ul class="list-inline">
                     <li class="hidden-xs"><a href="about.html">درباره ما</a></li>
-                    <li class="hidden-xs"><a href="blog.html">بلاگ</a></li>
+                    <li class="hidden-xs"><a href="{{ url('/blog') }}">بلاگ</a></li>
                     <li class="hidden-xs"><a href="contact.html">تماس با ما</a></li>
                     <li class="hidden-xs"><a href="faq.html">سوالات پر تکرار</a></li>
                     <li class="hidden-xs"><a href="wishlist.html">علاقه مندی ها</a></li>
