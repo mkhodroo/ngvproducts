@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\SendSms;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Jobs\CreatePDFJob;
@@ -19,10 +20,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
+Route::get('event', function(){
+    event(new SendSms("09376922176", "salam"));
+});
+
 Route::get('build-app', function () {
     Artisan::call('cache:clear');
     Artisan::call('migrate');
     return 'done';
+});
+
+Route::get('queue-start', function () {
+    Artisan::call('queue:work');
+    return 'queue started.';
+});
+
+Route::get('queue-stop', function () {
+    Artisan::call('queue:restart');
+    return 'queue stoped.';
 });
 
 Route::get('/dashboard', function () {
