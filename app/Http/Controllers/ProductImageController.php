@@ -11,7 +11,7 @@ class ProductImageController extends Controller
     private $product_image_path;
     
     public function __construct() {
-        $this->product_image_path = public_path('products\images');
+        $this->product_image_path = public_path('products/images');
     }
 
     public function add(Request $r)
