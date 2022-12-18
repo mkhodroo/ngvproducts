@@ -19,7 +19,7 @@ class Product extends Model
 
     public function min_price()
     {
-        return ProductPrice::where('product_id', $this->id)->orderBy('price', 'asc')->first();
+        return ProductPrice::where('product_id', $this->id)->whereNotNull('price')->orderBy('price', 'asc')->first();
     }
 
     public function images()

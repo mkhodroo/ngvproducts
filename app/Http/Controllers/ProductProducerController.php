@@ -31,18 +31,25 @@ class ProductProducerController extends Controller
             
             if($r->$input_id !== null){
                 $producer = $this->get($r->$input_id);
-                $producer->name = $r->$input_name;
-                $producer->save();
+                $producer->update([
+                    'name' => $r->$input_name
+                ]);
+                
             }else{
                 $producer = $this->add($r->product_id, $r->$input_name);
             }
-            
             $price->add($r->product_id, $r->$input_price, $producer->id);
         }
         return response('قیمت برای تولیدکنندگان ذخیره شد');
     }
 
     public function get($id)
+    {
+        $pp = ProductProducer::find($id);
+        return $pp;
+    }
+
+    public function get_details($id)
     {
         $pp = ProductProducer::find($id);
         $pp->price = $pp->price();
