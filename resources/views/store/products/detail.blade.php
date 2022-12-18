@@ -2,9 +2,13 @@
 
 @section('content')
     <section class="page-section">
-        <div class="col-sm-3" id="cart-details" style="background: #e6f7f7; margin: 10px; padding: 10px; text-align: center">
-            
+        <div class="col-sm-4">
+            <img 
+            src="{{ env('PRODUCTS_IMAGE_URL') . $product->main_image()?->image_url  }}" 
+            alt="{{ $product->name }}"
+            width="100%">
         </div>
+        
         <div class="col-sm-4">
             <h3>{{ $product->name }}</h3>
             <h5>{{ $product->catagory()?->name }}</h5>
@@ -15,12 +19,11 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-sm-4">
-            <img 
-            src="{{ env('PRODUCTS_IMAGE_URL') . $product->main_image()?->image_url  }}" 
-            alt="{{ $product->name }}"
-            width="100%">
+
+        <div class="col-sm-3" id="cart-details" style="background: #e6f7f7; margin: 10px; padding: 10px; text-align: center">
+            
         </div>
+        
     </section>
 @endsection
 

@@ -60,6 +60,72 @@
             "install-path": "../brick/math"
         },
         {
+            "name": "cryptommer/smsir",
+            "version": "v1.1.1",
+            "version_normalized": "1.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cryptommer/smsir.git",
+                "reference": "144e2b7cab3c71243c92119326d72d2ce38aa57d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cryptommer/smsir/zipball/144e2b7cab3c71243c92119326d72d2ce38aa57d",
+                "reference": "144e2b7cab3c71243c92119326d72d2ce38aa57d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "*",
+                "illuminate/support": "*",
+                "php": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2022-05-16T11:48:31+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cryptommer\\Smsir\\SmsirServiceProvider"
+                    ],
+                    "aliases": {
+                        "Smsir": "Smsir"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Cryptommer\\Smsir\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pouya Biglari",
+                    "email": "cyberman9000@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Official sms.ir New Panel laravel repository",
+            "homepage": "https://github.com/cryptommer/Smsir",
+            "keywords": [
+                "cryptommer",
+                "smsir"
+            ],
+            "support": {
+                "issues": "https://github.com/cryptommer/smsir/issues",
+                "source": "https://github.com/cryptommer/smsir/tree/v1.1.1"
+            },
+            "install-path": "../cryptommer/smsir"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.1",
             "version_normalized": "3.0.1.0",
