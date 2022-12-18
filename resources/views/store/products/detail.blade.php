@@ -29,12 +29,12 @@
 
 @section('script')
     <script>
-        $('#producer').val({{ $product?->min_price()->product_producer_id }}).change();
+        $('#producer').val({{ $product?->min_price()?->product_producer_id }}).change();
         $('#producer').on('change', function(){
             var producer_id = $('#producer').val();
             cart_details(producer_id);
         })
-        cart_details({{ $product?->min_price()->product_producer_id }})
+        cart_details({{ $product?->min_price()?->product_producer_id }})
         function cart_details(producer_id){
             var cart_details = $('#cart-details');
             $.get(`{{ url('products/get-details') }}/${producer_id}`, function(data){
