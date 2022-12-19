@@ -13,6 +13,7 @@ Route::prefix('/products')->group(function(){
     Route::any('/add', [ProductController::class, 'add'])->name('add-product');
     Route::any('/add-image', [ProductImageController::class, 'add'])->name('add-product-image');
     Route::any('/remove-image', [ProductImageController::class, 'remove'])->name('remove-product-image');
+    Route::any('/delete-image-by-id/{id}', [ProductImageController::class, 'delete_by_id'])->name('delete-product-image-by-id');
     Route::any('/edit-producer', [ProductProducerController::class, 'edit'])->name('admin-edit-product-producer');
 
 });

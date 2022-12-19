@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProductImage;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -43,5 +44,16 @@ class ProductImageController extends Controller
             unlink($path);
         }
         return response('تصویر حذف شد'); 
+    }
+
+    public function delete_by_id($id)
+    {
+        try{
+            ProductImage::find($id)->delete();
+            return response("تصویر حذف شد.");
+        }
+        catch(Exception $ex){
+            return response($ex->getMessage(),500);
+        }
     }
 }

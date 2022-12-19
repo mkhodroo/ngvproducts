@@ -63,6 +63,10 @@
                             </form>
                         </div>
                         <div id="images" class="tab-pane fade">
+                            <table class="table table-responsive table-stripped">
+                                <tbody id="product-images">
+                                </tbody>
+                            </table>
                             <form action="{{ route('add-product-image') }}" id="product-image-form" class="dropzone" enctype="multipart/form-data">
                                 @csrf
                                 @include('inputs.hidden',[
@@ -116,7 +120,11 @@
                 $('#list-name_' + i).val(item.name);
                 $('#list-price_' + i).val(item.price.price);
                 i++;
-           })
+            })
+
+            //PRODUCT IMAGES
+            put_product_images_in_table(data);
+
             Dropzone.options.dropzone =
             {
                 init: function(){
@@ -156,14 +164,37 @@
                 },
                 success: function(file, response) 
                 {
-                    console.log(response);
+                    alert_notification(response);
+                    var product_id = $('input[name="product_id"]').val();
+                    get_info(product_id);
                 },
                 error: function(file, response)
                 {
                     console.log(response);
-                return false;
+                    return false;
                 }
             };
+        })
+    }
+
+    function put_product_images_in_table(product_info_data){
+        var product_images = $('#product-images');
+        product_images.html('');
+        product_info_data.images.forEach(function(item){
+            product_images.append(`<tr>`);
+            product_images.append(`<td><img src="{{ env('PRODUCTS_IMAGE_URL') }}/${item.image_url}" width="120"></td>`);
+            product_images.append(`<td><i class="fa fa-trash" style="color: red; cursor: pointer" onclick="delete_product_image(${item.id})"></i></td>`)
+            product_images.append(`</tr>`);
+        })
+    }
+
+    function delete_product_image(image_id){
+        var url = '{{route('delete-product-image-by-id', ['id'=> 'image_id'])}}';
+        url = url.replace('image_id', image_id);
+        $.get(url, function (data) {  
+            alert_notification(data);
+            var product_id = $('input[name="product_id"]').val();
+            get_info(product_id);
         })
     }
 
