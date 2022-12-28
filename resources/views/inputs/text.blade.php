@@ -1,5 +1,5 @@
 {{ $label ?? '' }}<input 
-type="text" 
+type="{{ $type ?? 'text' }}" 
 name="{{ $name ?? ''}}" 
 value="{{ $value ?? '' }}"
 id="{{ $id ?? '' }}" 

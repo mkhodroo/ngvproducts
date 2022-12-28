@@ -14,6 +14,7 @@
                         'label' => 'نام کاربری',
                     ])
                     @include('inputs.text', [
+                        'type' => 'password',
                         'name' => 'password',
                         'label' => 'رمز عبور',
                     ])
