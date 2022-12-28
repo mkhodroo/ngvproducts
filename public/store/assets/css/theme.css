@@ -146,6 +146,10 @@
 @font-face {
   font-family: Samim;
   src: url("fonts/Samim.ttf") format("truetype"); }
+
+  @font-face {
+    font-family: YekanPlus;
+    src: url("fonts/yekan-plus.ttf") format("truetype"); }
 body {
   font-family: Samim, 'Lato', sans-serif;
   font-size: 14px;

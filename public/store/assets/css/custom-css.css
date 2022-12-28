@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Samim;
+  src: url("fonts/Samim.ttf") format("truetype"); 
+}
+
+@font-face {
+  font-family: YekanPlus;
+  src: url("fonts/yekan-plus.ttf") format("truetype"); }
+
+.yekan-titr{
+  font-family: YekanPlus !important;
+}

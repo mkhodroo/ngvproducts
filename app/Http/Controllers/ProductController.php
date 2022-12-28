@@ -92,7 +92,7 @@ class ProductController extends Controller
 
     public function newest_products()
     {
-        return Product::orderBy('id', 'desc')->take(4)->get()->each(function($c){
+        return Product::orderBy('id', 'desc')->take(5)->get()->each(function($c){
             $c->price = $c->min_price()?->price;
         });
     }

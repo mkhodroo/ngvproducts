@@ -34,24 +34,23 @@
     <section class="page-section">
         <div class="container">
 
-            <div class="tabs">
-                <ul id="tabs" class="nav nav-justified-off"><!--
-                    --><li class=""><a href="#tab-1" data-toggle="tab">جدیدترین ها</a></li>
-                </ul>
-            </div>
-
-            <div class="tab-content">
-
-                <!-- tab 1 -->
-                
-            </div>
             <div class="container-fluid h-scroll" id="tab-1">
-                <div class="row h-scroll" id="newest-products">
-                    @foreach ($newest_products as $item)
-                        @include('store.products.single',[
-                            'product' => $item
-                        ])
-                    @endforeach
+                <div class="row h-scroll table-responsive hide-scroll" id="newest-products">
+                    <table>
+                        <tr>
+                            <td style="text-align: center">
+                                <h2 style="width: 200px; color: white" class=" yekan-titr">جدیدترین ها</h2>
+                            </td>
+                            @foreach ($newest_products as $item)
+                            <td style="width: 500px !important">
+                                @include('store.products.single',[
+                                    'product' => $item
+                                ])
+                            </td>
+                            @endforeach
+                        </tr>
+                    </table>
+                    
                 </div>
             </div>
 

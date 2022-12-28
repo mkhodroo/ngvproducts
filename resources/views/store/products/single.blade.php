@@ -1,6 +1,6 @@
 
-<div class="col-md-3 col-sm-6">
-    <div style="margin: 10px 3px 8px 2px; background: #f2fcfc ; border-radius: 8px">
+<div class="col-md-12 col-sm-12 sigle-product">
+    <div class="sigle-product-content" style="background: #f2fcfc ; border-radius: 8px">
         <div class="thumbnail no-border no-padding">
             <div class="media" style="padding: 5px">
                 <a class="media-link" data-gal="prettyPhoto" href="{{ url('public/store/assets/img/preview/shop/product-1-big.jpg') }}">

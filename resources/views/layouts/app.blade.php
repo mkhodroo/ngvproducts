@@ -22,7 +22,8 @@
     <link href="{{ url('public/store/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/store/assets/plugins/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ url('public/dashboard/assets/node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('public/dashboard/assets/css/bootstrap-theme.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/store/assets/css/bootstrap-theme.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public/store/assets/css/custom-css.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('public/store/assets/css/rtl.css') }}" rel="stylesheet" type="text/css" />
 
 
