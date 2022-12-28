@@ -4,6 +4,7 @@ use App\Events\SendSms;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Jobs\CreatePDFJob;
+use App\Models\Product;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+Route::get('test/', function(){
+    return Product::find(2)->min_price();
+});
 
 Route::get('event', function(){
     event(new SendSms("09376922176", "salam"));

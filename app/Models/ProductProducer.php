@@ -14,7 +14,7 @@ class ProductProducer extends Model
 
     public function price()
     {
-        return ProductPrice::where('product_producer_id', $this->id)->latest()->first();
+        return ProductPrice::where('product_producer_id', $this->id)->whereNotNull('price')->latest()->first();
     }
 
     public function product()

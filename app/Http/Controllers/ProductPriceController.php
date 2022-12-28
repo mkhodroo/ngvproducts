@@ -20,6 +20,9 @@ class ProductPriceController extends Controller
 
     public function add_with_request(Request $r)
     {
+        if(!$r->price){
+            return ProductPrice::where('product_producer_id', $r->product_producer_id)->first();
+        }
         $pp =ProductPrice::create($r->all());
         $pp->product_id = ProductProducer::find($r->product_producer_id)->product_id;
         $pp->save();
