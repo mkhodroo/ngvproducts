@@ -11,43 +11,6 @@
     font-weight: bold;
 }
 
-.sigle-product{
-    width: 300px !important;
-    height: 500px;
-}
-
-.sigle-product-content{
-    height: 400px;
-}
-
-.sigle-product-content .caption .caption-title{
-    height: 50px;
-    color: white;
-}
-
-.hide-scroll {
-    background-color: rgb(242, 73, 73) !important;
-    border: solid 2px rgb(242, 73, 73) !important;
-    height: 500px;
-    overflow-y: scroll; /* Add the ability to scroll */
-  }
-  
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .hide-scroll::-webkit-scrollbar {
-      display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .hide-scroll {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-
-.row table{
-    position: relative;
-    height: 100%;
-}
-
 .label,sub,sup{
    vertical-align:baseline
 }
