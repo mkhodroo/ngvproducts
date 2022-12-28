@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 
 class ProductProducerController extends Controller
 {
-    public function add($p_id, $name)
+    public function add($p_id, $name, $seller_name = null)
     {
+        if(!$seller_name){
+            $seller_name = $name;
+        }
         $product_producer = ProductProducer::create([
             'product_id' => $p_id,
-            'name' => $name
+            'name' => $name,
+            'seller_name' => $seller_name
         ]);
         return $product_producer;
     }
@@ -23,7 +27,7 @@ class ProductProducerController extends Controller
         for($i=0; $i >= 0; $i++){
             $input_id = "list-id_$i";
             $input_name = "list-name_$i";
-            $input_price = "list-price_$i";
+            $input_seller_name = "list-seller-name_$i";
 
             if( $r->get($input_name) == null ){
                 break;
@@ -32,13 +36,13 @@ class ProductProducerController extends Controller
             if($r->$input_id !== null){
                 $producer = $this->get($r->$input_id);
                 $producer->update([
-                    'name' => $r->$input_name
+                    'name' => $r->$input_name,
+                    'seller_name' => $r->$input_seller_name
                 ]);
-                
             }else{
-                $producer = $this->add($r->product_id, $r->$input_name);
+                $producer = $this->add($r->product_id, $r->$input_name, $r->$input_seller_name);
             }
-            $price->add($r->product_id, $r->$input_price, $producer->id);
+            // $price->add($r->product_id, $r->$input_price, $producer->id);
         }
         return response('قیمت برای تولیدکنندگان ذخیره شد');
     }

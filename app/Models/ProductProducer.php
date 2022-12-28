@@ -9,13 +9,12 @@ class ProductProducer extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'product_id', 'name'
+        'product_id', 'name', 'seller_name'
     ];
 
     public function price()
     {
-        return ProductPrice::where('product_id', $this->product_id)
-            ->where('product_producer_id', $this->id)->latest()->first();
+        return ProductPrice::where('product_producer_id', $this->id)->latest()->first();
     }
 
     public function product()

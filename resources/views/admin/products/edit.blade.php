@@ -1,3 +1,4 @@
+@include('admin.products.edit-price')
 
 
 <div class="modal fade bs-example-modal-lg" id="edit-product-modal" tabindex="-1" role="dialog"
@@ -34,7 +35,12 @@
                                 <div id="producer-info">
                                     <table id="list" class="table">
                                         <thead>
-                                          <tr><th>تولید کننده</th><th>قیمت محصول</th><th></th></tr>
+                                          <tr>
+                                            <th>تولید کننده</th>
+                                            <th> فروشنده</th>
+                                            <th>قیمت</th>
+                                            <th></th>
+                                        </tr>
                                         </thead>
                                         <tbody id="producer-info-tbody">
                                           <tr class="list_var">
@@ -42,7 +48,8 @@
                                                 <input type="hidden" name="list-id_0" id="list-id_0">
                                                 <input type="text" name="list-name_0" id="list-name_0">
                                             </td>
-                                            <td><input type="text" name="list-price_0" id="list-price_0"></td>
+                                            <td><input type="text" name="list-seller-name_0" id="list-seller-name_0"></td>
+                                            <td><button class="btn btn-info" name="list-price_0" id="list-price_0"></button></td>
                                             <td class="del-area"><button class="list_del">Delete</button></td>
                                           </tr>
                                         </tbody>
@@ -51,6 +58,8 @@
                                                 <td>
                                                     <input type="button" value="Add" class="list_add btn btn-warning">
                                                 </td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -118,7 +127,9 @@
                 $('.list_add').click();
                 $('#list-id_' + i).val(item.id);
                 $('#list-name_' + i).val(item.name);
-                $('#list-price_' + i).val(item.price.price);
+                $('#list-seller-name_' + i).val(item.seller_name);
+                $('#list-price_' + i).attr("onclick", `open_price_modal(${item.id})`);
+                $('#list-price_' + i).html(`لیست قیمت برای ${item.seller_name}`);
                 i++;
             })
 
@@ -232,6 +243,7 @@
             }
         })
     }
+
 
     $('#list').addInputArea({
         area_del: '.del-area'
