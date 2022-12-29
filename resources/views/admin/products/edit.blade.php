@@ -32,7 +32,7 @@
                         <div id="producer" class="tab-pane fade">
                             <form action="javascript:void(0)" class="" id="producer-info-form" >
                                 @csrf
-                                <div id="producer-info">
+                                <div id="producer-info table-responsive">
                                     <table id="list" class="table">
                                         <thead>
                                           <tr>
