@@ -33,7 +33,7 @@
                             <form action="javascript:void(0)" class="" id="producer-info-form" >
                                 @csrf
                                 <div id="producer-info table-responsive">
-                                    <table id="list" class="table">
+                                    <table class="table table-responsive" id="list" class="table">
                                         <thead>
                                           <tr>
                                             <th>تولید کننده</th>
