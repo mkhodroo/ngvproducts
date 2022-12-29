@@ -9,11 +9,12 @@
             <div class="modal-body">
                 <form action="javascript:void(0)" class="" id="add-address-form">
                     @csrf
-                    <select name="city" id="city" class="select2" style="width: 100%">
+                    <select name="city" id="city" class="select2" id="select2insidemodal" style="width: 100%; z-index:1075">
                         @foreach ($cities as $item)
                             <option value="{{ $item->id }}">استان: {{ $item->province }} - شهرستان: {{ $item->city }}</option>
                         @endforeach
                     </select>
+                    آدرس کامل: 
                     <textarea name="address" id="address" class="form-control col-sm-12" placeholder="جزئیات آدرس.." rows="10"></textarea>
                 </form>
                 <button class="btn btn-success" onclick="add_address()">افزودن</button>
@@ -55,5 +56,11 @@
             }
         })
     }
+
+    $(document).ready(function() {
+        $("#select2insidemodal").select2({
+            dropdownParent: $("#add-address-modal")
+        });
+    });
 
 </script>
