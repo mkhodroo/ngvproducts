@@ -38,10 +38,21 @@
   color: white;
 }
 
-.hide-scroll {
+.border-radius{
+  border-radius: 15px;
+}
+
+.red-back{
   background-color: rgb(242, 73, 73) !important;
   border: solid 2px rgb(242, 73, 73) !important;
-  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+.white-color{
+  color: white;
+}
+
+.hide-scroll {
+  overflow-y: hidden; /* Add the ability to scroll */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -62,4 +73,37 @@
 
 .table-responsive{
   margin: 0px !important;
+}
+
+.h-scroll{
+  height: 460px !important;
+}
+
+.h-scroll table{
+  height: 460px !important;
+}
+
+.h-scroll table tbody tr td{
+  height: 46px !important;
+}
+
+.margin-tb-10{
+  margin: 10px 0 10px 0 !important;
+}
+
+.catagories-table tbody tr td{
+  height: 250px;
+}
+
+.catagories{
+  height: 250px;
+  background: #058eb0;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.width-200{
+  width: 200px !important;
 }

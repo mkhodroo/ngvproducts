@@ -21,39 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('test/', function(){
-    $data = array(
-        'organization' => 'irngv',
-        'username' => 'irngv',
-        'password' => 'irngv123',
-        'method' => 'send',
-        'messages' => array([
-            'sender' => '9820003807',
-            'recipient' => '09376922176',
-            'body' => 'test',
-            'customerId' => 1,
-        ]
-        )
-    );
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://new.payamsms.com/services/rest/index.php');
-    # Setup request to send json via GET.
-    $payload = json_encode($data);
-    
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, False);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, False);
-
-    # Return response instead of printing.
-    # Send request.
-    $er = curl_error($ch);
-    var_dump($er);
-    $result = curl_exec($ch);
-    curl_close($ch);
-});
-
 Route::get('event', function(){
     event(new SendSms("09376922176", "salam"));
 });

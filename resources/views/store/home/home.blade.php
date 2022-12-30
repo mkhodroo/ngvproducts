@@ -33,9 +33,8 @@
 
     <section class="page-section">
         <div class="container">
-
-            <div class="container-fluid h-scroll" id="tab-1">
-                <div class="row h-scroll table-responsive hide-scroll" id="newest-products">
+            <div class="container-fluid h-scroll  margin-tb-10" id="tab-1">
+                <div class="row h-scroll table-responsive hide-scroll red-back border-radius" id="newest-products">
                     <table>
                         <tr>
                             <td style="text-align: center">
@@ -53,43 +52,37 @@
                     
                 </div>
             </div>
+        </div>
 
+        <div class="row catagories table-responsive hide-scroll border-radius" id="newest-products">
+            <table class="catagories-table">
+                <tr>
+                    <td style="text-align: center">
+                        <h2 style="width: 200px; color: white" class=" yekan-titr">دسته بندی ها</h2>
+                    </td>
+                    <td class="text-center width-200">
+                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'مخزن']) }}">
+                            <img class="width-200" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold" class="white-color">مخازن CNG</h4>
+                        </a>
+                    </td>
+                    <td class="text-center width-200">
+                        <img class="width-200" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold" class="white-color">رگولاتورهای CNG</h4>
+                    </td>
+                    <td class="text-center width-200">
+                        <img class="width-200" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
+                        <h4 style="font-weight: bold" class="white-color">شیرمخزن CNG</h4>
+                    </td>
+                    <td class="text-center width-200">
+                        <img class="width-200" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole">
+                        <h4 style="font-weight: bold" class="white-color">شیرقطع کن های CNG</h4>
+                    </td>
+                </tr>
+            </table>
+            
         </div>
-        <div class="container">
-            <div class="tabs">
-                <ul id="tabs" class="nav nav-justified-off"><!--
-                    --><li class=""><a href="#tab-1" data-toggle="tab" style="font-weight: bold"> دسته بندی ها</a></li>
-                </ul>
-            </div>
-            <div class="container-fluid h-scroll" id="tab-1">
-                <div class="row" id="">
-                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'مخزن']) }}">
-                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                            <img class="" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
-                            <h4 style="font-weight: bold">مخازن CNG</h4>
-                        </div>
-                    </a>
-                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'رگلاتور']) }}">
-                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                            <img class="" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
-                            <h4 style="font-weight: bold">رگولاتورهای CNG</h4>
-                        </div>
-                    </a>
-                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'شیرمخزن']) }}">
-                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                            <img class="" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
-                            <h4 style="font-weight: bold">شیرمخزن CNG</h4>
-                        </div>
-                    </a>
-                    <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'شیرقطع کن']) }}">
-                        <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                            <img class="" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole" style="width: 100%">
-                            <h4 style="font-weight: bold">شیرقطع کن های CNG</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+
         <div class="container">
             <div class="tabs">
                 <ul id="tabs" class="nav nav-justified-off"><!--
