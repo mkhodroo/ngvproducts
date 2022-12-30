@@ -67,48 +67,63 @@
                         </a>
                     </td>
                     <td class="text-center width-200">
-                        <img class="width-200" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold" class="white-color">رگولاتورهای CNG</h4>
+                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'رگلاتور']) }}">
+                            <img class="width-200" src="{{ url('public/store/assets/img/cng-regolator.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold" class="white-color">رگولاتورهای CNG</h4>
+                        </a>
                     </td>
                     <td class="text-center width-200">
-                        <img class="width-200" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold" class="white-color">شیرمخزن CNG</h4>
+                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'شیرمخزن']) }}">
+                            <img class="width-200" src="{{ url('public/store/assets/img/cng-valve.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold" class="white-color">شیرمخزن CNG</h4>
+                        </a>
                     </td>
                     <td class="text-center width-200">
-                        <img class="width-200" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole">
-                        <h4 style="font-weight: bold" class="white-color">شیرقطع کن های CNG</h4>
+                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'شیرقطع کن']) }}">
+                            <img class="width-200" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole">
+                            <h4 style="font-weight: bold" class="white-color">شیرقطع کن های CNG</h4>
+                        </a>
                     </td>
                 </tr>
             </table>
             
         </div>
 
-        <div class="container">
-            <div class="tabs">
-                <ul id="tabs" class="nav nav-justified-off"><!--
-                    --><li class=""><a href="#tab-1" data-toggle="tab" style="font-weight: bold">برندهای فعال </a></li>
-                </ul>
-            </div>
-            <div class="container-fluid h-scroll" id="tab-1">
-                <div class="row" id="" >
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/bsi.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">بهینه صنعت اصفهان</h4>
-                    </div>
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/asianama.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">آسیاناما</h4>
-                    </div>
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/shahab.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">شهاب گازسوز</h4>
-                    </div>
-                    <div class="col-sm-2 col-xs-3 img-circle" style="text-align: center">
-                        <img class="" src="{{ url('public/store/assets/img/electrofan.png') }}" alt="capsole" style="width: 100%">
-                        <h4 style="font-weight: bold">الکتروفن</h4>
-                    </div>
-                </div>
-            </div>
+        <div class="row brands table-responsive hide-scroll border-radius margin-tb-10" id="newest-products">
+            <table class="brands-table">
+                <tr>
+                    <td colspan="4" class="text-center" style="height: 50px">
+                        <h2 class="white-color yekan-titr">برندهای فعال در ngvkala</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center width-200">
+                        <div class="col-sm-12 width-200 ">
+                            <img class="white-back circle" src="{{ url('public/store/assets/img/bsi.png') }}" alt="capsole" class="width-200">
+                            <h4 style="font-weight: bold" class="white-color">بهینه صنعت اصفهان</h4>
+                        </div>
+                    </td>
+                    <td class="text-center width-200">
+                        <div class="col-sm-12 width-200">
+                            <img class="white-back circle" src="{{ url('public/store/assets/img/asianama.png') }}" alt="capsole" class="width-200">
+                            <h4 style="font-weight: bold" class="white-color">آسیاناما</h4>
+                        </div>
+                    </td>
+                    <td class="text-center width-200">
+                        <div class="col-sm-12 width-200">
+                            <img class="white-back circle" src="{{ url('public/store/assets/img/electrofan.png') }}" alt="capsole" class="width-200">
+                            <h4 style="font-weight: bold" class="white-color">الکتروفن</h4>
+                        </div>
+                    </td>
+                    <td class="text-center width-200">
+                        <div class="col-sm-12 width-200">
+                            <img class="white-back circle" src="{{ url('public/store/assets/img/shahab.png') }}" alt="capsole" class="width-200">
+                            <h4 style="font-weight: bold" class="white-color">شهاب گازسوز</h4>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
         </div>
     </section>
     <!-- /PAGE -->

@@ -47,6 +47,10 @@
   border: solid 2px rgb(242, 73, 73) !important;
 }
 
+.white-back{
+  background: #fdfdfd;
+}
+
 .white-color{
   color: white;
 }
@@ -106,4 +110,21 @@
 
 .width-200{
   width: 200px !important;
+}
+
+.brands-table tbody tr td{
+  height: 350px;
+}
+
+.brands-table tbody tr td div{
+  margin: 10px !important;
+}
+
+.brands{
+  height: 450px;
+  background: #058eb0;
+}
+
+.circle{
+  border-radius: 50%;
 }
