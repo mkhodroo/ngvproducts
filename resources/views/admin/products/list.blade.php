@@ -13,6 +13,7 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Image</th>
                     <th>Name</th>
                     <th>Inventory</th>
                     <th>Updated At</th>
@@ -37,6 +38,11 @@
             },
             columns: [
                 { data: 'id' },
+                { data: 'image', 
+                    render: function(data){
+                        return `<img src="${data}" width="150">`;
+                    } 
+                },
                 { data: 'name' },
                 { data: 'inventory' },
                 { data: 'updated_at' },
