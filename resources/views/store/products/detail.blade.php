@@ -13,9 +13,9 @@
             <h3>{{ $product->name }}</h3>
             <h5>{{ $product->catagory()?->name }}</h5>
             سازنده: 
-            <select name="producer" id="producer" class="col-sm-6 select2">
+            <select name="producer" id="producer" class="col-sm-8 select2">
                 @foreach ($product->producers() as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    <option value="{{ $item->id }}">تولیدکننده: {{ $item->name }} - فروشنده: {{ $item->seller_name }}</option>
                 @endforeach
             </select>
         </div>
@@ -42,8 +42,16 @@
                 cart_details.html('');
                 cart_details.append(`
                 <div class="price">
-                    قیمت: <ins>${data.price.price}<span style="color: black">تومان</span></ins>
+                    قیمت: <ins>${data.price.price}<span style="color: black">تومان</span></ins><hr>
                 </div>`);
+                data.features.forEach(function(item){
+                    cart_details.append(`
+                    <div class="features">
+                        ${item.key}: ${item.value}
+                    </div>
+                    `);
+                })
+                
 
                 cart_details.append(`
                 <div class="buttons">

@@ -55,6 +55,7 @@ Route::get('create-pdf', function(){
 Route::prefix('/admin')->middleware(['access'])->group(function(){
     require __DIR__.'/admin-products.php';
     require __DIR__.'/admin-producer-prices.php';
+    require __DIR__.'/admin-producer-features.php';
     require __DIR__.'/inventory.php';
     require __DIR__.'/store.php';
     require __DIR__.'/orders.php';

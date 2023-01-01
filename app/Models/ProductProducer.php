@@ -21,4 +21,9 @@ class ProductProducer extends Model
     {
         return Product::find($this->product_id);
     }
+
+    public function features()
+    {
+        return ProducerFeature::where('producer_id', $this->id)->get();
+    }
 }

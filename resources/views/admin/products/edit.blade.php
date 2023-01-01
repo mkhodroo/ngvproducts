@@ -1,4 +1,5 @@
 @include('admin.products.edit-price')
+@include('admin.products.edit-feature')
 
 
 <div class="modal fade bs-example-modal-lg" id="edit-product-modal" tabindex="-1" role="dialog"
@@ -38,6 +39,7 @@
                                           <tr>
                                             <th>تولید کننده</th>
                                             <th> فروشنده</th>
+                                            <th>ویژگی</th>
                                             <th>قیمت</th>
                                             <th></th>
                                         </tr>
@@ -49,6 +51,7 @@
                                                 <input type="text" name="list-name_0" id="list-name_0">
                                             </td>
                                             <td><input type="text" name="list-seller-name_0" id="list-seller-name_0"></td>
+                                            <td><button class="btn btn-success" name="list-feature_0" id="list-feature_0"></button></td>
                                             <td><button class="btn btn-info" name="list-price_0" id="list-price_0"></button></td>
                                             <td class="del-area"><button class="list_del">Delete</button></td>
                                           </tr>
@@ -128,6 +131,9 @@
                 $('#list-id_' + i).val(item.id);
                 $('#list-name_' + i).val(item.name);
                 $('#list-seller-name_' + i).val(item.seller_name);
+                $('#list-price_' + i).attr("onclick", `open_price_modal(${item.id})`);
+                $('#list-feature_' + i).attr("onclick", `open_feature_modal(${item.id})`);
+                $('#list-feature_' + i).html(`لیست ویژگی برای ${item.seller_name}`);
                 $('#list-price_' + i).attr("onclick", `open_price_modal(${item.id})`);
                 $('#list-price_' + i).html(`لیست قیمت برای ${item.seller_name}`);
                 i++;

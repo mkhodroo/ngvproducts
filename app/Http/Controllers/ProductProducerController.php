@@ -57,6 +57,7 @@ class ProductProducerController extends Controller
     {
         $pp = ProductProducer::find($id);
         $pp->price = $pp->price();
+        $pp->features = $pp->features();
         return $pp;
     }
 
