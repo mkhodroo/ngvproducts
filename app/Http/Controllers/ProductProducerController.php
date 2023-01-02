@@ -71,4 +71,20 @@ class ProductProducerController extends Controller
     {
         
     }
+
+    public function show_list()
+    {
+        return view('admin.price.list');
+    }
+
+    public function get_prices_data()
+    {
+        return [
+            'data' => ProductProducer::get()->each(function($c){
+                $c->product = $c->product();
+                $c->price = $c->price();
+                $c->producer_seller = $c->name . "-" . $c->seller_name;
+            })
+        ];
+    }
 }
