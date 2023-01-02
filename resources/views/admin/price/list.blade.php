@@ -28,7 +28,7 @@
         </table>
     </div>
 
-    @include('admin.methods.add')
+    @include('admin.price.add')
 @endsection
 
 @section('script')
@@ -96,27 +96,5 @@
             ],
             "displayLength": 25,
         });
-
-        function open_add_modal() {
-            $('#add-method-modal').modal('show');
-        }
-
-        function add_method() {
-            
-            $.ajax({
-                url: `{{ route('add-method') }}`,
-                data: $('#add-method-form').serialize(),
-                processData: false,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                method: 'post',
-                success: function(data) {
-                    console.log(data);
-                    alert_notification('محصول اضافه شد');
-                    $('#add-method-modal').modal('hide');
-                }
-            })
-        }
     </script>
 @endsection

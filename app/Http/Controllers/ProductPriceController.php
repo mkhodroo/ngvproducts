@@ -33,4 +33,15 @@ class ProductPriceController extends Controller
     {
         return ProductPrice::producer_prices($producer_id);
     }
+
+    public function add_with_file(Request $r)
+    {
+        $file = $r->file('file');
+        $product_image_path = public_path('products/prices');
+        $file->move($product_image_path,'prices.xlsx');
+
+
+
+        return response('asd');
+    }
 }
