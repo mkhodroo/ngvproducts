@@ -48,7 +48,9 @@
                                         <tbody id="producer-info-tbody">
                                           <tr class="list_var">
                                             <td>
-                                                <input type="hidden" name="list-id_0" id="list-id_0">
+                                                <input type="text" name="list-id_0" id="list-id_0" readonly>
+                                            </td>
+                                            <td>
                                                 <input type="text" name="list-name_0" id="list-name_0">
                                             </td>
                                             <td><input type="text" name="list-seller-name_0" id="list-seller-name_0"></td>
