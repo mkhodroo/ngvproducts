@@ -37,6 +37,7 @@
                                     <table class="table table-responsive" id="list" class="table">
                                         <thead>
                                           <tr>
+                                            <th>شناسه</th>
                                             <th>تولید کننده</th>
                                             <th> فروشنده</th>
                                             <th>ویژگی</th>
