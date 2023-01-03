@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\SimpleXLSX;
 use App\Models\ProductPrice;
 use App\Models\ProductProducer;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProductPriceController extends Controller
 {
@@ -37,11 +40,31 @@ class ProductPriceController extends Controller
     public function add_with_file(Request $r)
     {
         $file = $r->file('file');
-        $product_image_path = public_path('products/prices');
-        $file->move($product_image_path,'prices.xlsx');
+        $file_path = public_path('products/prices');
+        $file->move($file_path,'prices.xlsx');
 
+        $xlsx = SimpleXLSX::parse("$file_path/prices.xlsx");
+        $i=1;
+        $er = "";
+        foreach($xlsx->rows() as $row){
+            if($i !=1){
+                try{
+                    ProductPrice::create([
+                        'product_producer_id' => $row[2],
+                        'price' => $row[4],
+                        'agency_price' => $row[5],
+                        'min_agency_number' => $row[6],
+                        'wholesaler_price' => $row[7],
+                        'min_wholesaler_number' => $row[8]
+                    ]);
+                }
+                catch(Exception $e){
+                    $er .= "row #$i: $e->getMessage()";
+                }
+            }
+            $i++;
+        }
 
-
-        return response('asd');
+        return response($er);
     }
 }

@@ -58,9 +58,8 @@
         },
         success: function(file, response) 
         {
+            console.log(response);
             alert_notification(response);
-            var product_id = $('input[name="product_id"]').val();
-            get_info(product_id);
         },
         error: function(file, response)
         {
