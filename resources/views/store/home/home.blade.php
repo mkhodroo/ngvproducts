@@ -61,7 +61,7 @@
                         <h2 style="width: 200px; color: white" class=" yekan-titr">دسته بندی ها</h2>
                     </td>
                     <td class="text-center width-200">
-                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'ایسیوهای نسل دو']) }}">
+                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'ایسیو های نسل دو']) }}">
                             <img class="width-200" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
                             <h4 style="font-weight: bold" class="white-color">ایسیوهای نسل دو</h4>
                         </a>
