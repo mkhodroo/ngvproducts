@@ -385,6 +385,7 @@
     }
 
     function add_to_cart(product_producer_id){
+        show_loading();
         fd = { 'pp_id': product_producer_id };
         $.ajax({
             url: `{{ route('add-to-cart') }}`,
@@ -395,12 +396,15 @@
             },
             method: 'get',
             success: function(data){
+                hide_loading();
                 console.log(data);
                 alert_notification("محصول به سبد خرید اضافه شد");
                 update_user_cart_item();
                 update_total_cart_price();
+                
             },
             error: function (data) {
+                hide_loading();
                 console.log(data);
                 error_notification(data.responseText);
             }

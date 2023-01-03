@@ -93,6 +93,7 @@
 
     <script>
         function pay(){
+            show_loading();
             var fd = new FormData();
             fd.append('address',$('input[name="address"]:checked').val());
             fd.append('how_to_send',$('input[name="how_to_send"]:checked').val());
@@ -110,12 +111,14 @@
                 success: function (data) {
                     console.log(data);
                     alert_notification(data);
-                    window.location = '{{ route("my-orders") }}'
+                    window.location = '{{ route("my-orders") }}';
+                    hide_loading();
                 }
             })
         }
 
         function delete_item_from_cart(cart_id){
+            show_loading();
             var fd = new FormData();
             fd.append('id', cart_id);
             $.ajax({
@@ -130,7 +133,7 @@
                 success: function(data){
                     console.log(data);
                     alert_notification('کالای موردنظر از سبد خرید حذف شد.')
-                    location.reload()
+                    location.reload();
                 }
             })
         }
