@@ -50,6 +50,7 @@ class ProductPriceController extends Controller
             if($i !=1){
                 try{
                     ProductPrice::create([
+                        'product_id' => $row[0],
                         'product_producer_id' => $row[2],
                         'price' => $row[4],
                         'agency_price' => $row[5],
