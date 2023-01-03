@@ -61,6 +61,12 @@
                         <h2 style="width: 200px; color: white" class=" yekan-titr">دسته بندی ها</h2>
                     </td>
                     <td class="text-center width-200">
+                        <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'ایسیوهای نسل دو']) }}">
+                            <img class="width-200" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
+                            <h4 style="font-weight: bold" class="white-color">ایسیوهای نسل دو</h4>
+                        </a>
+                    </td>
+                    <td class="text-center width-200">
                         <a href="{{ route('show-catagory-by-part-of-name', ['name' => 'مخزن']) }}">
                             <img class="width-200" src="{{ url('public/store/assets/img/capsole.png') }}" alt="capsole" style="width: 100%">
                             <h4 style="font-weight: bold" class="white-color">مخازن CNG</h4>
@@ -83,43 +89,6 @@
                             <img class="width-200" src="{{ url('public/store/assets/img/cng-cutoff-valve.png') }}" alt="capsole">
                             <h4 style="font-weight: bold" class="white-color">شیرقطع کن های CNG</h4>
                         </a>
-                    </td>
-                </tr>
-            </table>
-            
-        </div>
-
-        <div class="row brands table-responsive hide-scroll border-radius margin-tb-10" id="newest-products">
-            <table class="brands-table">
-                <tr>
-                    <td colspan="4" class="text-center" style="height: 50px">
-                        <h2 class="white-color yekan-titr">برندهای فعال در ngvkala</h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center width-200">
-                        <div class="col-sm-12 width-200 ">
-                            <img class="white-back circle" src="{{ url('public/store/assets/img/bsi.png') }}" alt="capsole" class="width-200">
-                            <h4 style="font-weight: bold" class="white-color">بهینه صنعت اصفهان</h4>
-                        </div>
-                    </td>
-                    <td class="text-center width-200">
-                        <div class="col-sm-12 width-200">
-                            <img class="white-back circle" src="{{ url('public/store/assets/img/asianama.png') }}" alt="capsole" class="width-200">
-                            <h4 style="font-weight: bold" class="white-color">آسیاناما</h4>
-                        </div>
-                    </td>
-                    <td class="text-center width-200">
-                        <div class="col-sm-12 width-200">
-                            <img class="white-back circle" src="{{ url('public/store/assets/img/electrofan.png') }}" alt="capsole" class="width-200">
-                            <h4 style="font-weight: bold" class="white-color">الکتروفن</h4>
-                        </div>
-                    </td>
-                    <td class="text-center width-200">
-                        <div class="col-sm-12 width-200">
-                            <img class="white-back circle" src="{{ url('public/store/assets/img/shahab.png') }}" alt="capsole" class="width-200">
-                            <h4 style="font-weight: bold" class="white-color">شهاب گازسوز</h4>
-                        </div>
                     </td>
                 </tr>
             </table>

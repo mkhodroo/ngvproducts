@@ -15,6 +15,7 @@
                     <th>Id</th>
                     <th>Image</th>
                     <th>Name</th>
+                    <th>Price</th>
                     <th>Inventory</th>
                     <th>Updated At</th>
                     <th>Created At</th>
@@ -44,6 +45,7 @@
                     } 
                 },
                 { data: 'name' },
+                { data: 'price' },
                 { data: 'inventory' },
                 { data: 'updated_at' },
                 { data: 'created_at' }
