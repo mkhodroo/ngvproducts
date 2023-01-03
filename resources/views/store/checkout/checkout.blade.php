@@ -75,7 +75,7 @@
             <fieldset style="background: lightblue; margin: 10px; padding: 5px">
                 <legend style="background: rgb(0, 177, 106)">نحوه پرداخت</legend>
                 <div class="col-sm-12">
-                    <input type="radio" name="payment_status" id="online" value="online">پرداخت آنلاین
+                    <input type="radio" name="payment_status" id="online" value="online" disabled>پرداخت آنلاین
                 </div>
                 <div class="col-sm-12">
                     <input type="radio" name="payment_status" id="offline" value="offline">پرداخت حضوری
@@ -110,6 +110,7 @@
                 success: function (data) {
                     console.log(data);
                     alert_notification(data);
+                    window.location = '{{ route("my-orders") }}'
                 }
             })
         }
