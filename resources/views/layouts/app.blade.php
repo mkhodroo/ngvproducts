@@ -50,7 +50,7 @@
             <div class="rect4"></div>
             <div class="rect5"></div>
         </div>
-        <div id="preloader-title">Loading</div>
+        <div id="preloader-title">منتظر بمانید</div>
     </div>
 </div>
 <!-- /PRELOADER -->
@@ -405,6 +405,14 @@
                 error_notification(data.responseText);
             }
         })
+    }
+
+    function show_loading(){
+        $('#preloader').show();
+    }
+
+    function hide_loading(){
+        $('#preloader').hide();
     }
 </script>
 
