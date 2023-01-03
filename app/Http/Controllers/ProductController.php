@@ -120,7 +120,7 @@ class ProductController extends Controller
         $c = (new ProductCatagoryController())->get_by_part_of_name($name);
         return view('store.catagories.list')->with([
             'catagory' => $name,
-            'products' => Product::whereIn('product_catagory_id', $c)->get(),
+            'products' => Product::whereIn('product_catagory_id', $c)->whereNotNull('product_catagory_id')->get(),
         ]);
     }
 
