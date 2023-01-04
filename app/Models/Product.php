@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\ProductPriceController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class Product extends Model
 {
@@ -15,7 +17,11 @@ class Product extends Model
 
     public function price()
     {
-        return ProductPrice::where('product_id', $this->id)->whereNotNull('price')->latest()->first();
+        $price = ProductPrice::where('product_id', $this->id)->whereNotNull('price')->latest()->first();
+        $price->price = ProductPriceController::cal_price($price->price);
+        $price->agency_price = ProductPriceController::cal_price($price->agency_price);
+        $price->wholesaler_price = ProductPriceController::cal_price($price->wholesaler_price);
+        return $price;
     }
 
     public function min_price()
@@ -26,9 +32,21 @@ class Product extends Model
         ->where('product_id', $this->id)
         ->orderBy('id', 'desc')->get()->each(function($c){
             $c->price = ProductPrice::find($c->id);
+            
         });
 
-        return collect($rows)->sortBy('price.price')->first()?->price;
+        $price = collect($rows)->sortBy('price.price')->first()?->price;
+        if($price?->price){
+            $price->price = ProductPriceController::cal_price($price?->price);
+        }
+        if($price?->agency_price){
+            $price->agency_price = ProductPriceController::cal_price($price?->agency_price);
+        }
+        if($price?->wholesaler_price){
+            $price->wholesaler_price = ProductPriceController::cal_price($price?->wholesaler_price);
+        }
+        
+        return $price;
     }
 
     public function images()

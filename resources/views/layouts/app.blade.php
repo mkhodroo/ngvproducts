@@ -418,6 +418,13 @@
     function hide_loading(){
         $('#preloader').hide();
     }
+
+    function scroll_left(element_id){
+        alert_notification(element_id)
+        var leftPos = $(`#${element_id}`).scrollLeft();
+        $(`#${element_id}`).animate({scrollLeft: leftPos - 200}, 800);
+        $(`.scroll-btn`).animate({scrollLeft: leftPos - 200}, 800);
+    }
 </script>
 
 @yield('script')

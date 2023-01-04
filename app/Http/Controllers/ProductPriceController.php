@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\SimpleXLSX;
+use App\Models\PriceParams;
 use App\Models\ProductPrice;
 use App\Models\ProductProducer;
 use Exception;
@@ -67,5 +68,30 @@ class ProductPriceController extends Controller
         }
 
         return response($er);
+    }
+
+    public static function cal_price($price)
+    {
+        // Log::info($price);
+        $price_is_number = true;
+        for ($i = 0; $i < strlen($price); $i++){
+            $char = $price[$i];
+            if (is_numeric($char)) {
+               continue;
+            } else {
+                $price_is_number = false;
+               break;
+            }
+        }
+        
+        if($price_is_number){
+            return $price;
+        }
+
+        foreach(PriceParamsController::get_all() as $param){
+            $price = str_replace($param->key, $param->value, $price);
+        }
+        eval( '$result = (' . $price. ');' );
+        return $result;
     }
 }

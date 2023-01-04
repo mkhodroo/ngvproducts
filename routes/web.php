@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
+
 Route::get('event', function(){
     event(new SendSms("09376922176", "salam"));
 });

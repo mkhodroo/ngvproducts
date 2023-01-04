@@ -54,8 +54,11 @@
             </div>
         </div>
 
-        <div class="row catagories table-responsive hide-scroll border-radius" id="newest-products">
-            <table class="catagories-table">
+        <div class="row catagories table-responsive hide-scroll border-radius" id="catagories">
+            <table class="catagories-table" >
+                {{-- <div class="text-center scroll-btn" style="float: left; position: relative; top:47%; z-index: 200; height:0px">
+                    <button class="btn btn-default" onclick="scroll_left('catagories')" style="position: relative; top: 50%; border-radius: 50%" >></button>
+                </div> --}}
                 <tr>
                     <td style="text-align: center">
                         <h2 style="width: 200px; color: white" class=" yekan-titr">دسته بندی ها</h2>
