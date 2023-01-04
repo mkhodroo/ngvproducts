@@ -114,7 +114,7 @@
                     <h3 style="font-weight: bold">
                         <a href="{{ route('home') }}">
                             <img src="{{ url('public/store/assets/img/logo.png') }}" alt="logo">
-                            NGV<span style="color: black">Products</span>
+                            NGV<span style="color: black">KALA</span>
                         </a>
                     </h3>
                 </div>
