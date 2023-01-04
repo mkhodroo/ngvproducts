@@ -10,8 +10,8 @@
     <meta name="description" content="@yield('description')" / >
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url('public/store/assets/ico/apple-touch-icon-144-precomposed.png') }}">
-    <link rel="shortcut icon" href="{{ url('public/store/assets/ico/favicon.ico') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url('public/store/assets/img/logo-ico.png') }}">
+    <link rel="shortcut icon" href="{{ url('public/store/assets/img/logo-ico.png') }}">
 
     <!-- CSS Global -->
     <link href="{{ url('public/store/assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
