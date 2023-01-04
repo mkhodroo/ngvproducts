@@ -26,7 +26,7 @@
 
 .sigle-product{
   width: 300px !important;
-  height: 500px;
+  height: auto;
 }
 
 .sigle-product-content{
@@ -95,13 +95,17 @@
   margin: 10px 0 10px 0 !important;
 }
 
+.newest-products{
+  height: 430px !important;
+}
+
 .catagories-table tbody tr td{
   height: 250px;
 }
 
 .catagories{
   height: 250px;
-  background: #058eb0;
+  background: #7f8485;
 }
 
 .text-center{
@@ -127,4 +131,20 @@
 
 .circle{
   border-radius: 50%;
+}
+
+.swiper {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: rgb(242, 73, 73) !important;
+  /* height: 300px; */
+}
+
+.swiper-wrapper{
+  padding: 10px;
+}
+
+.swiper-slide{
+  height: auto;
 }

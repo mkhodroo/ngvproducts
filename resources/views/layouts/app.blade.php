@@ -29,11 +29,19 @@
 
     <!-- Theme CSS -->
     <link href="{{ url('public/store/assets/css/theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url('public/store/assets/list-scroller/als_style.css') }}" />
 
     <!-- Head Libs -->
     <script src="{{ url('public/store/assets/plugins/modernizr.custom.js') }}"></script>
 
     <script src="{{ url('public/store/assets/plugins/jquery/jquery-1.11.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('public/store/assets/list-scroller/jquery.als-2.1.min.js') }}" ></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 
     
@@ -425,6 +433,10 @@
         $(`#${element_id}`).animate({scrollLeft: leftPos - 200}, 800);
         $(`.scroll-btn`).animate({scrollLeft: leftPos - 200}, 800);
     }
+    $(document).ready(function(){
+		$("#catagories").als();
+	});
+
 </script>
 
 @yield('script')

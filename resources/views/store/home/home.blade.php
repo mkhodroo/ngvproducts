@@ -32,26 +32,28 @@
     </style>
 
     <section class="page-section">
-        <div class="container">
-            <div class="container-fluid h-scroll  margin-tb-10" id="tab-1">
-                <div class="row h-scroll table-responsive hide-scroll red-back border-radius" id="newest-products">
-                    <table>
-                        <tr>
-                            <td style="text-align: center">
-                                <h2 style="width: 200px; color: white" class=" yekan-titr">جدیدترین ها</h2>
-                            </td>
-                            @foreach ($newest_products as $item)
-                            <td style="width: 500px !important">
-                                @include('store.products.single',[
-                                    'product' => $item
-                                ])
-                            </td>
-                            @endforeach
-                        </tr>
-                    </table>
-                    
-                </div>
+        <div class="swiper newest-products">
+            
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="text-center swiper-slide" >
+                <h2 class="width-200 white-color yekan-titr">جدیدترین ها</h2>
+              </div>
+                @foreach ($newest_products as $item)
+                    <div class="swiper-slide">
+                        @include('store.products.single',[
+                            'product' => $item
+                        ])
+                    </div>
+                @endforeach 
+              ...
             </div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-scrollbar"></div>
         </div>
 
         <div class="row catagories table-responsive hide-scroll border-radius" id="catagories">
@@ -97,6 +99,35 @@
             </table>
             
         </div>
+
+        
+          <script>
+        
+            var w = window.innerWidth;
+            var spv = 3
+            if(w <= 600){
+                spv = 1.5;
+            }
+            if( w >= 600 && w <= 999){
+                spv = 2
+            }
+            if( w >= 999){
+                spv = 5
+            }
+            console.log(spv);
+            var swiper = new Swiper(".swiper", {
+                slidesPerView: spv,
+                spaceBetween: 40,
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+          </script>
     </section>
     <!-- /PAGE -->
 @endsection
