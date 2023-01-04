@@ -57,11 +57,11 @@ class ProductPriceController extends Controller
                     ProductPrice::create([
                         'product_id' => $row[0],
                         'product_producer_id' => $row[2],
-                        'price' => $row[4],
-                        'agency_price' => $row[5],
-                        'min_agency_number' => $row[6],
-                        'wholesaler_price' => $row[7],
-                        'min_wholesaler_number' => $row[8]
+                        'price' => $row[6],
+                        'agency_price' => $row[7],
+                        'min_agency_number' => $row[8],
+                        'wholesaler_price' => $row[9],
+                        'min_wholesaler_number' => $row[10]
                     ]);
                 }
                 catch(Exception $e){
