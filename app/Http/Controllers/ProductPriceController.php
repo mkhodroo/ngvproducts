@@ -9,6 +9,10 @@ use App\Models\ProductProducer;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use ParseError;
+use Throwable;
+
+use function PHPSTORM_META\type;
 
 class ProductPriceController extends Controller
 {
@@ -91,7 +95,13 @@ class ProductPriceController extends Controller
         foreach(PriceParamsController::get_all() as $param){
             $price = str_replace($param->key, $param->value, $price);
         }
-        eval( '$result = (' . $price. ');' );
-        return $result;
+        try{
+            eval( '$result = (' . $price. ');' );
+            return $result;
+        }
+        catch(Throwable $e){
+            return 'پارامتری';
+        }
+        
     }
 }
