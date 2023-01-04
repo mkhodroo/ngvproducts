@@ -97,6 +97,7 @@
 
 .newest-products{
   height: 430px !important;
+  background-color: rgb(255, 192, 0) !important;
 }
 
 .catagories-table tbody tr td{
@@ -105,7 +106,7 @@
 
 .catagories{
   height: 250px;
-  background: #7f8485;
+  background: #737676 !important;
 }
 
 .text-center{
@@ -137,7 +138,7 @@
   width: 100%;
   border-radius: 10px;
   margin: 10px;
-  background-color: rgb(242, 73, 73) !important;
+  background-color: rgb(242, 73, 73);
   /* height: 300px; */
 }
 
