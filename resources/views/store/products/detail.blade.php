@@ -13,7 +13,7 @@
             <div class="col-sm-12" ><h3 style="color: black; font-weight: bold">{{ $product->name }}</h3><hr></div>
             <div class="col-sm-12">
                 دسته بندی: 
-                <h5>{{ $product->catagory()?->name }}</h5>
+                <h5 style="display: inline !important">{{ $product->catagory()?->name }}</h5>
                 <hr>
             </div>
             <div class="col-sm-12" style="color: black">
