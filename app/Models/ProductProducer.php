@@ -17,13 +17,7 @@ class ProductProducer extends Model
     {
         $price = ProductPrice::where('product_producer_id', $this->id)->whereNotNull('price')->latest()->first();
         if($price?->price){
-            $price->price = ProductPriceController::cal_price($price?->price);
-        }
-        if($price?->agency_price){
-            $price->agency_price = ProductPriceController::cal_price($price?->agency_price);
-        }
-        if($price?->wholesaler_price){
-            $price->wholesaler_price = ProductPriceController::cal_price($price?->wholesaler_price);
+            $price = ProductPriceController::cal_price($price);
         }
         return $price;
     }

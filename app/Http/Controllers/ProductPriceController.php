@@ -8,6 +8,7 @@ use App\Models\ProductPrice;
 use App\Models\ProductProducer;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use ParseError;
 use Throwable;
@@ -74,12 +75,23 @@ class ProductPriceController extends Controller
         return response($er);
     }
 
-    public static function cal_price($price)
+    public static function cal_price(ProductPrice $price)
     {
+        if(Auth::user()?->role_id === 2){ // PRICE FOR AGENCIES
+            $price->showing_price = $price?->agency_price;
+            $price->min_number = $price->min_agency_number;
+        }
+        elseif(Auth::user()?->role_id === 3){ // PRICE FOR WHOLESALER
+            $price->showing_price = $price?->wholesaler_price;
+            $price->min_number = $price->min_wholesaler_number;
+        }else{
+            $price->showing_price = $price?->price;
+            $price->min_number = 1;
+        }
         // Log::info($price);
         $price_is_number = true;
-        for ($i = 0; $i < strlen($price); $i++){
-            $char = $price[$i];
+        for ($i = 0; $i < strlen($price->showing_price); $i++){
+            $char = $price->showing_price[$i];
             if (is_numeric($char)) {
                continue;
             } else {
@@ -93,14 +105,17 @@ class ProductPriceController extends Controller
         }
 
         foreach(PriceParamsController::get_all() as $param){
-            $price = str_replace($param->key, $param->value, $price);
+            $price->showing_price = str_replace($param->key, $param->value, $price->showing_price);
         }
         try{
-            eval( '$result = (' . $price. ');' );
-            return $result;
+            eval( '$result = (' . $price->showing_price. ');' );
+            $price->showing_price = $result;
+            return $price;
         }
         catch(Throwable $e){
-            return 'پارامتری';
+            $price->showing_price = "پارامتری";
+            $price->min_number = 0;
+            return $price;
         }
         
     }

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Controllers\ProductPriceController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -32,20 +33,13 @@ class Product extends Model
         ->where('product_id', $this->id)
         ->orderBy('id', 'desc')->get()->each(function($c){
             $c->price = ProductPrice::find($c->id);
-            
         });
 
         $price = collect($rows)->sortBy('price.price')->first()?->price;
         if($price?->price){
-            $price->price = ProductPriceController::cal_price($price?->price);
+            $price = ProductPriceController::cal_price($price);
         }
-        if($price?->agency_price){
-            $price->agency_price = ProductPriceController::cal_price($price?->agency_price);
-        }
-        if($price?->wholesaler_price){
-            $price->wholesaler_price = ProductPriceController::cal_price($price?->wholesaler_price);
-        }
-        
+        Log::info($price);
         return $price;
     }
 

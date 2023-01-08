@@ -42,7 +42,14 @@
                 cart_details.html('');
                 cart_details.append(`
                 <div class="price">
-                    قیمت: <ins>${data.price.price}<span style="color: black">تومان</span></ins><hr>
+                    قیمت: 
+                        ${data.price.showing_price}
+                        <span style="color: black">تومان</span>
+                    <hr>
+                    حداقل تعداد خرید: 
+                        ${data.price.min_number}
+                        <span style="color: black">عدد</span>
+                    <hr>
                 </div>`);
                 data.features.forEach(function(item){
                     cart_details.append(`
