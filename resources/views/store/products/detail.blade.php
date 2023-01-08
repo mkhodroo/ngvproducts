@@ -20,7 +20,7 @@
             </select>
         </div>
 
-        <div class="col-sm-3" id="cart-details" style="background: #e6f7f7; margin: 10px; padding: 10px; text-align: center">
+        <div class="col-sm-3" id="cart-details" style="background: #f4f4f4; margin: 10px; padding: 10px; text-align: center; border-radius: 10px">
             
         </div>
         
@@ -62,7 +62,7 @@
 
                 cart_details.append(`
                 <div class="buttons">
-                    <a class="btn btn-theme btn-theme-transparent btn-icon-left" style="background: #4ed1fc; width: 100%" onclick="add_to_cart(${data.id})"><i class="fa fa-shopping-cart"></i>افزودن به سبد</a>
+                    <a class="btn btn-theme btn-theme-transparent btn-icon-left" style="background: #db3537; width: 100%; border-radius: 10px" onclick="add_to_cart(${data.id})"><i class="fa fa-shopping-cart"></i>افزودن به سبد</a>
                 </div>
                 `);
             })
