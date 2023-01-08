@@ -10,14 +10,21 @@
         </div>
         
         <div class="col-sm-4">
-            <h3>{{ $product->name }}</h3>
-            <h5>{{ $product->catagory()?->name }}</h5>
-            سازنده: 
-            <select name="producer" id="producer" class="col-sm-8 select2">
-                @foreach ($product->producers() as $item)
-                    <option value="{{ $item->id }}">تولیدکننده: {{ $item->name }} - فروشنده: {{ $item->seller_name }}</option>
-                @endforeach
-            </select>
+            <div class="col-sm-12" ><h3 style="color: black; font-weight: bold">{{ $product->name }}</h3><hr></div>
+            <div class="col-sm-12">
+                دسته بندی: 
+                <h5>{{ $product->catagory()?->name }}</h5>
+                <hr>
+            </div>
+            <div class="col-sm-12" style="color: black">
+                سازنده: 
+                <select name="producer" id="producer" class="col-sm-8 select2">
+                    @foreach ($product->producers() as $item)
+                        <option value="{{ $item->id }}">تولیدکننده: {{ $item->name }} - فروشنده: {{ $item->seller_name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            
         </div>
 
         <div class="col-sm-3" id="cart-details" style="background: #f4f4f4; margin: 10px; padding: 10px; text-align: center; border-radius: 10px">
