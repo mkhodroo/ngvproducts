@@ -399,6 +399,16 @@
 		$("#catagories").als();
 	});
 
+    camma_sep();
+    function camma_sep(){
+        var v = $('.camma-value');
+        v.each(function(item){
+            if(parseInt($(this).html())){
+                $(this).html(parseInt($(this).html()).toLocaleString())
+            }
+        })
+    }
+
 </script>
 
 @yield('script')

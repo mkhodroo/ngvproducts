@@ -19,7 +19,7 @@
                     --><span class="star active"></span>
                 </div>
                 <div class="price"><ins>
-                    {{ $product?->min_price()->showing_price ?? '' }} 
+                    <span class="camma-value"> {{ $product?->min_price()->showing_price ?? '' }} </span>
                     <span style="color: black">تومان</span>
                 </ins> <del>{{ $product->old_price ?? '' }}</del></div>
                 <div class="buttons">

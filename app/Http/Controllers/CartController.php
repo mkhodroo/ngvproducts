@@ -48,7 +48,7 @@ class CartController extends Controller
         $total = 0 ;
         $items = $this->get_user_cart_items();
         foreach($items as $item){
-            $total = $total + ($item->price->price * $item->number);
+            $total = $total + ( (int)$item->price->showing_price * $item->price->min_number);
         }
         return $total;
     }

@@ -34,7 +34,7 @@
             data.forEach(function(item){
                 $('#user-cart-items').append(`<div class="media">`);
                 $('#user-cart-items').append(`<a class="pull-left" href="#"><img class="media-object item-image" src="{{ url('public/store/assets/img/preview/shop/order-1s.jpg') }}" alt=""></a>`)
-                $('#user-cart-items').append(`<p class="pull-right item-price">${item.price.price} × ${item.number}</p>`)
+                $('#user-cart-items').append(`<p class="pull-right item-price">${item.price.showing_price} × ${item.price.min_number}</p>`)
                 $('#user-cart-items').append(`
                 <div class="media-body">
                     <h4 class="media-heading item-title"><a href="#">${item.product.name}</a></h4>
@@ -51,7 +51,7 @@
     function update_total_cart_price(){
         $.get(`{{ route('get-total-price') }}`, function(data){
             console.log(data);
-            $('#total-cart-price').html(data)
+            $('#total-cart-price').html(data);
         });
     }
     update_total_cart_price()
