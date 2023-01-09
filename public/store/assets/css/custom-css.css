@@ -163,3 +163,8 @@
   height: 50px;
   color: white;
 }
+
+.newest-posts{
+  height: 430px !important;
+  background-color: white !important;
+}
