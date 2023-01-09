@@ -6,13 +6,13 @@
                     <div id="user-cart-items">
                         
                     </div>
-                    <div class="media">
+                    <div class="">
                         <p class="pull-right item-price" id="total-cart-price"></p>
                         <div class="media-body">
                             <h4 class="media-heading item-title summary">مجموع</h4>
                         </div>
                     </div>
-                    <div class="media">
+                    <div class="">
                         <div class="media-body">
                             <div>
                                 <a href="#" class="btn btn-theme btn-theme-dark" data-dismiss="modal">بستن</a><!--
@@ -32,9 +32,9 @@
         $.get(`{{ route('get-user-cart-items') }}`, function(data){
             // console.log(data);
             data.forEach(function(item){
-                $('#user-cart-items').append(`<div class="media">`);
-                $('#user-cart-items').append(`<a class="pull-left" href="#"><img class="media-object item-image" src="{{ url('public/store/assets/img/preview/shop/order-1s.jpg') }}" alt=""></a>`)
-                $('#user-cart-items').append(`<p class="pull-right item-price">${item.price.showing_price} × ${item.price.min_number}</p>`)
+                $('#user-cart-items').append(`<div class="">`);
+                $('#user-cart-items').append(`<a class="pull-left" href="#"><img class="media-object item-image" src="" alt=""></a>`)
+                $('#user-cart-items').append(`<p class="pull-right item-price">${item.price.showing_price} × ${item.number}</p>`)
                 $('#user-cart-items').append(`
                 <div class="media-body">
                     <h4 class="media-heading item-title"><a href="#">${item.product.name}</a></h4>

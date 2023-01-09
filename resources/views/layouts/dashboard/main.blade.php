@@ -431,6 +431,15 @@
             $('#alert-success').show();
             $('#alert-success').delay(2000).fadeOut('slow');;
         }
+
+        function camma_sep(){
+            var v = $('.camma-value');
+            v.each(function(item){
+                if(parseInt($(this).html())){
+                    $(this).html(parseInt($(this).html()).toLocaleString())
+                }
+            })
+        }
     </script>
     
     @yield('script')

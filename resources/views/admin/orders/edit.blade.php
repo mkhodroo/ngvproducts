@@ -18,7 +18,7 @@
                             <div class="col-sm-12">
                                 <form action="javascript:void(0)" class="" id="edit-form" >
                                     @csrf
-                                    <div id="info">
+                                    <div id="info" class="table-responsive">
                                         <h3>شماره سفارش: <span id="order-code"></span></h3>
                                         <hr>
                                         <div>
@@ -31,6 +31,7 @@
                                                     <th>انبار</th>
                                                     <th>تولید کننده</th>
                                                     <th>تعداد</th>
+                                                    <th>قیمت واحد </th>
                                                     <th>قیمت</th>
                                                 </tr>
                                             </thead>
@@ -77,10 +78,11 @@
                 }
                 tbody.append(`<td>${item.producer_name}</td>`);
                 tbody.append(`<td>${item.number}</td>`);
-                tbody.append(`<td>${item.price * item.number}</td>`);
+                tbody.append(`<td class="camma-value">${item.price}</td>`);
+                tbody.append(`<td class="camma-value">${item.price * item.number}</td>`);
                 tbody.append('</tr>');
             })
-            
+            camma_sep();
         })
     }
 

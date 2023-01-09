@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\ProductProducer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,9 +20,10 @@ class CartController extends Controller
             $user_cart->save();
             return $user_cart;
         }
+        $producer = ProductProducer::find($r->pp_id);
         return Cart::create([
             'product_producer_id' => $r->pp_id,
-            'number' => 1,
+            'number' => $producer->price()->min_number,
             'user_id' => Auth::id(),
         ]);
     }
@@ -39,6 +41,7 @@ class CartController extends Controller
         return Cart::where('user_id', Auth::id())->get()->each(function($c){
             $c->producer = $c->producer();
             $c->product = $c->product();
+            $c->product->image = $c->product->main_image();
             $c->price = $c->producer()->price();
         });
     }
@@ -48,7 +51,7 @@ class CartController extends Controller
         $total = 0 ;
         $items = $this->get_user_cart_items();
         foreach($items as $item){
-            $total = $total + ( (int)$item->price->showing_price * $item->price->min_number);
+            $total = $total + ( (int)$item->price->showing_price * $item->number);
         }
         return $total;
     }

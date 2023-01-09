@@ -81,7 +81,7 @@ class ProductPriceController extends Controller
             $price->showing_price = $price?->agency_price;
             $price->min_number = $price->min_agency_number;
         }
-        elseif(Auth::user()?->role_id === 3){ // PRICE FOR WHOLESALER
+        elseif(Auth::user()?->role_id === 1){ // PRICE FOR WHOLESALER
             $price->showing_price = $price?->wholesaler_price;
             $price->min_number = $price->min_wholesaler_number;
         }else{

@@ -31,7 +31,7 @@ class CheckoutController extends Controller
             $order = Order::create([
                 'order_code' => $order_code,
                 'product_producer_id' => $item->producer()->id,
-                'price' => $item->price()->price,
+                'price' => $item->price()->showing_price,
                 'number' => $item->number,
                 'user_id' => Auth::id(),
                 'how_to_send' => $r->how_to_send,

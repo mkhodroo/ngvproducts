@@ -175,3 +175,7 @@
   height: 430px !important;
   background-color: white !important;
 }
+
+.cart-items-inner > div{
+  padding: 15px;
+}

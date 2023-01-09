@@ -27,8 +27,8 @@
                                     <tr>
                                         <td>{{$item->product->name}}</td>
                                         <td>{{$item->producer->name}}</td>
-                                        <td>{{$item->price->min_number}}</td>
-                                        <td class="camma-value">{{ (int) $item->price->showing_price* $item->price->min_number}}</td>
+                                        <td>{{$item->number}}</td>
+                                        <td class="camma-value">{{ (int) $item->price->showing_price* $item->number}}</td>
                                         <td><i class="fa fa-trash" style="color: red; cursor: pointer" onclick="delete_item_from_cart({{$item->id}})"></i></td>
                                     </tr>
                                 @endforeach
