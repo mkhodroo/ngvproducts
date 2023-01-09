@@ -77,7 +77,7 @@ class ProductPriceController extends Controller
 
     public static function cal_price(ProductPrice $price)
     {
-        Log::info("price: ". $price);
+        // Log::info("price: ". $price);
         if(Auth::user()?->role_id === 2){ // PRICE FOR AGENCIES
             $price->showing_price = $price?->agency_price;
             $price->min_number = $price->min_agency_number;

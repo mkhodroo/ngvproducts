@@ -39,7 +39,6 @@ class Product extends Model
         if($price?->price){
             $price = ProductPriceController::cal_price($price);
         }
-        Log::info($price);
         return $price;
     }
 
