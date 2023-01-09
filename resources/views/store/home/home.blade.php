@@ -102,9 +102,33 @@
             <div class="swiper-scrollbar"></div>
         </div>
 
+        <div class="swiper newest-products">
+            
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="text-center swiper-slide" >
+                    <img class="width-200" src="{{ url('public/store/assets/img/new-products.png') }}" alt="new-products" style="width: 100%; position: relative; top: -50px">
+              </div>
+                @foreach ($newest_posts as $item)
+                    <div class="swiper-slide">
+                        @include('store.posts.single',[
+                            'item' => $item
+                        ])
+                    </div>
+                @endforeach 
+              ...
+            </div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
         
           <script>
-        
+            console.log('{{ $newest_posts }}');
             var w = window.innerWidth;
             var spv = 3
             if(w <= 600){

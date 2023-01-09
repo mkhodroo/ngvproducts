@@ -149,3 +149,17 @@
 .swiper-slide{
   height: auto;
 }
+
+.sigle-post{
+  width: 300px !important;
+  height: auto;
+}
+
+.sigle-post-content{
+  height: 400px;
+}
+
+.sigle-post-content .caption .caption-title{
+  height: 50px;
+  color: white;
+}
