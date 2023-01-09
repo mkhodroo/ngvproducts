@@ -149,7 +149,14 @@
 .swiper-slide{
   height: auto;
 }
-
+.swiper-button-next{
+  border-radius: 50% !important;
+  padding: 30px;
+}
+.swiper-button-prev{
+  border-radius: 50% !important;
+  padding: 30px;
+}
 .sigle-post{
   width: 300px !important;
   height: auto;
