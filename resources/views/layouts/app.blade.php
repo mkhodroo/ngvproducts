@@ -183,13 +183,13 @@
                     <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
                     <ul class="nav sf-menu" >
                         <li class="active">
-                            <a href="{{ route('home') }}">NGVProducts</a>
+                            <a href="{{ route('home') }}">NGVKALA</a>
                         </li>
                         <li class="megamenu"><a href="#">محصولات</a>
                             <ul>
                                 <li class="row" >
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>مخازن</span></h4>
+                                        <h4 class="block-title"><span>مخازن</span></h4><hr>
                                         <ul>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن نوع اول']) }}">نوع اول</a></li>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'مخزن نوع دوم']) }}">نوع دوم</a></li>
@@ -198,63 +198,25 @@
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>رگلاتور</span></h4>
+                                        <h4 class="block-title"><span>رگلاتور</span></h4><hr>
                                         <ul>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'رگلاتور نسل یک']) }}">نسل یک</a></li>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'رگلاتور نسل دو']) }}">نسل دو</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>شیرمخزن</span></h4>
+                                        <h4 class="block-title"><span>شیرمخزن</span></h4><hr>
                                         <ul>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرمخزن مخروطی']) }}">مخروطی</a></li>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرمخزن استوانه']) }}">استوانه</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-2">
-                                        <h4 class="block-title"><span>شیرقطع کن</span></h4>
+                                        <h4 class="block-title"><span>شیرقطع کن</span></h4><hr>
                                         <ul>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرقطع کن دستی']) }}">دستی</a></li>
                                             <li><a href="{{ route('show-catagory-by-name', ['name' => 'شیرقظع کن برقی']) }}">برقی</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="product-list">
-                                            <div class="media">
-                                                <a class="pull-left media-link" href="#">
-                                                    <img class="media-object" src="{{ url('public/store/assets/img/preview/shop/top-sellers-2.jpg') }}" alt="top-sellers">
-                                                    <i class="fa fa-plus"></i>
-                                                </a>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading"><a href="#">Standard Product Header</a></h4>
-                                                    <div class="rating">
-                                                        <span class="star"></span><!--
-                                                        --><span class="star active"></span><!--
-                                                        --><span class="star active"></span><!--
-                                                        --><span class="star active"></span><!--
-                                                        --><span class="star active"></span>
-                                                    </div>
-                                                    <div class="price"><ins>$400.00</ins> <del>$425.00</del></div>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <a class="pull-left media-link" href="#">
-                                                    <img class="media-object" src="{{ url('public/store/assets/img/preview/shop/top-sellers-3.jpg') }}" alt="top-sellers">
-                                                    <i class="fa fa-plus"></i>
-                                                </a>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading"><a href="#">Standard Product Header</a></h4>
-                                                    <div class="rating">
-                                                        <span class="star"></span><!--
-                                                        --><span class="star active"></span><!--
-                                                        --><span class="star active"></span><!--
-                                                        --><span class="star active"></span><!--
-                                                        --><span class="star active"></span>
-                                                    </div>
-                                                    <div class="price"><ins>$400.00</ins> <del>$425.00</del></div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </li>
                             </ul>
