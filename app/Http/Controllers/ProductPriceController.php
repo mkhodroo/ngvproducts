@@ -88,7 +88,7 @@ class ProductPriceController extends Controller
             $price->showing_price = $price?->price;
             $price->min_number = 1;
         }
-        Log::info(Auth::user()?->role_id);
+        Log::info("user role id : ".Auth::user()?->role_id);
         $price_is_number = true;
         for ($i = 0; $i < strlen($price->showing_price); $i++){
             $char = $price->showing_price[$i];
