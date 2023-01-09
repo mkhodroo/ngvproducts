@@ -85,11 +85,10 @@ class ProductPriceController extends Controller
             $price->showing_price = $price?->wholesaler_price;
             $price->min_number = $price->min_wholesaler_number;
         }else{
-            $price->role_id = 1;
             $price->showing_price = $price?->price;
             $price->min_number = 1;
         }
-        // Log::info($price);
+        Log::info(Auth::user()?->role_id);
         $price_is_number = true;
         for ($i = 0; $i < strlen($price->showing_price); $i++){
             $char = $price->showing_price[$i];
