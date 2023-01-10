@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-12" style="color: black">
                 سازنده: 
-                <select name="producer" id="producer" class="col-sm-8 select2">
+                <select name="producer" id="producer" class="col-sm-9 select2">
                     @foreach ($product->producers() as $item)
                         <option value="{{ $item->id }}">تولیدکننده: {{ $item->name }} - فروشنده: {{ $item->seller_name }}</option>
                     @endforeach
