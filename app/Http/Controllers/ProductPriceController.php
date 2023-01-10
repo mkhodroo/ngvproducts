@@ -93,7 +93,7 @@ class ProductPriceController extends Controller
                 $price->showing_price = $price?->agency_price;
                 $price->min_number = $price->min_agency_number;
             }
-            elseif($user->role_id == 1){ // PRICE FOR WHOLESALER
+            elseif($user->role_id == 3){ // PRICE FOR WHOLESALER
                 $price->showing_price = $price?->wholesaler_price;
                 $price->min_number = $price->min_wholesaler_number;
             }
@@ -123,6 +123,7 @@ class ProductPriceController extends Controller
         try{
             eval( '$result = (' . $price->showing_price. ');' );
             $price->showing_price = $result;
+            // Log::info($price->only('showing_price', 'min_number'));
             return $price;
         }
         catch(Throwable $e){
