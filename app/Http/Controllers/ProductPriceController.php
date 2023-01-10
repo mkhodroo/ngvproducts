@@ -87,6 +87,8 @@ class ProductPriceController extends Controller
     public static function cal_price(ProductPrice $price)
     {
         // Log::info("price: ". $price);
+        $price->showing_price = $price?->price;
+        $price->min_number = 1;
         $user = Auth::user();
         if($user){
             if($user->role_id == 2){ // PRICE FOR AGENCIES
@@ -97,9 +99,6 @@ class ProductPriceController extends Controller
                 $price->showing_price = $price?->wholesaler_price;
                 $price->min_number = $price->min_wholesaler_number;
             }
-        }else{
-            $price->showing_price = $price?->price;
-            $price->min_number = 1;
         }
         // Log::info("user role id : ".Auth::user()?->role_id);
         $price_is_number = true;
