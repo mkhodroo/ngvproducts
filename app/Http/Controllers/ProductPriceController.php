@@ -89,11 +89,11 @@ class ProductPriceController extends Controller
         // Log::info("price: ". $price);
         $user = Auth::user();
         if($user){
-            if($user->role_id === 2){ // PRICE FOR AGENCIES
+            if($user->role_id == 2){ // PRICE FOR AGENCIES
                 $price->showing_price = $price?->agency_price;
                 $price->min_number = $price->min_agency_number;
             }
-            elseif($user->role_id === 1){ // PRICE FOR WHOLESALER
+            elseif($user->role_id == 1){ // PRICE FOR WHOLESALER
                 $price->showing_price = $price?->wholesaler_price;
                 $price->min_number = $price->min_wholesaler_number;
             }
