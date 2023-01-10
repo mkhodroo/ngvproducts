@@ -377,7 +377,7 @@
             error: function (data) {
                 hide_loading();
                 console.log(data);
-                error_notification(data.responseText);
+                error_notification("خطایی رخ داد. با پشتیبانی تماس بگیرید.");
             }
         })
     }
