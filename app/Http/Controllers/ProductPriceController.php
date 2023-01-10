@@ -38,6 +38,15 @@ class ProductPriceController extends Controller
         return $pp;
     }
 
+    public function update_price(Request $r)
+    {
+        $p = $this->get($r->product_producer_id);
+        if($p){
+            $p->update($r->all());
+        }
+        return $p;
+    }
+
     public function get($producer_id)
     {
         return ProductPrice::producer_prices($producer_id);
@@ -78,13 +87,16 @@ class ProductPriceController extends Controller
     public static function cal_price(ProductPrice $price)
     {
         // Log::info("price: ". $price);
-        if(Auth::user()?->role_id === 2){ // PRICE FOR AGENCIES
-            $price->showing_price = $price?->agency_price;
-            $price->min_number = $price->min_agency_number;
-        }
-        elseif(Auth::user()?->role_id === 1){ // PRICE FOR WHOLESALER
-            $price->showing_price = $price?->wholesaler_price;
-            $price->min_number = $price->min_wholesaler_number;
+        $user = Auth::user();
+        if($user){
+            if($user->role_id === 2){ // PRICE FOR AGENCIES
+                $price->showing_price = $price?->agency_price;
+                $price->min_number = $price->min_agency_number;
+            }
+            elseif($user->role_id === 1){ // PRICE FOR WHOLESALER
+                $price->showing_price = $price?->wholesaler_price;
+                $price->min_number = $price->min_wholesaler_number;
+            }
         }else{
             $price->showing_price = $price?->price;
             $price->min_number = 1;
