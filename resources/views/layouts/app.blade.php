@@ -71,6 +71,7 @@
     <!-- /Popup: Shopping cart items -->
 
     <!-- Header top bar -->
+    @include('store.profile.modal')
     @include('store.auth.login')
     @include('store.auth.register')
     @include('layouts.alert')
@@ -81,7 +82,7 @@
                     <script>
                         $.get(`{{ route('get-user-info') }}`, function(data){
                             if(data){
-                                $('#login-info').append(`<li class="icon-user" ><a href="{{ route('my-orders') }}"> <img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/><span>${data.name}</span></a></li>`)
+                                $('#login-info').append(`<li class="icon-user" onclick="open_profile_modal()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/><span>${data.name}</span></li>`)
                                 $('#login-info').append(`<li class="icon-form" onclick="logout()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-2.png') }}" alt=""/> <span class="colored">خروج</span></span></li>`);
                             }else{
                                 $('#login-info').append(`<li class="icon-user" onclick="open_login_modal()" style="cursor: pointer"><img src="{{ url('public/store/assets/img/icon-1.png') }}" alt=""/> <span>ورود</span></li>`);
@@ -262,7 +263,7 @@
                             <p>در وبلاگ ما میتوانید از آخرین خبرهای حوزه سوخت های جایگزین با خبر شوید.</p>
                             <form action="#">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Enter Your Mail and Get $10 Cash"/>
+                                    <input class="form-control" type="text" placeholder=""/>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-theme btn-theme-transparent">Subscribe</button>
